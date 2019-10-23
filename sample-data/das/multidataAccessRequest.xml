@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<das:multiDataAccessRequest xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd">
+   <das:sqlStatement columnCase="lowercase"
+                     hasResultSet="false"
+                     includeMetadata="false"
+                     maxRows="0"
+                     maxWaitSeconds="0"
+                     statementId="string">
+      <das:statement>string</das:statement>
+      <das:parameter attachmentId="string" sqlType="byte">string</das:parameter>
+   </das:sqlStatement>
+</das:multiDataAccessRequest>

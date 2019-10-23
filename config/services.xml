@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screenflowContribution xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosServiceDiscovery.xsd">
+   <service name="execSQL">
+      <avosServiceName>execSQL</avosServiceName>
+      <displayName>execSQL</displayName>
+      <category>Automated Steps:Data Access Services</category>
+      <description>You can interact directly with a data source within a IPD process by using the Data Access system service. 
+Using this service, you create an invoke activity that executes one statement on a specified data source and receives a result set as the response.
+This service Supports One SQL statement, but multiple batched updates/inserts</description>
+      <iconLocation>project:/com.informatica.cloud.das/images/database.png</iconLocation>
+      <largeIconLocation>project:/com.informatica.cloud.das/images/database.png</largeIconLocation>
+      <input>
+         <parameter name="dataAccessRequest" required="true" type="reference"
+         	description="tDataAccessRequest Object">
+            <options>
+               <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
+            </options>
+         </parameter>
+      </input>
+      <output>
+         <field description="tResponse Object"
+                   label=""
+                   name="dataAccessResponse"
+                   type="reference">
+            <options>
+               <option name="referenceTo">DataAccessService:tResponse</option>
+            </options>
+         </field>
+      </output>
+   </service>
+   
+   <service name="execMultiSQL">
+      <avosServiceName>execMultiSQL</avosServiceName>
+      <displayName>execMultiSQL</displayName>
+      <category>Automated Steps:Data Access Services</category>
+      <description>You can interact directly with a data source within a IPD process by using the Data Access system service. 
+Using this service, you create an invoke activity that executes Multiple statement on a specified data source and receives a result set as the response.
+You can execute any SQL statement, whether you are selecting, inserting, updating or deleting data or stored procedures from a data source.
+This service Supports One SQL statement, but multiple batched updates/inserts</description>
+      <iconLocation>project:/com.informatica.cloud.das/images/database.png</iconLocation>
+      <largeIconLocation>project:/com.informatica.cloud.das/images/database.png</largeIconLocation>
+      <input>
+         <parameter name="multiDataAccessRequest" required="true" type="reference"
+         	description="Provide one or many statements to be executed using the MultiDataAccessRequest">
+            <options>
+               <option name="referenceTo">DataAccessService:tMultiDataAccessRequest</option>
+            </options>
+         </parameter>
+      </input>
+      <output>
+         <field description="tMultiResponse object"
+                   label=""
+                   name="multiDataAccessResponse"
+                   type="reference">
+            <options>
+               <option name="referenceTo">DataAccessService:tMultiResponse</option>
+            </options>
+         </field>
+      </output>
+   </service>
+</screenflowContribution>

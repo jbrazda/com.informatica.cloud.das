@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connection
+	xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+	label="DataAccessService"
+	name="DataAccessService">
+	<agent />
+	<attributes>
+	</attributes>
+	<!--  
+	<businessConnector
+		xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+		agentOnly="false"
+		connectorPath="project:/rt.connector/Data_Access_Service/Data_Access_Service_svcDef.xml"
+		supportsConnectionTest="false"
+		uuid="d5419b4d-17a0-4321-a002-5794c2d34287">
+		<description>DO NOT USE THIS SERVICE DIRECTLY is defined only to provide metadata definitions for Automated Steps execSQL and execMultiSQL</description>
+	</businessConnector>
+	-->
+</connection>

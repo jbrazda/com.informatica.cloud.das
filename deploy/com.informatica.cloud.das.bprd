@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project name="Service Archive" default='run' basedir=".">
+
+   <!-- The project root location. -->
+   <property name="project_loc" value="${basedir}/.." />
+
+   <!-- Some properties used by the script. -->
+   <property name="archive.filename" value="${project_loc}/target/bpr/com.informatica.cloud.das.bpr" />
+
+   <!-- The deployment location.  Typically a server/container deployment directory. -->
+   <property name="archive.deploypath" value="" />
+
+   <!-- The type of deployment. -->
+   <property name="archive.deploytype" value="file" />
+
+   <!-- A temp directory location. -->
+   <property name="archive.temppath" value="${java.io.tmpdir}" />
+
+   <!-- Taskdefs required when running this script from the command line. -->
+   <target name="init">
+      <property name="activevos.antlib" value="" />
+      <path id="activevos.classpath">
+         <fileset dir="${activevos.antlib}">
+            <include name="*.jar" />
+         </fileset>
+      </path>
+      <condition property="avos.tasks.available">
+         <and>
+            <available classpathref="activevos.classpath" classname="com.activee.ant.bpr.tasks.AeCreateCatalogTask"/>
+            <available classpathref="activevos.classpath" classname="com.activee.ant.bpr.tasks.AeDeployBPRTask"/>
+            <available classpathref="activevos.classpath" classname="com.activee.ant.bpr.tasks.AeCreateContributionTask"/>
+         </and>
+      </condition>
+   </target>
+
+   <target name="load.tasks" depends="init" if="avos.tasks.available">
+      <taskdef name="deploybpr" onerror="ignore" classpathref="activevos.classpath" classname="com.activee.ant.bpr.tasks.AeDeployBPRTask" />
+      <taskdef name="createcatalog" onerror="ignore" classpathref="activevos.classpath" classname="com.activee.ant.bpr.tasks.AeCreateCatalogTask" />
+      <taskdef name="createcontribution" onerror="ignore" classpathref="activevos.classpath" classname="com.activee.ant.bpr.tasks.AeCreateContributionTask" />
+   </target>
+
+   <!-- Build the BPR file from the following (generated) file set. -->
+   <target name="build" depends="load.tasks">
+      <delete file="${archive.filename}" />
+      <jar destfile="${archive.filename}">
+         <!-- PDD Files. -->
+         <zipfileset file="${project_loc}/deploy/execMultiSQL.pdd" fullpath="META-INF/pdd/com.informatica.cloud.das/deploy/execMultiSQL.pdd" />
+         <zipfileset file="${project_loc}/deploy/execSQL.pdd" fullpath="META-INF/pdd/com.informatica.cloud.das/deploy/execSQL.pdd" />
+         <!-- BPEL Files. -->
+         <zipfileset file="${project_loc}/bpel/execMultiSQL.bpel" fullpath="bpel/com.informatica.cloud.das/bpel/execMultiSQL.bpel" />
+         <zipfileset file="${project_loc}/bpel/execSQL.bpel" fullpath="bpel/com.informatica.cloud.das/bpel/execSQL.bpel" />
+         <!-- WSDL Files. -->
+         <zipfileset file="${project_loc}/wsdl/data-access.wsdl" fullpath="resources/com.informatica.cloud.das/wsdl/data-access.wsdl" />
+         <!-- XSD Files -->
+         <zipfileset file="${project_loc}/schema/data-access.xsd" fullpath="resources/com.informatica.cloud.das/schema/data-access.xsd" />
+         <!-- Other Files. -->
+         <zipfileset file="${project_loc}/README.html" fullpath="resources/com.informatica.cloud.das/README.html" />
+         <zipfileset file="${project_loc}/README.md" fullpath="resources/com.informatica.cloud.das/README.md" />
+         <zipfileset file="${project_loc}/config/Parameter.xml" fullpath="resources/com.informatica.cloud.das/config/Parameter.xml" />
+         <zipfileset file="${project_loc}/config/ProcedureParameter.xml" fullpath="resources/com.informatica.cloud.das/config/ProcedureParameter.xml" />
+         <zipfileset file="${project_loc}/config/connection.xml" fullpath="resources/com.informatica.cloud.das/config/connection.xml" />
+         <zipfileset file="${project_loc}/config/entityList.xml" fullpath="resources/com.informatica.cloud.das/config/entityList.xml" />
+         <zipfileset file="${project_loc}/config/services.xml" fullpath="resources/com.informatica.cloud.das/config/services.xml" />
+         <zipfileset file="${project_loc}/config/svcDef.xml" fullpath="resources/com.informatica.cloud.das/config/svcDef.xml" />
+         <zipfileset file="${project_loc}/config/tDataAccessRequest.xml" fullpath="resources/com.informatica.cloud.das/config/tDataAccessRequest.xml" />
+         <zipfileset file="${project_loc}/config/tMetadata.xml" fullpath="resources/com.informatica.cloud.das/config/tMetadata.xml" />
+         <zipfileset file="${project_loc}/config/tMultiDataAccessRequest.xml" fullpath="resources/com.informatica.cloud.das/config/tMultiDataAccessRequest.xml" />
+         <zipfileset file="${project_loc}/config/tMultiResponse.xml" fullpath="resources/com.informatica.cloud.das/config/tMultiResponse.xml" />
+         <zipfileset file="${project_loc}/config/tProcedureSignature.xml" fullpath="resources/com.informatica.cloud.das/config/tProcedureSignature.xml" />
+         <zipfileset file="${project_loc}/config/tResponse.xml" fullpath="resources/com.informatica.cloud.das/config/tResponse.xml" />
+         <zipfileset file="${project_loc}/config/tRow.xml" fullpath="resources/com.informatica.cloud.das/config/tRow.xml" />
+         <zipfileset file="${project_loc}/config/tSqlParameterBatch.xml" fullpath="resources/com.informatica.cloud.das/config/tSqlParameterBatch.xml" />
+         <zipfileset file="${project_loc}/config/tSqlStatement.xml" fullpath="resources/com.informatica.cloud.das/config/tSqlStatement.xml" />
+         <zipfileset file="${project_loc}/images/database.png" fullpath="resources/com.informatica.cloud.das/images/database.png" />
+         <zipfileset file="${project_loc}/images/database_go.png" fullpath="resources/com.informatica.cloud.das/images/database_go.png" />
+         <zipfileset file="${project_loc}/xquery/infa-das.xq" fullpath="wsdl/Users/jbrazda/git/icrt_common/com.informatica.cloud.das/xquery/infa-das.xq" />
+         <!-- Process Image Files. -->
+         <zipfileset file="${project_loc}/.image/bpel/execMultiSQL/*" prefix=".image/com.informatica.cloud.das/bpel/execMultiSQL" />
+         <zipfileset file="${project_loc}/.image/bpel/execSQL/*" prefix=".image/com.informatica.cloud.das/bpel/execSQL" />
+      </jar>
+      <createcatalog file="${archive.filename}" contributionURI="project:/com.informatica.cloud.das">
+         <wsdlentry location="project:/com.informatica.cloud.das/wsdl/data-access.wsdl" classpath="resources/com.informatica.cloud.das/wsdl/data-access.wsdl" />
+         <schemaentry location="project:/com.informatica.cloud.das/schema/data-access.xsd" classpath="resources/com.informatica.cloud.das/schema/data-access.xsd" />
+         <otherentry typeURI="res:/text/html" location="project:/com.informatica.cloud.das/README.html" classpath="resources/com.informatica.cloud.das/README.html" />
+         <otherentry typeURI="res:/application/octet-stream" location="project:/com.informatica.cloud.das/README.md" classpath="resources/com.informatica.cloud.das/README.md" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/Parameter.xml" classpath="resources/com.informatica.cloud.das/config/Parameter.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/ProcedureParameter.xml" classpath="resources/com.informatica.cloud.das/config/ProcedureParameter.xml" />
+         <otherentry typeURI="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd" location="project:/com.informatica.cloud.das/config/connection.xml" classpath="resources/com.informatica.cloud.das/config/connection.xml" />
+         <otherentry typeURI="http:/schemas.active-endpoints.com/appmodules/screenflow/2012/09/avosObjectDiscovery.xsd" location="project:/com.informatica.cloud.das/config/entityList.xml" classpath="resources/com.informatica.cloud.das/config/entityList.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosServiceDiscovery.xsd" location="project:/com.informatica.cloud.das/config/services.xml" classpath="resources/com.informatica.cloud.das/config/services.xml" />
+         <otherentry typeURI="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd" location="project:/com.informatica.cloud.das/config/svcDef.xml" classpath="resources/com.informatica.cloud.das/config/svcDef.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/tDataAccessRequest.xml" classpath="resources/com.informatica.cloud.das/config/tDataAccessRequest.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/tMetadata.xml" classpath="resources/com.informatica.cloud.das/config/tMetadata.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/tMultiDataAccessRequest.xml" classpath="resources/com.informatica.cloud.das/config/tMultiDataAccessRequest.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/tMultiResponse.xml" classpath="resources/com.informatica.cloud.das/config/tMultiResponse.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/tProcedureSignature.xml" classpath="resources/com.informatica.cloud.das/config/tProcedureSignature.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/tResponse.xml" classpath="resources/com.informatica.cloud.das/config/tResponse.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/tRow.xml" classpath="resources/com.informatica.cloud.das/config/tRow.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/tSqlParameterBatch.xml" classpath="resources/com.informatica.cloud.das/config/tSqlParameterBatch.xml" />
+         <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd" location="project:/com.informatica.cloud.das/config/tSqlStatement.xml" classpath="resources/com.informatica.cloud.das/config/tSqlStatement.xml" />
+         <otherentry typeURI="res:/image/png" location="project:/com.informatica.cloud.das/images/database.png" classpath="resources/com.informatica.cloud.das/images/database.png" />
+         <otherentry typeURI="res:/image/png" location="project:/com.informatica.cloud.das/images/database_go.png" classpath="resources/com.informatica.cloud.das/images/database_go.png" />
+         <otherentry typeURI="http://modules.active-endpoints.com/2009/07/xquery" location="project:/com.informatica.cloud.das/xquery/infa-das.xq" classpath="wsdl/Users/jbrazda/git/icrt_common/com.informatica.cloud.das/xquery/infa-das.xq" />
+      </createcatalog>
+      <!-- The contribution task sets up a contribution file which documents the exported and imported namespaces for this contribution -->
+      <createcontribution file="${archive.filename}">
+         <!-- Namespaces exported by this contribution for use by other contributions  -->
+         <export namespace="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl"/>
+         <export namespace="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"/>
+         <export namespace="http://www.informatica.com/das/1.0/xquery"/>
+         <!-- Namespaces from other contributions (location) that this contribution is dependent on if any -->
+         <!-- Namespaces for system services used in this contribution on if any -->
+         <import namespace="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl" location="project:/com.activee.rt.data.access.services"/>
+         <import namespace="http://schemas.active-endpoints.com/wsdl/screenFlow/2010/10/avosAutomatedStep.wsdl" location="project:/com.activevos.socrates.repository.services"/>
+      </createcontribution>
+   </target>
+
+   <!-- Deploy the built BPR file to some kind of container/server. -->
+   <target name="deploy" depends="load.tasks">
+      <echo message="Deploying Business Process Archive." />
+
+      <!--
+         **** deploybpr task usage: ****
+         @type: Either 'file' or 'webservice'.
+         @file: The path to the BPR file created by the build target.
+         @todir: The path to deploy the BPR to when @type is 'file'.
+         @tourl: The URL of the server to deploy the BPR to when @type is 'webservice'.
+         @username: A username to use to authenticate when @type is 'webservice'.
+         @password: A password to use to authenticate when @type is 'webservice'.
+         @failonerror: Fail the build when it's set to true and @type is 'webservice'.
+      -->
+      <deploybpr type="${archive.deploytype}" file="${archive.filename}" failonerror="true" todir="${archive.deploypath}" />
+   </target>
+
+   <!-- The main entry point into this script, the run target calls various other targets in turn. -->
+   <target name="run" depends="build"/>
+
+   <target name="runDeploy" depends="run,deploy"/>
+
+</project>

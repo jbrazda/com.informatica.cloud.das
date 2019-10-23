@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<das:multiDataAccessResponse xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"><!--Optional:-->
+   <das:result sqlcode="1" sqlstate="string" statementId="string"><!--Optional:-->
+      <das:errorMessage>string</das:errorMessage>
+      <das:metadata/>
+      <das:row attachmentId="string" updatedRows="1"/>
+   </das:result>
+</das:multiDataAccessResponse>

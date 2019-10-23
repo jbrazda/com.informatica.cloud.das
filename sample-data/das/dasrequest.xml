@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<das:dataAccessRequest xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd">
+   <das:sqlStatement columnCase="lowercase"
+                     hasResultSet="true"
+                     includeMetadata="false"
+                     maxRows="0"
+                     maxWaitSeconds="5"
+                     statementId="string">
+      <das:statement>select * from table where id = ?</das:statement>
+      <das:parameter sqlType="double">22</das:parameter>
+      
+   </das:sqlStatement>
+</das:dataAccessRequest>

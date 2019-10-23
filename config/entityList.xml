@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entityList xmlns="http:/schemas.active-endpoints.com/appmodules/screenflow/2012/09/avosObjectDiscovery.xsd">
+   <entity isByCopy="true"
+               label="ProcedureParameter"
+               name="ProcedureParameter"
+               objectLocation="project:/com.informatica.cloud.das/config/ProcedureParameter.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+   <entity isByCopy="true"
+               label="Parameter"
+               name="Parameter"
+               objectLocation="project:/com.informatica.cloud.das/config/Parameter.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+   <entity isByCopy="true"
+               label="tDataAccessRequest"
+               name="tDataAccessRequest"
+               objectLocation="project:/com.informatica.cloud.das/config/tDataAccessRequest.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+   <entity isByCopy="true"
+               label="tMetadata"
+               name="tMetadata"
+               objectLocation="project:/com.informatica.cloud.das/config/tMetadata.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+   <entity isByCopy="true"
+               label="tMultiDataAccessRequest"
+               name="tMultiDataAccessRequest"
+               objectLocation="project:/com.informatica.cloud.das/config/tMultiDataAccessRequest.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+   <entity isByCopy="true"
+               label="tMultiResponse"
+               name="tMultiResponse"
+               objectLocation="project:/com.informatica.cloud.das/config/tMultiResponse.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+   <entity isByCopy="true"
+               label="tProcedureSignature"
+               name="tProcedureSignature"
+               objectLocation="project:/com.informatica.cloud.das/config/tProcedureSignature.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+   <entity isByCopy="true"
+               label="tResponse"
+               name="tResponse"
+               objectLocation="project:/com.informatica.cloud.das/config/tResponse.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+   <entity isByCopy="true"
+               label="tRow"
+               name="tRow"
+               objectLocation="project:/com.informatica.cloud.das/config/tRow.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+   <entity isByCopy="true"
+               label="tSqlParameterBatch"
+               name="tSqlParameterBatch"
+               objectLocation="project:/com.informatica.cloud.das/config/tSqlParameterBatch.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+   <entity isByCopy="true"
+               label="tSqlStatement"
+               name="tSqlStatement"
+               objectLocation="project:/com.informatica.cloud.das/config/tSqlStatement.xml"
+               source="DataAccessService">
+      <description/>
+   </entity>
+</entityList>

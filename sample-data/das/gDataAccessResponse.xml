@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<das:dataAccessResponse xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+                        xmlns:ns2="http://schemas.active-endpoints.com/engineapi/2010/09/ProcessManagementTypes.xsd"
+                        xmlns:ns3="http://schemas.active-endpoints.com/engineapi/2010/05/EngineAPITypes.xsd"
+                        xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+                        statementId="statement-1">
+   <das:metadata>
+      <lb_emd_post_id dataType="nvarchar" displaySize="255"/>
+   </das:metadata>
+   <das:row>
+      <lb_emd_post_id>1232573624110583520_1675157082</lb_emd_post_id>
+   </das:row>
+   <das:row>
+      <lb_emd_post_id>1234017673904426845_1675157082</lb_emd_post_id>
+   </das:row>
+   <das:row>
+      <lb_emd_post_id>1236249478070046424_1675157082</lb_emd_post_id>
+   </das:row>
+</das:dataAccessResponse>
