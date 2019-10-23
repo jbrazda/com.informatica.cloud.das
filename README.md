@@ -22,7 +22,7 @@
 
 ## Introduction
 
-Informatica Application Integration Platform (Informatica Cloud Real Time - ICRT) provides many built in connectors including JDBC Connector.
+Informatica Cloud Application Integration Platform (ICAI) provides many built in connectors including JDBC Connector.
 
 Although JDBC Connector provide simple metadata-driven access to read and write database records, you may need some more advanced access that is not supported by this connector such as
 
@@ -34,10 +34,10 @@ Although JDBC Connector provide simple metadata-driven access to read and write 
 
 Informatica Process Engine provides built-in JDBC Connectivity which can be leveraged in such cases, but requires ad-hoc use of Data Access Service (DAS).
 
-Data Access Service provides implementers with the ability to interact with a database to manipulate its structure and content, and execute queries and stored procedures.
+Data Access Service provides implementers with the ability to interact with a database to manipulate its structure and content, and execute SQL Statements and stored procedures.
 
-This package contains Generic Wrapper for this Service That allows Consumption of this System Service directly from IPD processes
-[See the documentation for DAS](http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/com.activee.bpep.doc/html/UG28-9-1.html)
+This package contains a Generic Wrapper for this Service which allows consumption of this System Service directly from IPD processes
+[See the documentation for DAS](https://network.informatica.com/onlinehelp/activevos/current/index.htm#page/bb-av-designer/Data_Access_Service.html)
 
 ## Features
 
@@ -53,27 +53,26 @@ You will need an Informatica Process Developer to build and install this package
 
 ## Install this package on ICS/ICRT
 
-1. Login to the [Informatica Cloud](https://app.informaticaondemand.com/ma/)
-2. Assuming you have the ICRT license enabled, click `Design > Services and Processes`.
-3. In the ICRT process designer, launch `Design Home > Forms > Process Developer > Landing page`.
-4. Download the Eclipse process Developer and install.
-5. Import this project zip into an eclipse workspace using Eclipse menu `File > Import > Existing Projects into Workspace` select the Archive Option
-6. Validate the project and check for errors
-7. Create `target/bpr` directory in the project toot
-8. Run `File > Export > Orchestration > Contribution - Business Process Archive` project export wizard
-9. Make sure that you  set following export parameter as follows
-10. Bpr File: `/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr`
-11. Check the `Save the contribution specification as Ant script ...` option, it is useful for subsequent builds
-12. Set the Target bprd file name to `/com.informatica.cloud.das/deploy/com.informatica.cloud.das.bprd`'
-13. Optionally you can set the deployment option to deeply directly to your cloud org, this saves one step in the deployment as you have to deploy manually only to agents
-14. Deployment Url should be following `https://ps1w2-ics.rt.informaticacloud.com/active-bpel/services/[YOURORGID]/ActiveBpelDeployBPR`
-15. Deploy the produced bpr from `/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr` bot to your cloud org and all agents where you want to use this DAS service
-16. Import attached `/com.informatica.cloud.das/sample-data/IPD_SOURCE_RELEASE_1.0.zip` to your IPD
-17. Adjust target Agent name in the imported Proxy processes `execSQLProxy` and `execMultiSQLProxy`
-18. Setup and Configure DS1 to DSn in the `Process Console > Admin >  Datasource Service` section
-19. Publish all provided resources imported in the step 15
-20. You can use provided test case to verify functionality (test need write and create table, drop table permissions as it creates/drops test table)
-21. Use the provided `TEST DAS` process as reference and example of use to build your own processes
+1. Install and Configure Informatica Process Developer ([Open Installation guide](https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/install_process_developer.md))
+2. Import this project zip into an eclipse workspace using Eclipse menu `File > Import > Existing Projects into Workspace` select the Archive Option
+3. Validate the project and check for errors
+4. Create `target/bpr` directory in the project toot
+5. Run `File > Export > Orchestration > Contribution - Business Process Archive` project export wizard
+6. Make sure that you  set following export parameter as follows
+7. Bpr File: `/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr`
+8. Check the `Save the contribution specification as Ant script ...` option, it is useful for subsequent builds
+9. Set the Target bprd file name to `/com.informatica.cloud.das/deploy/com.informatica.cloud.das.bprd`'
+10. Optionally you can set the deployment option to deeply directly to your cloud org, this saves one step in the deployment as you have to deploy manually only to agents
+11. Deployment Url should be following `https://[Your_POD_Hostname]/active-bpel/services/[YOURORGID]/ActiveBpelDeployBPR` i.e. `https://na1.ai.dm-us.informaticacloud.com/active-bpel/services/d8UL5i5Pm4KddufpfKuiaN/ActiveBpelDeployBPR`
+12. Deploy the produced bpr from `/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr` bot to your cloud org and all agents where you want to use this DAS service
+13. Import attached [IPD_SOURCE_DAS-IICS-2.0.zip](https://github.com/jbrazda/com.informatica.cloud.das/raw/master/sample-data/IPD_SOURCE_DAS-IICS-2.0.zip) to your IPD
+14. Adjust target Agent name in the imported Proxy processes `execSQLProxy` and `execMultiSQLProxy`
+15. Setup and Configure DS1 to DS{n} in the `Process Console > Admin >  Datasource Service` section
+16. Publish all provided resources imported in the step 15
+17. You can use provided test case to verify functionality (test need write and create table, drop table permissions as it creates/drops test table)
+18. Use the provided `TEST DAS` process as reference and example of use to build your own processes
+
+> Note: step 12 in the installation can be also performed via web service when you have access toi Secure Agent the URL would be `http://hostname:7080/process-engine/services/ActiveBpelDeployBPR`
 
 ## Package Contents
 
@@ -95,6 +94,8 @@ You will need an Informatica Process Developer to build and install this package
 Process Implements Automated Step Service  available in the IPD under
 `Services > Data Access Services > execSQL`
 
+![execSQL](doc/images/execSQL_Process.png)
+
 __Input Fields:__
 
 |        Name       |                  Type                  |        Description         |
@@ -113,14 +114,14 @@ execSQL Parameters
 
 |    Parameter    |                                                                                                                        Description                                                                                                                        |
 |-----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| sqlStatement    | Element containing the required <statement> and optional parameters                                                                                                                                                                                       |
+| sqlStatement    | Element containing the required `<statement>` and optional parameters                                                                                                                                                                                       |
 | includeMetadata | Returns a row of metadata about the query columns prior to the actual return data (default = false). Meta data includes data type and display size.                                                                                                       |
 | maxRows         | Maximum number of result rows to be returned. (default = 0 or unlimited)                                                                                                                                                                                  |
 | maxWaitSeconds  | Maximum time to wait for results. (default = 0 or unlimited)                                                                                                                                                                                              |
 | columnCase      | Specifies the case formatting of the columns in the result set (default is unchanged from server). Schema enumerations defined for this element include lowercase, uppercase, and unchanged                                                               |
 | statementId     | Specified as part of request to help identify results (default is to auto generate an Id that results in an Id such as statement-1, statement-2)                                                                                                          |
 | statement       | (Required.) SQL statement to execute                                                                                                                                                                                                                      |
-| parameter       | Identifies the data to be inserted, updated or deleted from the data source. Parameter values are listed in order within a <parameterBatch> element associated with a statement. See Parameter-Based Request for Insert, Update, Delete Statements below. |
+| parameter       | Identifies the data to be inserted, updated or deleted from the data source. Parameter values are listed in order within a `<parameterBatch>` element associated with a statement. See Parameter-Based Request for Insert, Update, Delete Statements below. |
 | sqlType         | Parameter attribute. Types include string (default), byte, short, int, long, float, double, date, binary, or clob                                                                                                                                   |
 | attachmentId    | Parameter attribute. Specified as part of request to help identify results attachments, if any. See Handling Binary Data below.                                                                                                                           |
 | hasResultSet    | Indicates that a stored procedures returns data. Only use this parameter if this is true.                                                                                                                                                                 |
@@ -390,6 +391,8 @@ Select Response Example:
 This allows to invoke multiple Database statements in one request, this is very useful when you need to run multiple statements of a different kind. It supports the same set parameters and both static and parametrized queries as well as stored procedures and DDL statement as the execSQL Service. It only adds ability to execute multiple statements at the same time where the DAs service provides individual result set or output for each statement
 `execMultiSQL` supports can be used for example to couple two statements together such as inserting a row to the database and finding out the primary key  generated as auto-increment or a sequence by the database which is often Database specific.
 
+![execMultiSQL](doc/images/execMultiSQL_Process.png)
+
 Example Multi Data Access Request
 
 ```xml
@@ -532,10 +535,12 @@ This service Supports One SQL statement, but multiple batched updates/inserts</d
 </screenflowContribution>
 ```
 
-Note that the Service Descriptors refer to process objects such as `DataAccessService:tMultiResponse` or `DataAccessService:tMultiDataAccessRequest` that are defined in separate files that must be also deployed and published on the target ICRT Org instance. This is necessary to provide metadata for design time in the IPD to describe the process objects. You will need to import and publish following Objects included in the `/com.informatica.cloud.das/sample-data/IPD_SOURCE_RELEASE_1.0.zip` zip file
+Note that the Service Descriptors refer to process objects such as `DataAccessService:tMultiResponse` or `DataAccessService:tMultiDataAccessRequest` that are defined
+in separate files that must be also deployed and published on the target ICRT Org instance. This is necessary to provide metadata for design time in the IPD to describe the process objects.
+You will need to import and publish following Objects included in the [IPD_SOURCE_DAS-IICS-2.0.zip](https://github.com/jbrazda/com.informatica.cloud.das/raw/master/sample-data/IPD_SOURCE_DAS-IICS-2.0.zip) Archive
 
-- DataAccessService.conn.xml
-- DataAccessService.svc.xml
+- DataAccessService Connection
+- DataAccessService Connector
 
 These are the Service Connector and connection Definition that should be used in the design of your processes only process objects defined in them, Do not use the service actions directly.
 
@@ -549,7 +554,7 @@ Other files included in this package are:
 | execMultiSQLProxy.pd.xml | Example Proxy service to enable DAS automated Step invocation from GUIDE or Cloud Processes |
 | execSQLProxy.pd.xml      | Example Proxy service to enable DAS automated Step invocation from GUIDE or Cloud Processes |
 
-You will need to adjust `execMultiSQLProxy.pd.xml` and `execSQLProxy.pd.xml` accordingly after importing them to your Org as these processes must be deployed to agent to act as a proxy for calls from the Guide or Processes deployed on the Cloud process engine.
+You will need to adjust `execMultiSQLProxy` and `execSQLProxy` processes accordingly after importing them to your Org as these processes must be deployed to agent to act as a proxy for calls from the Guide or Processes deployed on the Cloud process engine.
 You will need to set target Agent before publishing them. If you have more than one agent with DAS services configured you will have to clone these two processes and deploy the to all agent where the DAS Access from Cloud is needed.
 These two processes are not necessary if you create IPD process deployed and published to an agent where the DAS wrapper Automated Steps are deployed and Where the DAS service is configured. In this case IPD can call the DAS Automated steps directly as it is shown in the `TEST_DAS.pd.xml` process
 
