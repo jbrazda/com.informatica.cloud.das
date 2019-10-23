@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema targetNamespace="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+   xmlns:tns="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+   elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+   <!-- =================================================== -->
+   <!-- Define some simple types to be used by the schema. -->
+   <!-- =================================================== -->
+    <xs:simpleType name="tSqlType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="byte"/>
+            <xs:enumeration value="short"/>
+            <xs:enumeration value="int"/>
+            <xs:enumeration value="long"/>
+            <xs:enumeration value="float"/>
+            <xs:enumeration value="double"/>
+            <xs:enumeration value="string"/>
+            <xs:enumeration value="date"/>
+            <xs:enumeration value="clob"/>
+            <xs:enumeration value="binary"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="tColumnCaseType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="lowercase"/>
+            <xs:enumeration value="uppercase"/>
+            <xs:enumeration value="unchanged"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tParameterMode">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="in"/>
+            <xs:enumeration value="out"/>
+            <xs:enumeration value="inout"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+   <!-- =================================================== -->
+   <!-- Define some complex types to be used by the schema. -->
+   <!-- =================================================== -->
+   <xs:complexType name="tSqlParameter">
+      <xs:simpleContent>
+         <xs:extension base="xs:string">
+            <xs:attribute name="sqlType" type="tns:tSqlType" use="optional"/>
+            <xs:attribute name="attachmentId" type="xs:string" use="optional"/>
+         </xs:extension>
+      </xs:simpleContent>
+   </xs:complexType>
+
+   <xs:complexType name="tSqlParameterBatch">
+      <xs:sequence>
+         <xs:element name="parameter" type="tns:tSqlParameter" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   
+   <xs:complexType name="tProcedureArg">
+      <xs:simpleContent>
+         <xs:extension base="xs:string">
+            <xs:attribute name="sqlType" type="tns:tSqlType"/>
+            <xs:attribute name="mode" type="tns:tParameterMode"/>
+         </xs:extension>
+      </xs:simpleContent>
+   </xs:complexType>
+   
+   <xs:complexType name="tProcedureSignature">
+      <xs:sequence>
+         <xs:element name="parameter" type="tns:tProcedureArg" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   
+   <xs:complexType name="tSqlStatement">
+      <xs:sequence>
+         <xs:element name="statement"  type="xs:string" minOccurs="1" maxOccurs="1"/>
+         <xs:choice>
+            <xs:element name="parameter" type="tns:tSqlParameter" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="parameterBatch" type="tns:tSqlParameterBatch" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="procedure" type="tns:tProcedureSignature" minOccurs="0" maxOccurs="1"/>
+         </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="maxRows" type="xs:int" default="0" use="optional"/>
+      <xs:attribute name="maxWaitSeconds" type="xs:int" default="0" use="optional"/>
+      <xs:attribute name="statementId" type="xs:string" use="optional"/>
+      <xs:attribute name="columnCase" type="tns:tColumnCaseType" use="optional"/>
+      <xs:attribute name="includeMetadata" type="xs:boolean" default="false" use="optional"/>
+      <xs:attribute name="hasResultSet" type="xs:boolean" default="false" use="optional"/>
+      <xs:attribute name="dataSource" type="xs:string" default="DS1" use="optional"/>
+   </xs:complexType>
+   
+   <xs:complexType name="tDataAccessRequest">
+      <xs:sequence>
+         <xs:element name="sqlStatement" type="tns:tSqlStatement" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="tMultiDataAccessRequest">
+      <xs:sequence>
+         <xs:element name="sqlStatement" type="tns:tSqlStatement" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="tMetadata">
+      <xs:sequence>
+         <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip"/>
+      </xs:sequence>
+   </xs:complexType>
+
+   <xs:complexType name="tRow">
+      <xs:sequence>
+         <xs:any minOccurs="0" maxOccurs="unbounded" namespace="##local" processContents="skip"/>
+      </xs:sequence>
+      <xs:attribute name="updatedRows" type="xs:int" use="optional"/>
+      <xs:attribute name="attachmentId" type="xs:string" use="optional"/>
+   </xs:complexType>
+
+   <xs:complexType name="tResponse">
+      <xs:sequence>
+         <xs:element name="errorMessage" minOccurs="0" maxOccurs="1" type="xs:string"/>
+         <xs:element name="metadata" minOccurs="0" maxOccurs="1" type="tns:tMetadata"/>
+         <xs:element name="row" minOccurs="0" maxOccurs="unbounded" type="tns:tRow"/>
+      </xs:sequence>
+      <xs:attribute name="statementId" type="xs:string"/>
+      <xs:attribute name="sqlcode" type="xs:int" use="optional"/>
+      <xs:attribute name="sqlstate" type="xs:string" use="optional"/>
+   </xs:complexType>
+   
+   <xs:complexType name="tMultiResponse">
+      <xs:sequence>
+         <xs:element name="result" minOccurs="0" maxOccurs="unbounded" type="tns:tResponse" />
+      </xs:sequence>
+   </xs:complexType>
+   
+   <xs:complexType name="tDataAccessFaultType">
+      <xs:sequence>
+         <xs:element name="errorMessage" minOccurs="0" maxOccurs="1" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="sqlcode" type="xs:int"/>
+      <xs:attribute name="sqlstate" type="xs:string"/>
+   </xs:complexType>
+
+   <!-- =================================================== -->
+   <!-- The definition (uses the above declared types).     -->
+   <!-- =================================================== -->
+   <xs:element name="dataAccessRequest" type="tns:tDataAccessRequest" />
+   <xs:element name="dataAccessResponse" type="tns:tResponse" />
+   
+   <xs:element name="multiDataAccessRequest" type="tns:tMultiDataAccessRequest" />
+   <xs:element name="multiDataAccessResponse" type="tns:tMultiResponse" />
+
+   <xs:element name="dataAccessFault" type="tns:tDataAccessFaultType" />
+</xs:schema>

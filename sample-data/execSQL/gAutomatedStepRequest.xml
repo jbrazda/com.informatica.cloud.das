@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aetgt:automatedStepRequest xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                            xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                            xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+                            xmlns:ns2="http://schemas.active-endpoints.com/engineapi/2010/09/ProcessManagementTypes.xsd"
+                            xmlns:ns3="http://schemas.active-endpoints.com/engineapi/2010/05/EngineAPITypes.xsd">
+   <sf:userId>jbrazda@informatica.com</sf:userId>
+   <sf:correlationId/>
+   <sf:serviceName>execSQL</sf:serviceName>
+   <sf:avosServiceName>execSQL</sf:avosServiceName>
+   <sf:stepId>c</sf:stepId>
+   <aesf:hostContext xmlns:aesf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                     xmlns:ns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                     xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+                     xmlns:type="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+                     xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+      <ns:arg name="tzOffset">300</ns:arg>
+   </aesf:hostContext>
+   <sf:parameters>
+      <sf:parameter name="dataAccessRequest">
+         <temp.dataAccessRequest xmlns:types="http://schemas.active-endpoints.com/wsdl/guideRuntime/2013/04/guideInterpreter.xsd"
+                                 xmlns:git="http://schemas.active-endpoints.com/wsdl/guideRuntime/2013/04/guideInterpreter.xsd"
+                                 xmlns:ns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                                 xmlns:aesf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                                 xmlns:aetgt="http://schemas.active-endpoints.com/wsdl/guideRuntime/2013/04/guideInterpreter.xsd"
+                                 xmlns:type="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+                                 xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+            <sqlStatement>
+               <statement>SELECT * FROM source_metadata</statement>
+               <columnCase>unchanged</columnCase>
+               <hasResultSet>true</hasResultSet>
+               <statementId>test_statement</statementId>
+            </sqlStatement>
+            <dataSource>DS1</dataSource>
+         </temp.dataAccessRequest>
+      </sf:parameter>
+   </sf:parameters>
+</aetgt:automatedStepRequest>

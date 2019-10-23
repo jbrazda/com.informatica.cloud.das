@@ -1,0 +1,718 @@
+diff --git a/com.informatica.cloud.das/bpel/execMultiSQL.bpel b/com.informatica.cloud.das/bpel/execMultiSQL.bpel
+index af67867..43a4ffc 100755
+--- a/com.informatica.cloud.das/bpel/execMultiSQL.bpel
++++ b/com.informatica.cloud.das/bpel/execMultiSQL.bpel
+@@ -59,15 +59,15 @@
+                            aei:type="PARTNER_LINK"
+                            aei:visible="false,false,false,false,false,"
+                            bpmnElement="147872993352112023"/>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {40,30}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {15,15}"
+                            aei:absoluteSize="DIM {1015,835}"
+                            aei:objectId="147872977452211901"
+                            aei:type="SEQUENCE"
+                            bpmnElement="147872977452211901"
+                            isHorizontal="false">
+-            <dc:Bounds height="-1" width="-1" x="30" y="20"/>
++            <dc:Bounds height="840" width="1020" x="5" y="5"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {512,40}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {487,25}"
+                            aei:absoluteSize="DIM {70,60}"
+                            aei:attachments=""
+                            aei:name="automatedStep"
+@@ -77,7 +77,7 @@
+                            aei:type="RECEIVE"
+                            bpmnElement="147872977451711897">
+             <dc:Bounds height="60" width="70" x="0" y="0"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {520,97}"
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {495,82}"
+                               aei:absoluteSize="DIM {74,13}"
+                               aei:anchor.location="1"
+                               aei:anchor.objectId="147872977451711897"
+@@ -89,29 +89,29 @@
+                <dc:Bounds height="13" width="74" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {485,125}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {460,110}"
+                            aei:absoluteSize="DIM {125,53}"
+                            aei:name="Get DAS Request"
+                            aei:objectId="147880737617878094"
+                            aei:type="ASSIGN"
+                            bpmnElement="147880737617878094">
+-            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
++            <dc:Bounds height="53" width="125" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {485,203}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {460,188}"
+                            aei:absoluteSize="DIM {125,53}"
+                            aei:objectId="147880737617878096"
+                            aei:type="VALIDATE"
+                            bpmnElement="147880737617878096">
+-            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
++            <dc:Bounds height="53" width="125" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {50,281}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {25,266}"
+                            aei:absoluteSize="DIM {995,411}"
+                            aei:objectId="147873004408518263"
+                            aei:type="IF"
+                            bpmnElement="147873004408518263"
+                            isHorizontal="false">
+-            <dc:Bounds height="241" width="875" x="10" y="10"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {563,287}"
++            <dc:Bounds height="411" width="995" x="10" y="10"/>
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {538,272}"
+                               aei:absoluteSize="DIM {8,13}"
+                               aei:anchor.location="4"
+                               aei:anchor.objectId="147049074850411289"
+@@ -123,16 +123,16 @@
+                <dc:Bounds height="13" width="8" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS1'"
++         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS01'"
+                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+-                           aei:absoluteLocation="LOC {50,341}"
++                           aei:absoluteLocation="LOC {25,326}"
+                            aei:absoluteSize="DIM {145,291}"
+                            aei:objectId="147873004408518265"
+                            aei:text="DS1"
+                            aei:type="ELSE_IF"
+                            bpmnElement="147873004408518263ifDef">
+             <dc:Bounds height="121" width="145" x="0" y="0"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {93,335}"
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {68,320}"
+                               aei:absoluteSize="DIM {19,13}"
+                               aei:anchor.location="4"
+                               aei:anchor.objectId="147049074850411293"
+@@ -144,7 +144,7 @@
+                <dc:Bounds height="13" width="19" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {60,380}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {35,365}"
+                            aei:absoluteSize="DIM {125,53}"
+                            aei:attachments=""
+                            aei:name="execMultiSQL"
+@@ -155,7 +155,7 @@
+                            bpmnElement="147873004408518267">
+             <dc:Bounds height="53" width="125" x="208" y="196"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {50,370}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {25,355}"
+                            aei:absoluteSize="DIM {145,73}"
+                            aei:actySimState="0"
+                            aei:bpelName=""
+@@ -166,16 +166,16 @@
+                            isHorizontal="false">
+             <dc:Bounds height="78" width="150" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS2'"
++         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS02'"
+                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+-                           aei:absoluteLocation="LOC {220,341}"
++                           aei:absoluteLocation="LOC {195,326}"
+                            aei:absoluteSize="DIM {145,291}"
+                            aei:objectId="147873004408518269"
+                            aei:text="DS2"
+                            aei:type="ELSE_IF"
+                            bpmnElement="147873004408518269">
+             <dc:Bounds height="121" width="145" x="0" y="0"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {268,319}"
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {243,304}"
+                               aei:absoluteSize="DIM {19,13}"
+                               aei:anchor.location="4"
+                               aei:anchor.objectId="147049081602011417"
+@@ -187,7 +187,7 @@
+                <dc:Bounds height="13" width="19" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {230,380}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {205,365}"
+                            aei:absoluteSize="DIM {125,53}"
+                            aei:attachments=""
+                            aei:name="execMultiSQL"
+@@ -198,7 +198,7 @@
+                            bpmnElement="147873004408518271">
+             <dc:Bounds height="53" width="125" x="237" y="194"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {220,370}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {195,355}"
+                            aei:absoluteSize="DIM {145,73}"
+                            aei:actySimState="0"
+                            aei:bpelName=""
+@@ -209,16 +209,16 @@
+                            isHorizontal="false">
+             <dc:Bounds height="78" width="150" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS3'"
++         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS03'"
+                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+-                           aei:absoluteLocation="LOC {390,341}"
++                           aei:absoluteLocation="LOC {365,326}"
+                            aei:absoluteSize="DIM {145,291}"
+                            aei:objectId="147873004408518273"
+                            aei:text="DS3"
+                            aei:type="ELSE_IF"
+                            bpmnElement="147873004408518273">
+             <dc:Bounds height="121" width="145" x="0" y="0"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {453,323}"
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {428,308}"
+                               aei:absoluteSize="DIM {19,13}"
+                               aei:anchor.location="4"
+                               aei:anchor.objectId="147049081918011443"
+@@ -230,7 +230,7 @@
+                <dc:Bounds height="13" width="19" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {400,380}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {375,365}"
+                            aei:absoluteSize="DIM {125,53}"
+                            aei:attachments=""
+                            aei:name="execMultiSQL"
+@@ -241,7 +241,7 @@
+                            bpmnElement="147873004408518275">
+             <dc:Bounds height="53" width="125" x="235" y="188"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {390,370}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {365,355}"
+                            aei:absoluteSize="DIM {145,73}"
+                            aei:actySimState="0"
+                            aei:bpelName=""
+@@ -252,16 +252,16 @@
+                            isHorizontal="false">
+             <dc:Bounds height="78" width="150" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS4'"
++         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS04'"
+                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+-                           aei:absoluteLocation="LOC {560,341}"
++                           aei:absoluteLocation="LOC {535,326}"
+                            aei:absoluteSize="DIM {145,291}"
+                            aei:objectId="147873004408518277"
+                            aei:text="DS4"
+                            aei:type="ELSE_IF"
+                            bpmnElement="147873004408518277">
+             <dc:Bounds height="121" width="145" x="0" y="0"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {623,322}"
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {598,307}"
+                               aei:absoluteSize="DIM {19,13}"
+                               aei:anchor.location="4"
+                               aei:anchor.objectId="147049082329111469"
+@@ -273,7 +273,7 @@
+                <dc:Bounds height="13" width="19" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {570,380}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {545,365}"
+                            aei:absoluteSize="DIM {125,53}"
+                            aei:attachments=""
+                            aei:name="execMultiSQL"
+@@ -284,7 +284,7 @@
+                            bpmnElement="147873004408518279">
+             <dc:Bounds height="53" width="125" x="237" y="282"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {560,370}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {535,355}"
+                            aei:absoluteSize="DIM {145,73}"
+                            aei:actySimState="0"
+                            aei:bpelName=""
+@@ -295,16 +295,16 @@
+                            isHorizontal="false">
+             <dc:Bounds height="78" width="150" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS5'"
++         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS05'"
+                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+-                           aei:absoluteLocation="LOC {730,341}"
++                           aei:absoluteLocation="LOC {705,326}"
+                            aei:absoluteSize="DIM {145,291}"
+                            aei:objectId="147873004408518281"
+                            aei:text="DS5"
+                            aei:type="ELSE_IF"
+                            bpmnElement="147873004408518281">
+             <dc:Bounds height="121" width="145" x="0" y="0"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {793,326}"
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {768,311}"
+                               aei:absoluteSize="DIM {19,13}"
+                               aei:anchor.location="4"
+                               aei:anchor.objectId="147049082682211495"
+@@ -316,7 +316,7 @@
+                <dc:Bounds height="13" width="19" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {740,380}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {715,365}"
+                            aei:absoluteSize="DIM {125,53}"
+                            aei:attachments=""
+                            aei:name="execMultiSQL"
+@@ -327,7 +327,7 @@
+                            bpmnElement="147873004408518283">
+             <dc:Bounds height="53" width="125" x="307" y="231"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {730,370}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {705,355}"
+                            aei:absoluteSize="DIM {145,73}"
+                            aei:actySimState="0"
+                            aei:bpelName=""
+@@ -338,13 +338,13 @@
+                            isHorizontal="false">
+             <dc:Bounds height="78" width="150" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {900,341}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {875,326}"
+                            aei:absoluteSize="DIM {145,291}"
+                            aei:objectId="147873004408518285"
+                            aei:type="ELSE"
+                            bpmnElement="147873004408518263elseDef">
+-            <dc:Bounds height="81" width="25" x="0" y="0"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {973,352}"
++            <dc:Bounds height="291" width="145" x="0" y="0"/>
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {948,337}"
+                               aei:absoluteSize="DIM {19,13}"
+                               aei:anchor.location="4"
+                               aei:anchor.objectId="147049074850511299"
+@@ -356,29 +356,29 @@
+                <dc:Bounds height="13" width="19" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {900,370}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {875,355}"
+                            aei:absoluteSize="DIM {145,243}"
+                            aei:objectId="147873004408518286"
+                            aei:type="SEQUENCE"
+                            bpmnElement="147873004408518286"
+                            isHorizontal="false">
+-            <dc:Bounds height="33" width="25" x="0" y="0"/>
++            <dc:Bounds height="248" width="150" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {910,380}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {885,365}"
+                            aei:absoluteSize="DIM {125,53}"
+                            aei:name="Set Process Title"
+                            aei:objectId="148035250955507104"
+                            aei:type="ASSIGN"
+                            bpmnElement="148035250955507104">
+-            <dc:Bounds height="-1" width="-1" x="10" y="10"/>
++            <dc:Bounds height="53" width="125" x="10" y="10"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {937,458}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {912,443}"
+                            aei:absoluteSize="DIM {70,60}"
+                            aei:objectId="147880797563793572"
+                            aei:type="REPLY"
+                            bpmnElement="147880797563793572">
+-            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {961,515}"
++            <dc:Bounds height="60" width="70" x="0" y="0"/>
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {936,500}"
+                               aei:absoluteSize="DIM {42,13}"
+                               aei:anchor.location="1"
+                               aei:anchor.objectId="147880797563793572"
+@@ -387,17 +387,17 @@
+                               aei:relative.location="LOC {-21,47}"
+                               aei:text="Message"
+                               bpmnElement="147880797563793572label">
+-               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
++               <dc:Bounds height="13" width="42" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {937,543}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {912,528}"
+                            aei:absoluteSize="DIM {70,60}"
+                            aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                            aei:objectId="147880816670699924"
+                            aei:type="EXIT"
+                            bpmnElement="147880816670699924">
+-            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {958,600}"
++            <dc:Bounds height="60" width="70" x="0" y="0"/>
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {933,585}"
+                               aei:absoluteSize="DIM {48,13}"
+                               aei:anchor.location="1"
+                               aei:anchor.objectId="147880816670699924"
+@@ -406,18 +406,18 @@
+                               aei:relative.location="LOC {-24,47}"
+                               aei:text="Terminate"
+                               bpmnElement="147880816670699924label">
+-               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
++               <dc:Bounds height="13" width="48" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {485,717}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {460,702}"
+                            aei:absoluteSize="DIM {125,53}"
+                            aei:name="Set Process Title"
+                            aei:objectId="148035219544703024"
+                            aei:type="ASSIGN"
+                            bpmnElement="148035219544703024">
+-            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
++            <dc:Bounds height="53" width="125" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {512,795}"
++         <bpmndi:BPMNShape aei:absoluteLocation="LOC {487,780}"
+                            aei:absoluteSize="DIM {70,60}"
+                            aei:name="automatedStep-Reply"
+                            aei:objectId="147872977452211899"
+@@ -425,7 +425,7 @@
+                            aei:type="REPLY"
+                            bpmnElement="147872977452211899">
+             <dc:Bounds height="60" width="70" x="0" y="0"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {505,767}"
++            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {480,837}"
+                               aei:absoluteSize="DIM {105,13}"
+                               aei:anchor.location="1"
+                               aei:anchor.objectId="147872977452211899"
+@@ -608,7 +608,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
+       </bpel:assign>
+       <bpel:validate aei:id="147880737617878096" variables="gMultiDataAccessRequest"/>
+       <bpel:if aei:id="147873004408518263">
+-         <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS1'</bpel:condition>
++         <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS01'</bpel:condition>
+          <bpel:invoke aei:id="147873004408518267"
+                       inputVariable="gMultiDataAccessRequest"
+                       name="execMultiSQL"
+@@ -616,7 +616,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
+                       outputVariable="gMultiDataAccessResponse"
+                       partnerLink="DS1"/>
+          <bpel:elseif aei:id="147873004408518269">
+-            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS2'</bpel:condition>
++            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS02'</bpel:condition>
+             <bpel:invoke aei:id="147873004408518271"
+                          inputVariable="gMultiDataAccessRequest"
+                          name="execMultiSQL"
+@@ -625,7 +625,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
+                          partnerLink="DS2"/>
+          </bpel:elseif>
+          <bpel:elseif aei:id="147873004408518273">
+-            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS3'</bpel:condition>
++            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS03'</bpel:condition>
+             <bpel:invoke aei:id="147873004408518275"
+                          inputVariable="gMultiDataAccessRequest"
+                          name="execMultiSQL"
+@@ -634,7 +634,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
+                          partnerLink="DS3"/>
+          </bpel:elseif>
+          <bpel:elseif aei:id="147873004408518277">
+-            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS4'</bpel:condition>
++            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS04'</bpel:condition>
+             <bpel:invoke aei:id="147873004408518279"
+                          inputVariable="gMultiDataAccessRequest"
+                          name="execMultiSQL"
+@@ -643,7 +643,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
+                          partnerLink="DS4"/>
+          </bpel:elseif>
+          <bpel:elseif aei:id="147873004408518281">
+-            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS5'</bpel:condition>
++            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS05'</bpel:condition>
+             <bpel:invoke aei:id="147873004408518283"
+                          inputVariable="gMultiDataAccessRequest"
+                          name="execMultiSQL"
+diff --git a/com.informatica.cloud.das/bpel/execSQL.bpel b/com.informatica.cloud.das/bpel/execSQL.bpel
+index 5d3ef7c..8627583 100755
+--- a/com.informatica.cloud.das/bpel/execSQL.bpel
++++ b/com.informatica.cloud.das/bpel/execSQL.bpel
+@@ -123,7 +123,7 @@
+                <dc:Bounds height="13" width="8" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS1'"
++         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS01'"
+                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+                            aei:absoluteLocation="LOC {55,321}"
+                            aei:absoluteSize="DIM {145,291}"
+@@ -166,7 +166,7 @@
+                            isHorizontal="false">
+             <dc:Bounds height="78" width="150" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS2'"
++         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS02'"
+                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+                            aei:absoluteLocation="LOC {225,321}"
+                            aei:absoluteSize="DIM {145,291}"
+@@ -209,7 +209,7 @@
+                            isHorizontal="false">
+             <dc:Bounds height="78" width="150" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS3'"
++         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS03'"
+                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+                            aei:absoluteLocation="LOC {395,321}"
+                            aei:absoluteSize="DIM {145,291}"
+@@ -252,7 +252,7 @@
+                            isHorizontal="false">
+             <dc:Bounds height="78" width="150" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS4'"
++         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS04'"
+                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+                            aei:absoluteLocation="LOC {565,321}"
+                            aei:absoluteSize="DIM {145,291}"
+@@ -295,8 +295,8 @@
+                            isHorizontal="false">
+             <dc:Bounds height="78" width="150" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:IF_EXPRESSION="$gDataAccessRequest/das:sqlStatement/@dataSource='DS5'"
+-                           aei:IF_EXPR_LANG=""
++         <bpmndi:BPMNShape aei:IF_EXPRESSION="$gDataAccessRequest/das:sqlStatement/@dataSource='DS05'"
++                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                            aei:absoluteLocation="LOC {735,321}"
+                            aei:absoluteSize="DIM {145,291}"
+                            aei:objectId="147872999966316064"
+@@ -437,9 +437,7 @@
+                <dc:Bounds height="13" width="105" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {150,187}"
+-                           aei:absoluteSize="DIM {165,238}"
+-                           aei:catchAllFaults="true"
++         <bpmndi:BPMNShape aei:catchAllFaults="true"
+                            aei:collapedIconLocation="icons/bpmn/activity/catch.png"
+                            aei:constraint=""
+                            aei:expanded="true"
+@@ -451,9 +449,7 @@
+                            bpmnElement="147880547449471559"
+                            isHorizontal="false">
+             <dc:Bounds height="-1" width="-1" x="140" y="177"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {219,197}"
+-                              aei:absoluteSize="DIM {47,13}"
+-                              aei:anchor.location="0"
++            <bpmndi:BPMNLabel aei:anchor.location="0"
+                               aei:anchor.objectId="1478808628590109998"
+                               aei:backgroundColor="RGB {255,255,255}"
+                               aei:objectId="1478808628590110000"
+@@ -463,31 +459,23 @@
+                <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+             </bpmndi:BPMNLabel>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {160,247}"
+-                           aei:absoluteSize="DIM {145,158}"
+-                           aei:objectId="147880548185471567"
++         <bpmndi:BPMNShape aei:objectId="147880548185471567"
+                            aei:type="SEQUENCE"
+                            bpmnElement="147880548185471567"
+                            isHorizontal="false">
+             <dc:Bounds height="-1" width="-1" x="4" y="16"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {170,257}"
+-                           aei:absoluteSize="DIM {125,53}"
+-                           aei:name="Set Title"
++         <bpmndi:BPMNShape aei:name="Set Title"
+                            aei:objectId="148035196882401351"
+                            aei:type="ASSIGN"
+                            bpmnElement="148035196882401351">
+             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+          </bpmndi:BPMNShape>
+-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {197,335}"
+-                           aei:absoluteSize="DIM {70,60}"
+-                           aei:objectId="147880548185271563"
++         <bpmndi:BPMNShape aei:objectId="147880548185271563"
+                            aei:type="REPLY"
+                            bpmnElement="147880548185271563">
+             <dc:Bounds height="-1" width="-1" x="14" y="26"/>
+-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {221,392}"
+-                              aei:absoluteSize="DIM {42,13}"
+-                              aei:anchor.location="1"
++            <bpmndi:BPMNLabel aei:anchor.location="1"
+                               aei:anchor.objectId="147880548185271563"
+                               aei:backgroundColor="RGB {255,255,255}"
+                               aei:objectId="147880548185371565"
+@@ -612,7 +600,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
+       </bpel:assign>
+       <bpel:validate aei:id="147880558791071817" variables="gDataAccessRequest"/>
+       <bpel:if aei:id="147872999966316046">
+-         <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS1'</bpel:condition>
++         <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS01'</bpel:condition>
+          <bpel:invoke aei:id="147872999966316050"
+                       inputVariable="gDataAccessRequest"
+                       name="execSQL"
+@@ -620,7 +608,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
+                       outputVariable="gDataAccessResponse"
+                       partnerLink="DS1"/>
+          <bpel:elseif aei:id="147872999966316052">
+-            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS2'</bpel:condition>
++            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS02'</bpel:condition>
+             <bpel:invoke aei:id="147872999966316054"
+                          inputVariable="gDataAccessRequest"
+                          name="execSQL"
+@@ -629,7 +617,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
+                          partnerLink="DS2"/>
+          </bpel:elseif>
+          <bpel:elseif aei:id="147872999966316056">
+-            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS3'</bpel:condition>
++            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS03'</bpel:condition>
+             <bpel:invoke aei:id="147872999966316058"
+                          inputVariable="gDataAccessRequest"
+                          name="execSQL"
+@@ -638,7 +626,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
+                          partnerLink="DS3"/>
+          </bpel:elseif>
+          <bpel:elseif aei:id="147872999966316060">
+-            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS4'</bpel:condition>
++            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS04'</bpel:condition>
+             <bpel:invoke aei:id="147872999966316062"
+                          inputVariable="gDataAccessRequest"
+                          name="execSQL"
+@@ -647,7 +635,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
+                          partnerLink="DS4"/>
+          </bpel:elseif>
+          <bpel:elseif aei:id="147872999966316064">
+-            <bpel:condition>$gDataAccessRequest/das:sqlStatement/@dataSource='DS5'</bpel:condition>
++            <bpel:condition>$gDataAccessRequest/das:sqlStatement/@dataSource='DS05'</bpel:condition>
+             <bpel:invoke aei:id="147872999966316066"
+                          inputVariable="gDataAccessRequest"
+                          name="execSQL"
+@@ -667,7 +655,7 @@ let $dasType := switch (true())
+  case (exists($gDataAccessRequest/das:sqlStatement/das:procedure)) return "storedProcedure"
+  default return ()
+ 
+-let $result := concat("FAILED - Invalid DS",dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ))
++let $result := concat("FAILED - Invalid DS: ",dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ))
+ 
+ let $titleparts := ($processName, $statementId, $dasType, $result)
+ return
+diff --git a/com.informatica.cloud.das/deploy/com.informatica.cloud.das.bprd b/com.informatica.cloud.das/deploy/com.informatica.cloud.das.bprd
+index 25a6da0..dc0c16a 100755
+--- a/com.informatica.cloud.das/deploy/com.informatica.cloud.das.bprd
++++ b/com.informatica.cloud.das/deploy/com.informatica.cloud.das.bprd
+@@ -1,5 +1,5 @@
+ <?xml version='1.0' encoding='UTF-8'?>
+-<project name="Service Archive" default='runDeploy' basedir=".">
++<project name="Service Archive" default='run' basedir=".">
+ 
+    <!-- The project root location. -->
+    <property name="project_loc" value="${basedir}/.." />
+@@ -8,10 +8,10 @@
+    <property name="archive.filename" value="${project_loc}/target/bpr/com.informatica.cloud.das.bpr" />
+ 
+    <!-- The deployment location.  Typically a server/container deployment directory. -->
+-   <property name="archive.deploypath" value="https://ps1w2-ics.rt.informaticacloud.com/active-bpel/services/001DQO/ActiveBpelDeployBPR" />
++   <property name="archive.deploypath" value="" />
+ 
+    <!-- The type of deployment. -->
+-   <property name="archive.deploytype" value="webservice" />
++   <property name="archive.deploytype" value="file" />
+ 
+    <!-- The username/password used during webservice deployment -->
+    <property name="deploy.username" value="jbrazda@informatica.com" />
+@@ -122,7 +122,18 @@
+    <!-- Deploy the built BPR file to some kind of container/server. -->
+    <target name="deploy" depends="load.tasks">
+       <echo message="Deploying Business Process Archive." />
+-      <deploybpr type="${archive.deploytype}" file="${archive.filename}" failonerror="true" username="${deploy.username}" password="${deploy.password}" tourl="${archive.deploypath}" />
++
++      <!--
++         **** deploybpr task usage: ****
++         @type: Either 'file' or 'webservice'.
++         @file: The path to the BPR file created by the build target.
++         @todir: The path to deploy the BPR to when @type is 'file'.
++         @tourl: The URL of the server to deploy the BPR to when @type is 'webservice'.
++         @username: A username to use to authenticate when @type is 'webservice'.
++         @password: A password to use to authenticate when @type is 'webservice'.
++         @failonerror: Fail the build when it's set to true and @type is 'webservice'.
++      -->
++      <deploybpr type="${archive.deploytype}" file="${archive.filename}" failonerror="true" todir="${archive.deploypath}" />
+    </target>
+ 
+    <!-- The main entry point into this script, the run target calls various other targets in turn. -->
+diff --git a/com.informatica.cloud.das/deploy/execMultiSQL.pdd b/com.informatica.cloud.das/deploy/execMultiSQL.pdd
+index 2f06b02..6de1957 100755
+--- a/com.informatica.cloud.das/deploy/execMultiSQL.pdd
++++ b/com.informatica.cloud.das/deploy/execMultiSQL.pdd
+@@ -5,19 +5,19 @@
+       <pdd:myRole allowedRoles="" binding="EXTERNAL" service="execMultiSQL"/>
+     </pdd:partnerLink>
+     <pdd:partnerLink name="DS1">
+-      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS1"/>
++      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS01"/>
+     </pdd:partnerLink>
+     <pdd:partnerLink name="DS2">
+-      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS2"/>
++      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS02"/>
+     </pdd:partnerLink>
+     <pdd:partnerLink name="DS3">
+-      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS3"/>
++      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS03"/>
+     </pdd:partnerLink>
+     <pdd:partnerLink name="DS4">
+-      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS4"/>
++      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS04"/>
+     </pdd:partnerLink>
+     <pdd:partnerLink name="DS5">
+-      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS5"/>
++      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS05"/>
+     </pdd:partnerLink>
+   </pdd:partnerLinks>
+   <pdd:references>
+diff --git a/com.informatica.cloud.das/deploy/execSQL.pdd b/com.informatica.cloud.das/deploy/execSQL.pdd
+index 9269526..3ceb1de 100755
+--- a/com.informatica.cloud.das/deploy/execSQL.pdd
++++ b/com.informatica.cloud.das/deploy/execSQL.pdd
+@@ -5,19 +5,19 @@
+       <pdd:myRole allowedRoles="" binding="EXTERNAL" service="execSQL"/>
+     </pdd:partnerLink>
+     <pdd:partnerLink name="DS1">
+-      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS1"/>
++      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS01"/>
+     </pdd:partnerLink>
+     <pdd:partnerLink name="DS2">
+-      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS2"/>
++      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS02"/>
+     </pdd:partnerLink>
+     <pdd:partnerLink name="DS3">
+-      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS3"/>
++      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS03"/>
+     </pdd:partnerLink>
+     <pdd:partnerLink name="DS4">
+-      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS4"/>
++      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS04"/>
+     </pdd:partnerLink>
+     <pdd:partnerLink name="DS5">
+-      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS5"/>
++      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS05"/>
+     </pdd:partnerLink>
+   </pdd:partnerLinks>
+   <pdd:references>
+diff --git a/com.informatica.ipd/build.xml b/com.informatica.ipd/build.xml
+index c7b5a51..2f1458b 100755
+--- a/com.informatica.ipd/build.xml
++++ b/com.informatica.ipd/build.xml
+@@ -104,6 +104,7 @@
+         <zip destfile="${target.file}">
+             <fileset dir="${basedir}/src/ipd">
+                 <include name="*.*"/>
++            	<exclude name=".gitkeep"/>
+             </fileset>
+         </zip>
+         <echo level="info">File Created in : ${target.file}</echo>
+diff --git a/com.informatica.ipd/src/ipd/TEST_DAS.gt.xml b/com.informatica.ipd/src/ipd/TEST_DAS.gt.xml
+index 483c5b9..379ffac 100755
+--- a/com.informatica.ipd/src/ipd/TEST_DAS.gt.xml
++++ b/com.informatica.ipd/src/ipd/TEST_DAS.gt.xml
+@@ -175,7 +175,7 @@
+                   <option hide="true" name="multiSelect">true</option>
+                   <option name="required">false</option>
+                   <option name="isCopy">true</option>
+-                  <option name="display-options">{"display-options":{"columns":{"column":[{"name":"testName","type":"string","label":"Test Name","renderingType":"string"},{"name":"testResult","type":"picklist","label":"Test Result","renderingType":"picklist"},{"name":"message","type":"textarea","label":"Message","renderingType":"textarea"}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
++                  <option name="display-options">{"display-options":{"columns":{"column":[{"name":"testName","type":"string","label":"Test Name","renderingType":"string"},{"name":"testResult","type":"picklist","label":"Test Result","renderingType":"picklist"},{"name":"message","type":"textarea","label":"Message","renderingType":"textarea","options":{"option":[]}}]},"rendering-type":{"table-style":null,"height":null},"allow_pagination":true,"allow_filtering":true,"allow_sorting":true}}</option>
+                </options>
+             </screenDataItem>
+          </screenData>
+diff --git a/com.informatica.ipd/src/ipd/TEST_DAS.pd.xml b/com.informatica.ipd/src/ipd/TEST_DAS.pd.xml
+index f0fb1b7..67c1b13 100755
+--- a/com.informatica.ipd/src/ipd/TEST_DAS.pd.xml
++++ b/com.informatica.ipd/src/ipd/TEST_DAS.pd.xml
+@@ -273,7 +273,10 @@ values (?,?,?,?)&lt;/statement&gt;
+                <title>Assignment to testResults</title>
+                <operation source="constant" to="temp.testResult[1]/testName">DDL CREATE TABLE</operation>
+                <operation source="constant" to="temp.testResult[1]/testResult">succes</operation>
+-               <operation source="constant" to="temp.testResult[1]/message"/>
++               <operation source="formula" to="temp.testResult[1]/message">
++                  <expression language="XQuery">let $dasResponse := $output.dataAccessResponse
++return util:toXML($dasResponse)</expression>
++               </operation>
+             </assignment>
+             <link id="ivjwaak7" targetId="ivjwaak3" type="containerLink"/>
+          </flow>

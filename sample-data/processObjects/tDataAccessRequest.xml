@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tDataAccessRequest>
+   <sqlStatement>
+      <maxRows>100</maxRows>
+      <maxWaitSeconds>5</maxWaitSeconds>
+      <statementId>statement_1</statementId>
+      <columnCase>unchanged</columnCase>
+      <includeMetadata>true</includeMetadata>
+      <hasResultSet>true</hasResultSet>
+      
+      <statement>Select * from table</statement>
+      <parameter>
+         <sqlType>string</sqlType>
+         <attachmentId></attachmentId>
+         <data>test</data>
+      </parameter>
+      <parameterBatch>
+         <parameter>
+            <sqlType>string</sqlType>
+            <attachmentId></attachmentId>
+            <data>test2</data>
+         </parameter>
+      </parameterBatch>
+      <procedure>
+         <parameter>
+            <name>test</name>
+            <sqlType>string</sqlType>
+            <mode>in</mode>
+            <data>testValue</data>
+         </parameter>
+      </procedure>
+   </sqlStatement>
+   <dataSource>DS1</dataSource>
+</tDataAccessRequest>

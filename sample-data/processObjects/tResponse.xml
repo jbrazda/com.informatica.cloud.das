@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tResponse>
+   <statementId></statementId>
+   <sqlcode></sqlcode>
+   <sqlstate></sqlstate>
+   <errorMessage></errorMessage>
+   <metadata>
+   </metadata>
+   <row>
+      <updatedRows></updatedRows>
+      <attachmentId></attachmentId>
+   </row>
+</tResponse>

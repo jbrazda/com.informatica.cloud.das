@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<screenflowContribution xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosServiceDiscovery.xsd">
+   <service name="DataAccessService:execSQL">
+      <avosServiceName>avBusinessConnectionRESTService</avosServiceName>
+      <displayName>execSQL</displayName>
+      <category>$co:DataAccessService</category>
+      <description/>
+      <input>
+         <parameter name="dataAccessRequest" required="false" type="reference">
+            <options>
+               <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
+            </options>
+         </parameter>
+      </input>
+      <output>
+         <field description="" name="dataAccessResponse" type="reference">
+            <options>
+               <option name="referenceTo">DataAccessService:tResponse</option>
+            </options>
+         </field>
+      </output>
+   </service>
+   <service name="DataAccessService:execMultiSQL">
+      <avosServiceName>avBusinessConnectionRESTService</avosServiceName>
+      <displayName>execMultiSQL</displayName>
+      <category>$co:DataAccessService</category>
+      <description/>
+      <input>
+         <parameter name="multiDataAccessRequest" required="false" type="reference">
+            <options>
+               <option name="referenceTo">DataAccessService:tMultiDataAccessRequest</option>
+            </options>
+         </parameter>
+      </input>
+      <output>
+         <field description="" name="multiDataAccessResponse" type="reference">
+            <options>
+               <option name="referenceTo">DataAccessService:tMultiResponse</option>
+            </options>
+         </field>
+      </output>
+   </service>
+</screenflowContribution>

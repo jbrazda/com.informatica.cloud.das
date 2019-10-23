@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<businessConnector agentOnly="false" debug="false" label="Data Access Service" name="DataAccessService" uuid="35572b37-630c-4073-95dc-5cf8fcf957bb" xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd" xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd" xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+	<description/>
+	<tags>DAS</tags>
+	<connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+	<actions>
+		<action category="DAS" failOnError="true" forSearch="false" isAbstract="true" label="BaseAction" name="BaseAction">
+			<description>DO not use this Service Directly, it only provides definition of process objects for a execSQL and execSQL</description>
+			<input/>
+			<binding>
+				<restSimpleBinding multiUsing="semicolonSeparated" url="https://ps1w2.rt.informaticacloud.com:443/active-bpel/services/001CQJ/DASCloud" verb="POST">
+					<httpHeaders>
+						<header name="Content-Type">text/xml; charset=utf-8</header>
+					</httpHeaders>
+					<body/>
+				</restSimpleBinding>
+			</binding>
+			<output/>
+		</action>
+		<action category="" failOnError="true" forSearch="false" inherits="BaseAction" label="execSQL" name="execSQL">
+			<description/>
+			<inheritanceMetadata>
+				<section type="output">
+					<section type="outputFields"/>
+				</section>
+				<section type="restSimpleBinding">
+					<section type="body">
+						<attribute inherit="overwrite" name="content" type="content"/>
+					</section>
+					<section type="httpHeaders">
+						<attribute inherit="inherit" name="Content-Type" type="header"/>
+					</section>
+					<section type="otherParams"/>
+				</section>
+			</inheritanceMetadata>
+			<input>
+				<parameter name="dataAccessRequest" required="false" testWith="" type="reference">
+					<options>
+						<option name="referenceTo">tDataAccessRequest</option>
+					</options>
+				</parameter>
+			</input>
+			<binding>
+				<restSimpleBinding url="https://ps1w2.rt.informaticacloud.com:443/active-bpel/services/001CQJ/DASCloud" verb="POST">
+					<httpHeaders>
+						<header name="SOAPAction">&quot;&quot;</header>
+					</httpHeaders>
+					<body/>
+				</restSimpleBinding>
+			</binding>
+			<output>
+				<field description="" name="dataAccessResponse" type="reference">
+					<options>
+						<option name="referenceTo">tResponse</option>
+					</options>
+					<xquery>{util:simplifyXml(//*[local-name()='dataAccessResponse'])}</xquery>
+				</field>
+			</output>
+		</action>
+		<action category="" failOnError="true" forSearch="false" inherits="BaseAction" label="execMultiSQL" name="execMultiSQL">
+			<description/>
+			<inheritanceMetadata>
+				<section type="output">
+					<section type="outputFields"/>
+				</section>
+				<section type="restSimpleBinding">
+					<section type="body">
+						<attribute inherit="overwrite" name="content" type="content"/>
+					</section>
+					<section type="httpHeaders">
+						<attribute inherit="inherit" name="Content-Type" type="header"/>
+					</section>
+					<section type="otherParams"/>
+				</section>
+			</inheritanceMetadata>
+			<input>
+				<parameter name="multiDataAccessRequest" required="false" testWith="" type="reference">
+					<options>
+						<option name="referenceTo">tMultiDataAccessRequest</option>
+					</options>
+				</parameter>
+			</input>
+			<binding>
+				<restSimpleBinding url="https://ps1w2.rt.informaticacloud.com:443/active-bpel/services/001CQJ/DASCloud" verb="POST">
+					<httpHeaders>
+						<header name="SOAPAction">&quot;&quot;</header>
+					</httpHeaders>
+					<body/>
+				</restSimpleBinding>
+			</binding>
+			<output>
+				<field description="" name="multiDataAccessResponse" type="reference">
+					<options>
+						<option name="referenceTo">tMultiResponse</option>
+					</options>
+					<xquery>{util:simplifyXml(//*[local-name()='multiDataAccessResponse'])}</xquery>
+				</field>
+			</output>
+		</action>
+	</actions>
+	<objects>
+		<processObject isByCopy="true" name="ProcedureParameter" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail>
+				<field name="name" type="string"/>
+				<field name="sqlType" type="picklist">
+					<options>
+						<option name="values">[{&quot;value&quot;:&quot;byte&quot;,&quot;label&quot;:&quot;byte&quot;},{&quot;value&quot;:&quot;short&quot;,&quot;label&quot;:&quot;short&quot;},{&quot;value&quot;:&quot;int&quot;,&quot;label&quot;:&quot;int&quot;},{&quot;value&quot;:&quot;long&quot;,&quot;label&quot;:&quot;long&quot;},{&quot;value&quot;:&quot;float&quot;,&quot;label&quot;:&quot;float&quot;},{&quot;value&quot;:&quot;double&quot;,&quot;label&quot;:&quot;double&quot;},{&quot;value&quot;:&quot;string&quot;,&quot;label&quot;:&quot;string&quot;},{&quot;value&quot;:&quot;date&quot;,&quot;label&quot;:&quot;date&quot;},{&quot;value&quot;:&quot;clob&quot;,&quot;label&quot;:&quot;clob&quot;},{&quot;value&quot;:&quot;binary&quot;,&quot;label&quot;:&quot;binary&quot;}]</option>
+					</options>
+				</field>
+				<field name="mode" type="picklist">
+					<options>
+						<option name="values">[{&quot;value&quot;:&quot;in&quot;,&quot;label&quot;:&quot;in&quot;},{&quot;value&quot;:&quot;out&quot;,&quot;label&quot;:&quot;out&quot;},{&quot;value&quot;:&quot;inout&quot;,&quot;label&quot;:&quot;inout&quot;}]</option>
+					</options>
+				</field>
+				<field name="data" type="string"/>
+			</detail>
+		</processObject>
+		<processObject isByCopy="true" name="Parameter" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail>
+				<field name="sqlType" type="picklist">
+					<options>
+						<option name="values">[{&quot;value&quot;:&quot;byte&quot;,&quot;label&quot;:&quot;byte&quot;},{&quot;value&quot;:&quot;short&quot;,&quot;label&quot;:&quot;short&quot;},{&quot;value&quot;:&quot;int&quot;,&quot;label&quot;:&quot;int&quot;},{&quot;value&quot;:&quot;long&quot;,&quot;label&quot;:&quot;long&quot;},{&quot;value&quot;:&quot;float&quot;,&quot;label&quot;:&quot;float&quot;},{&quot;value&quot;:&quot;double&quot;,&quot;label&quot;:&quot;double&quot;},{&quot;value&quot;:&quot;string&quot;,&quot;label&quot;:&quot;string&quot;},{&quot;value&quot;:&quot;date&quot;,&quot;label&quot;:&quot;date&quot;},{&quot;value&quot;:&quot;clob&quot;,&quot;label&quot;:&quot;clob&quot;},{&quot;value&quot;:&quot;binary&quot;,&quot;label&quot;:&quot;binary&quot;}]</option>
+					</options>
+				</field>
+				<field name="attachmentId" type="string"/>
+				<field name="data" type="string"/>
+			</detail>
+		</processObject>
+		<processObject isByCopy="true" name="tDataAccessRequest" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail>
+				<field name="sqlStatement" type="reference">
+					<options>
+						<option name="referenceTo">tSqlStatement</option>
+						<option name="relationshipName">Child</option>
+					</options>
+				</field>
+			</detail>
+		</processObject>
+		<processObject isByCopy="true" name="tMetadata" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail/>
+		</processObject>
+		<processObject isByCopy="true" name="tMultiDataAccessRequest" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail>
+				<field name="sqlStatement" type="objectlist">
+					<options>
+						<option name="referenceTo">tSqlStatement</option>
+						<option name="relationshipName">Child</option>
+					</options>
+				</field>
+			</detail>
+		</processObject>
+		<processObject isByCopy="true" name="tMultiResponse" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail>
+				<field name="result" type="objectlist">
+					<options>
+						<option name="referenceTo">tResponse</option>
+						<option name="relationshipName">Child</option>
+					</options>
+				</field>
+			</detail>
+		</processObject>
+		<processObject isByCopy="true" name="tProcedureSignature" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail>
+				<field name="parameter" type="objectlist">
+					<options>
+						<option name="referenceTo">ProcedureParameter</option>
+						<option name="relationshipName">Child</option>
+					</options>
+				</field>
+			</detail>
+		</processObject>
+		<processObject isByCopy="true" name="tResponse" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail>
+				<field name="statementId" type="string"/>
+				<field name="sqlcode" type="double"/>
+				<field name="sqlstate" type="string"/>
+				<field name="errorMessage" type="string"/>
+				<field name="metadata" type="reference">
+					<options>
+						<option name="referenceTo">tMetadata</option>
+						<option name="relationshipName">Child</option>
+					</options>
+				</field>
+				<field name="row" type="objectlist">
+					<options>
+						<option name="referenceTo">tRow</option>
+						<option name="relationshipName">Child</option>
+					</options>
+				</field>
+			</detail>
+		</processObject>
+		<processObject isByCopy="true" name="tRow" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail>
+				<field name="updatedRows" type="double"/>
+				<field name="attachmentId" type="string"/>
+			</detail>
+		</processObject>
+		<processObject isByCopy="true" name="tSqlParameterBatch" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail>
+				<field name="parameter" type="objectlist">
+					<options>
+						<option name="referenceTo">Parameter</option>
+						<option name="relationshipName">Child</option>
+					</options>
+				</field>
+			</detail>
+		</processObject>
+		<processObject isByCopy="true" name="tSqlStatement" xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd">
+			<description/>
+			<detail>
+				<field name="maxRows" type="double"/>
+				<field name="maxWaitSeconds" type="double"/>
+				<field name="statementId" type="string"/>
+				<field name="columnCase" type="picklist">
+					<options>
+						<option name="values">[{&quot;value&quot;:&quot;lowercase&quot;,&quot;label&quot;:&quot;lowercase&quot;},{&quot;value&quot;:&quot;uppercase&quot;,&quot;label&quot;:&quot;uppercase&quot;},{&quot;value&quot;:&quot;unchanged&quot;,&quot;label&quot;:&quot;unchanged&quot;}]</option>
+					</options>
+				</field>
+				<field name="includeMetadata" type="checkbox"/>
+				<field name="hasResultSet" type="checkbox"/>
+				<field name="dataSource" type="picklist">
+					<options>
+						<option name="values">[{&quot;value&quot;:&quot;DS1&quot;,&quot;label&quot;:&quot;DS1&quot;},{&quot;value&quot;:&quot;DS1&quot;,&quot;label&quot;:&quot;DS1&quot;},{&quot;value&quot;:&quot;DS3&quot;,&quot;label&quot;:&quot;DS3&quot;},{&quot;value&quot;:&quot;DS4&quot;,&quot;label&quot;:&quot;DS4&quot;},{&quot;value&quot;:&quot;DS5&quot;,&quot;label&quot;:&quot;DS5&quot;}]</option>
+					</options>
+				</field>
+				<field name="statement" type="textarea"/>
+				<field name="parameter" type="objectlist">
+					<options>
+						<option name="referenceTo">Parameter</option>
+						<option name="relationshipName">Child</option>
+					</options>
+				</field>
+				<field name="parameterBatch" type="objectlist">
+					<options>
+						<option name="referenceTo">tSqlParameterBatch</option>
+						<option name="relationshipName">Child</option>
+					</options>
+				</field>
+				<field name="procedure" type="reference">
+					<options>
+						<option name="referenceTo">tProcedureSignature</option>
+						<option name="relationshipName">Child</option>
+					</options>
+				</field>
+			</detail>
+		</processObject>
+	</objects>
+</businessConnector>

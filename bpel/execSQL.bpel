@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+              xmlns:dasx="http://www.informatica.com/das/1.0/xquery"
+              xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+              xmlns:dasw="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl"
+              xmlns:ext1="http://www.activebpel.org/2009/06/bpel/extension/links"
+              xmlns:ext2="http://www.activebpel.org/2011/08/bpel/extension/script"
+              xmlns:abx="http://www.activebpel.org/bpel/extension"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+              xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+              xmlns:asw="http://schemas.active-endpoints.com/wsdl/screenFlow/2010/10/avosAutomatedStep.wsdl"
+              xmlns:ext="http://www.activebpel.org/2006/09/bpel/extension/query_handling"
+              xmlns:aei="http://www.activebpel.org/2009/02/bpel/extension/ignorable"
+              aei:editStyle="BPMN"
+              ext1:linksAreTransitions="yes"
+              ext:createTargetXPath="yes"
+              ext:disableSelectionFailure="yes"
+              name="execSQL"
+              suppressJoinFailure="yes"
+              targetNamespace="http://execSQL">
+   <bpmndi:BPMNDiagram xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                       xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                       aei:bpelDigest=""
+                       aei:editStyle="BPMN"
+                       aei:layoutNeeded="false"
+                       aei:modelVersion="5"
+                       aei:objectId="147872424549810269"
+                       aei:processInitiatorSim=""
+                       isHorizontal="false">
+      <bpmndi:BPMNPlane>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="147872970713511677"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="147872970713511677"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="147872981933011915"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="147872981933011915"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="147872984670911939"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="147872984670911939"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="147872988114411969"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="147872988114411969"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="147872990768112007"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="147872990768112007"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="147872993352112023"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="147872993352112023"/>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {15,15}"
+                           aei:absoluteSize="DIM {1015,835}"
+                           aei:objectId="147872977452211901"
+                           aei:type="SEQUENCE"
+                           bpmnElement="147872977452211901"
+                           isHorizontal="false">
+            <dc:Bounds height="840" width="1020" x="5" y="5"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {487,25}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:attachments=""
+                           aei:name="automatedStep"
+                           aei:objectId="147872977451711897"
+                           aei:principal=""
+                           aei:text="automatedStep"
+                           aei:type="RECEIVE"
+                           bpmnElement="147872977451711897">
+            <dc:Bounds height="60" width="70" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {495,82}"
+                              aei:absoluteSize="DIM {81,26}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="147872977451711897"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="147872977452411903"
+                              aei:relative.location="LOC {-37,47}"
+                              aei:text="automatedStep"
+                              bpmnElement="147872977451711897label">
+               <dc:Bounds height="26" width="81" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {460,110}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="Get DAS Request"
+                           aei:objectId="147880530385870839"
+                           aei:type="ASSIGN"
+                           bpmnElement="147880530385870839">
+            <dc:Bounds height="53" width="125" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {460,188}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:objectId="147880558791071817"
+                           aei:type="VALIDATE"
+                           bpmnElement="147880558791071817">
+            <dc:Bounds height="53" width="125" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {25,266}"
+                           aei:absoluteSize="DIM {995,411}"
+                           aei:objectId="147872999966316046"
+                           aei:type="IF"
+                           bpmnElement="147872999966316046"
+                           isHorizontal="false">
+            <dc:Bounds height="411" width="995" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {538,272}"
+                              aei:absoluteSize="DIM {8,13}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="147049074850411289"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="147872999966316047"
+                              aei:relative.location="LOC {6,-18}"
+                              aei:text="If"
+                              bpmnElement="147872999966316046label">
+               <dc:Bounds height="13" width="8" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS1'"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+                           aei:absoluteLocation="LOC {25,326}"
+                           aei:absoluteSize="DIM {145,291}"
+                           aei:objectId="147872999966316048"
+                           aei:text="DS1"
+                           aei:type="ELSE_IF"
+                           bpmnElement="147872999966316046ifDef">
+            <dc:Bounds height="121" width="145" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {68,320}"
+                              aei:absoluteSize="DIM {22,26}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="147049074850411293"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="147872999966316051"
+                              aei:relative.location="LOC {-39,-30}"
+                              aei:text="DS1"
+                              bpmnElement="147872999966316046ifDeflabel">
+               <dc:Bounds height="26" width="22" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {35,365}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="execSQL"
+                           aei:objectId="147872999966316050"
+                           aei:subprocessPath=""
+                           aei:text="execSQL"
+                           aei:type="INVOKE"
+                           bpmnElement="147872999966316050">
+            <dc:Bounds height="53" width="125" x="208" y="196"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {25,355}"
+                           aei:absoluteSize="DIM {145,73}"
+                           aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="147872999966316049"
+                           aei:type="Sequence"
+                           bpmnElement="147872999966316050wrappingSequence"
+                           isHorizontal="false">
+            <dc:Bounds height="78" width="150" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS2'"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+                           aei:absoluteLocation="LOC {195,326}"
+                           aei:absoluteSize="DIM {145,291}"
+                           aei:objectId="147872999966316052"
+                           aei:text="DS2"
+                           aei:type="ELSE_IF"
+                           bpmnElement="147872999966316052">
+            <dc:Bounds height="121" width="145" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {245,310}"
+                              aei:absoluteSize="DIM {22,26}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="147049081602011417"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="147872999966316055"
+                              aei:relative.location="LOC {-32,-40}"
+                              aei:text="DS2"
+                              bpmnElement="147872999966316052label">
+               <dc:Bounds height="26" width="22" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {205,365}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="execSQL"
+                           aei:objectId="147872999966316054"
+                           aei:subprocessPath=""
+                           aei:text="execSQL"
+                           aei:type="INVOKE"
+                           bpmnElement="147872999966316054">
+            <dc:Bounds height="53" width="125" x="237" y="194"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {195,355}"
+                           aei:absoluteSize="DIM {145,73}"
+                           aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="147872999966316053"
+                           aei:type="Sequence"
+                           bpmnElement="147872999966316054wrappingSequence"
+                           isHorizontal="false">
+            <dc:Bounds height="78" width="150" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS3'"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+                           aei:absoluteLocation="LOC {365,326}"
+                           aei:absoluteSize="DIM {145,291}"
+                           aei:objectId="147872999966316056"
+                           aei:text="DS3"
+                           aei:type="ELSE_IF"
+                           bpmnElement="147872999966316056">
+            <dc:Bounds height="121" width="145" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {428,308}"
+                              aei:absoluteSize="DIM {22,26}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="147049081918011443"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="147872999966316059"
+                              aei:relative.location="LOC {-19,-42}"
+                              aei:text="DS3"
+                              bpmnElement="147872999966316056label">
+               <dc:Bounds height="26" width="22" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {375,365}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="execSQL"
+                           aei:objectId="147872999966316058"
+                           aei:subprocessPath=""
+                           aei:text="execSQL"
+                           aei:type="INVOKE"
+                           bpmnElement="147872999966316058">
+            <dc:Bounds height="53" width="125" x="235" y="188"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {365,355}"
+                           aei:absoluteSize="DIM {145,73}"
+                           aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="147872999966316057"
+                           aei:type="Sequence"
+                           bpmnElement="147872999966316058wrappingSequence"
+                           isHorizontal="false">
+            <dc:Bounds height="78" width="150" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS4'"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+                           aei:absoluteLocation="LOC {535,326}"
+                           aei:absoluteSize="DIM {145,291}"
+                           aei:objectId="147872999966316060"
+                           aei:text="DS4"
+                           aei:type="ELSE_IF"
+                           bpmnElement="147872999966316060">
+            <dc:Bounds height="121" width="145" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {598,307}"
+                              aei:absoluteSize="DIM {22,26}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="147049082329111469"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="147872999966316063"
+                              aei:relative.location="LOC {-19,-43}"
+                              aei:text="DS4"
+                              bpmnElement="147872999966316060label">
+               <dc:Bounds height="26" width="22" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {545,365}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="execSQL"
+                           aei:objectId="147872999966316062"
+                           aei:subprocessPath=""
+                           aei:text="execSQL"
+                           aei:type="INVOKE"
+                           bpmnElement="147872999966316062">
+            <dc:Bounds height="53" width="125" x="237" y="282"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {535,355}"
+                           aei:absoluteSize="DIM {145,73}"
+                           aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="147872999966316061"
+                           aei:type="Sequence"
+                           bpmnElement="147872999966316062wrappingSequence"
+                           isHorizontal="false">
+            <dc:Bounds height="78" width="150" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS5'"
+                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:absoluteLocation="LOC {705,326}"
+                           aei:absoluteSize="DIM {145,291}"
+                           aei:objectId="147872999966316064"
+                           aei:text="DS5"
+                           aei:type="ELSE_IF"
+                           bpmnElement="147872999966316064">
+            <dc:Bounds height="121" width="145" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {768,311}"
+                              aei:absoluteSize="DIM {22,26}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="147049082682211495"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="147872999966316067"
+                              aei:relative.location="LOC {-19,-39}"
+                              aei:text="DS5"
+                              bpmnElement="147872999966316064label">
+               <dc:Bounds height="26" width="22" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {715,365}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="execSQL"
+                           aei:objectId="147872999966316066"
+                           aei:subprocessPath=""
+                           aei:text="execSQL"
+                           aei:type="INVOKE"
+                           bpmnElement="147872999966316066">
+            <dc:Bounds height="53" width="125" x="307" y="231"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {705,355}"
+                           aei:absoluteSize="DIM {145,73}"
+                           aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="147872999966316065"
+                           aei:type="Sequence"
+                           bpmnElement="147872999966316066wrappingSequence"
+                           isHorizontal="false">
+            <dc:Bounds height="78" width="150" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {875,326}"
+                           aei:absoluteSize="DIM {145,291}"
+                           aei:objectId="147872999966316068"
+                           aei:type="ELSE"
+                           bpmnElement="147872999966316046elseDef">
+            <dc:Bounds height="291" width="145" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {948,337}"
+                              aei:absoluteSize="DIM {21,26}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="147049074850511299"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="147872999966316070"
+                              aei:relative.location="LOC {-9,-13}"
+                              aei:text="Else"
+                              bpmnElement="147872999966316046elseDeflabel">
+               <dc:Bounds height="26" width="21" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {875,355}"
+                           aei:absoluteSize="DIM {145,243}"
+                           aei:objectId="147872999966316069"
+                           aei:type="SEQUENCE"
+                           bpmnElement="147872999966316069"
+                           isHorizontal="false">
+            <dc:Bounds height="248" width="150" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {885,365}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="Set Process Title"
+                           aei:objectId="148035270197608721"
+                           aei:type="ASSIGN"
+                           bpmnElement="148035270197608721">
+            <dc:Bounds height="53" width="125" x="10" y="10"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {912,443}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:objectId="1478808284253102922"
+                           aei:type="REPLY"
+                           bpmnElement="1478808284253102922">
+            <dc:Bounds height="60" width="70" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {936,500}"
+                              aei:absoluteSize="DIM {46,26}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="1478808284253102922"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="1478808284253102924"
+                              aei:relative.location="LOC {-21,47}"
+                              aei:text="Message"
+                              bpmnElement="1478808284253102922label">
+               <dc:Bounds height="26" width="46" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {912,528}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="1478808292749103206"
+                           aei:type="EXIT"
+                           bpmnElement="1478808292749103206">
+            <dc:Bounds height="60" width="70" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {933,585}"
+                              aei:absoluteSize="DIM {55,26}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="1478808292749103206"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="1478808292756103208"
+                              aei:relative.location="LOC {-24,47}"
+                              aei:text="Terminate"
+                              bpmnElement="1478808292749103206label">
+               <dc:Bounds height="26" width="55" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {460,702}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="Set Process Title"
+                           aei:objectId="148035103537401017"
+                           aei:type="ASSIGN"
+                           bpmnElement="148035103537401017">
+            <dc:Bounds height="53" width="125" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {487,780}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:name="automatedStep-Reply"
+                           aei:objectId="147872977452211899"
+                           aei:text="automatedStep-Reply"
+                           aei:type="REPLY"
+                           bpmnElement="147872977452211899">
+            <dc:Bounds height="60" width="70" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {480,837}"
+                              aei:absoluteSize="DIM {116,26}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="147872977452211899"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="147872977452411905"
+                              aei:relative.location="LOC {-52,47}"
+                              aei:text="automatedStep-Reply"
+                              bpmnElement="147872977452211899label">
+               <dc:Bounds height="26" width="116" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {150,187}"
+                           aei:absoluteSize="DIM {165,238}"
+                           aei:catchAllFaults="true"
+                           aei:collapedIconLocation="icons/bpmn/activity/catch.png"
+                           aei:constraint=""
+                           aei:expanded="true"
+                           aei:expandedSize="DIM {-1,-1}"
+                           aei:imageLocation="icons/bpmn/activity/large/paletteCatchLarge.png"
+                           aei:objectId="147880547449471559"
+                           aei:text="Catcch All"
+                           aei:type="CATCH_ALL"
+                           bpmnElement="147880547449471559"
+                           isHorizontal="false">
+            <dc:Bounds height="-1" width="-1" x="140" y="177"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {219,197}"
+                              aei:absoluteSize="DIM {54,13}"
+                              aei:anchor.location="0"
+                              aei:anchor.objectId="1478808628590109998"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="1478808628590110000"
+                              aei:relative.location="LOC {-23,0}"
+                              aei:text="Catcch All"
+                              bpmnElement="147880547449471559label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {160,247}"
+                           aei:absoluteSize="DIM {145,158}"
+                           aei:objectId="147880548185471567"
+                           aei:type="SEQUENCE"
+                           bpmnElement="147880548185471567"
+                           isHorizontal="false">
+            <dc:Bounds height="-1" width="-1" x="4" y="16"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {170,257}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="Set Title"
+                           aei:objectId="148035196882401351"
+                           aei:type="ASSIGN"
+                           bpmnElement="148035196882401351">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {197,335}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:objectId="147880548185271563"
+                           aei:type="REPLY"
+                           bpmnElement="147880548185271563">
+            <dc:Bounds height="-1" width="-1" x="14" y="26"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {221,392}"
+                              aei:absoluteSize="DIM {46,13}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="147880548185271563"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="147880548185371565"
+                              aei:relative.location="LOC {-21,47}"
+                              aei:text="Message"
+                              bpmnElement="147880548185271563label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+      </bpmndi:BPMNPlane>
+   </bpmndi:BPMNDiagram>
+   <bpel:extensions>
+      <bpel:extension mustUnderstand="no"
+                      namespace="http://www.activebpel.org/2009/02/bpel/extension/ignorable"/>
+      <bpel:extension mustUnderstand="no"
+                      namespace="http://www.omg.org/spec/BPMN/20100524/DI"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2006/09/bpel/extension/query_handling"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2009/06/bpel/extension/links"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2011/08/bpel/extension/script"/>
+   </bpel:extensions>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                namespace="http://schemas.active-endpoints.com/wsdl/screenFlow/2010/10/avosAutomatedStep.wsdl"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                namespace="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl"/>
+   <bpel:import importType="http://modules.active-endpoints.com/2009/07/xquery"
+                location="../xquery/infa-das.xq"
+                namespace="http://www.informatica.com/das/1.0/xquery"/>
+   <bpel:partnerLinks>
+      <bpel:partnerLink aei:id="147872970713511677"
+                        myRole="Provider"
+                        name="DASAutomatedStep"
+                        partnerLinkType="asw:AutomatedStepOperationsPLT"/>
+      <bpel:partnerLink aei:id="147872981933011915"
+                        name="DS1"
+                        partnerLinkType="dasw:dataAccessPLT"
+                        partnerRole="sender"/>
+      <bpel:partnerLink aei:id="147872984670911939"
+                        name="DS2"
+                        partnerLinkType="dasw:dataAccessPLT"
+                        partnerRole="sender"/>
+      <bpel:partnerLink aei:id="147872988114411969"
+                        name="DS3"
+                        partnerLinkType="dasw:dataAccessPLT"
+                        partnerRole="sender"/>
+      <bpel:partnerLink aei:id="147872990768112007"
+                        name="DS4"
+                        partnerLinkType="dasw:dataAccessPLT"
+                        partnerRole="sender"/>
+      <bpel:partnerLink aei:id="147872993352112023"
+                        name="DS5"
+                        partnerLinkType="dasw:dataAccessPLT"
+                        partnerRole="sender"/>
+   </bpel:partnerLinks>
+   <bpel:variables>
+      <bpel:variable element="das:dataAccessRequest" name="gDataAccessRequest"/>
+      <bpel:variable element="das:dataAccessResponse" name="gDataAccessResponse"/>
+      <bpel:variable element="sf:automatedStepRequest" name="gAutomatedStepRequest"/>
+   </bpel:variables>
+   <bpel:faultHandlers>
+      <bpel:catchAll aei:id="147880547449471559">
+         <bpel:sequence aei:id="147880548185471567">
+            <bpel:assign aei:id="148035196882401351" name="Set_Title">
+               <bpel:extensionAssignOperation>
+                  <ext2:script expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $processName := abx:getProcessName() 
+let $statementId := data($gDataAccessRequest/das:sqlStatement/@statementId)
+let $dasType := switch (true())
+ case (exists($gDataAccessRequest/das:sqlStatement/das:parameterBatch)) return concat("Batch Size:",count( $gDataAccessRequest/das:sqlStatement/das:parameterBatch ))
+ case (exists($gDataAccessRequest/das:sqlStatement/das:statement)) return "Single Statement"
+ case (exists($gDataAccessRequest/das:sqlStatement/das:procedure)) return "Stored Procedure"
+ default return ()
+
+let $error := abx:getFaultString()
+ 
+let $result := "FAILED"
+
+let $titleparts := ($processName, $statementId, $dasType, $result, $error)
+return
+abx:setProcessTitle(substring(string-join($titleparts," "),1,255))</ext2:script>
+               </bpel:extensionAssignOperation>
+            </bpel:assign>
+            <bpel:scope aei:implicit="true">
+               <bpel:variables>
+                  <bpel:variable messageType="asw:automatedStepFault" name="parameters"/>
+               </bpel:variables>
+               <bpel:sequence>
+                  <bpel:assign aei:assignType="XQUERY" aei:id="147880718356075835">
+                     <bpel:copy>
+                        <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;sf:faultResponse xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&gt;
+   &lt;sf:code&gt;{ abx:getFaultCode() }&lt;/sf:code&gt;
+   &lt;sf:reason&gt;{ abx:getFaultString() }&lt;/sf:reason&gt;
+   &lt;sf:details&gt;{ abx:getFaultDetail() }&lt;/sf:details&gt;
+&lt;/sf:faultResponse&gt;</bpel:from>
+                        <bpel:to part="automatedStepFaultResponse" variable="parameters"/>
+                     </bpel:copy>
+                  </bpel:assign>
+                  <bpel:reply aei:id="147880548185271563"
+                              faultName="asw:fault"
+                              operation="automatedStep"
+                              partnerLink="DASAutomatedStep"
+                              variable="parameters"/>
+               </bpel:sequence>
+            </bpel:scope>
+         </bpel:sequence>
+      </bpel:catchAll>
+   </bpel:faultHandlers>
+   <bpel:sequence aei:id="147872977452211901">
+      <bpel:receive aei:id="147872977451711897"
+                    createInstance="yes"
+                    name="automatedStep"
+                    operation="automatedStep"
+                    partnerLink="DASAutomatedStep"
+                    variable="gAutomatedStepRequest"/>
+      <bpel:assign aei:id="147880530385870839" name="Get_DAS_Request">
+         <bpel:copy>
+            <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $dasRequest :=  dasx:getASParam( $gAutomatedStepRequest,"dataAccessRequest" )
+return dasx:objectToDasRequest($dasRequest)</bpel:from>
+            <bpel:to variable="gDataAccessRequest"/>
+         </bpel:copy>
+      </bpel:assign>
+      <bpel:validate aei:id="147880558791071817" variables="gDataAccessRequest"/>
+      <bpel:if aei:id="147872999966316046">
+         <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS1'</bpel:condition>
+         <bpel:invoke aei:id="147872999966316050"
+                      inputVariable="gDataAccessRequest"
+                      name="execSQL"
+                      operation="execSQL"
+                      outputVariable="gDataAccessResponse"
+                      partnerLink="DS1"/>
+         <bpel:elseif aei:id="147872999966316052">
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS2'</bpel:condition>
+            <bpel:invoke aei:id="147872999966316054"
+                         inputVariable="gDataAccessRequest"
+                         name="execSQL"
+                         operation="execSQL"
+                         outputVariable="gDataAccessResponse"
+                         partnerLink="DS2"/>
+         </bpel:elseif>
+         <bpel:elseif aei:id="147872999966316056">
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS3'</bpel:condition>
+            <bpel:invoke aei:id="147872999966316058"
+                         inputVariable="gDataAccessRequest"
+                         name="execSQL"
+                         operation="execSQL"
+                         outputVariable="gDataAccessResponse"
+                         partnerLink="DS3"/>
+         </bpel:elseif>
+         <bpel:elseif aei:id="147872999966316060">
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS4'</bpel:condition>
+            <bpel:invoke aei:id="147872999966316062"
+                         inputVariable="gDataAccessRequest"
+                         name="execSQL"
+                         operation="execSQL"
+                         outputVariable="gDataAccessResponse"
+                         partnerLink="DS4"/>
+         </bpel:elseif>
+         <bpel:elseif aei:id="147872999966316064">
+            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS5'</bpel:condition>
+            <bpel:invoke aei:id="147872999966316066"
+                         inputVariable="gDataAccessRequest"
+                         name="execSQL"
+                         operation="execSQL"
+                         outputVariable="gDataAccessResponse"
+                         partnerLink="DS5"/>
+         </bpel:elseif>
+         <bpel:else aei:id="147872999966316068">
+            <bpel:sequence aei:id="147872999966316069" aei:implicit="yes">
+               <bpel:assign aei:id="148035270197608721" name="Set_Process_Title">
+                  <bpel:extensionAssignOperation>
+                     <ext2:script expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $processName := abx:getProcessName() 
+let $statementId := data($gDataAccessRequest/das:sqlStatement/@statementId)
+let $dasType := switch (true())
+ case (exists($gDataAccessRequest/das:sqlStatement/das:parameterBatch)) return concat("batchSize:",count( $gDataAccessRequest/das:sqlStatement/das:parameterBatch ))
+ case (exists($gDataAccessRequest/das:sqlStatement/das:statement)) return "singleStatement"
+ case (exists($gDataAccessRequest/das:sqlStatement/das:procedure)) return "storedProcedure"
+ default return ()
+
+let $result := concat("FAILED - Invalid DS",dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ))
+
+let $titleparts := ($processName, $statementId, $dasType, $result)
+return
+abx:setProcessTitle(substring(string-join($titleparts," "),1,255))</ext2:script>
+                  </bpel:extensionAssignOperation>
+               </bpel:assign>
+               <bpel:scope aei:implicit="true">
+                  <bpel:variables>
+                     <bpel:variable messageType="asw:automatedStepValidationFault" name="parameters"/>
+                  </bpel:variables>
+                  <bpel:sequence>
+                     <bpel:assign aei:assignType="XQUERY" aei:id="1478808298657103220">
+                        <bpel:copy>
+                           <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;sf:invalidData xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&gt;
+  &lt;sf:field name="dataAccessRequest" reason="Invalid or missing Data Source ID must be DS1-DS5" required="true"/&gt;
+&lt;/sf:invalidData&gt;</bpel:from>
+                           <bpel:to part="automatedStepValidationFault" variable="parameters"/>
+                        </bpel:copy>
+                     </bpel:assign>
+                     <bpel:reply aei:id="1478808284253102922"
+                                 faultName="asw:invalidData"
+                                 operation="automatedStep"
+                                 partnerLink="DASAutomatedStep"
+                                 variable="parameters"/>
+                  </bpel:sequence>
+               </bpel:scope>
+               <bpel:exit aei:id="1478808292749103206"/>
+            </bpel:sequence>
+         </bpel:else>
+      </bpel:if>
+      <bpel:assign aei:id="148035103537401017" name="Set_Process_Title">
+         <bpel:extensionAssignOperation>
+            <ext2:script expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $processName := abx:getProcessName() 
+let $statementId := data($gDataAccessRequest/das:sqlStatement/@statementId)
+let $dasType := switch (true())
+ case (exists($gDataAccessRequest/das:sqlStatement/das:parameterBatch)) return concat("Batch Size:",count( $gDataAccessRequest/das:sqlStatement/das:parameterBatch ))
+ case (exists($gDataAccessRequest/das:sqlStatement/das:statement)) return "Single Statement"
+ case (exists($gDataAccessRequest/das:sqlStatement/das:procedure)) return "Stored Procedure"
+ default return ()
+
+let $result := "SUCCESS"
+
+let $titleparts := ($processName, $statementId, $dasType, $result)
+return
+abx:setProcessTitle(substring(string-join($titleparts," "),1,255))</ext2:script>
+         </bpel:extensionAssignOperation>
+      </bpel:assign>
+      <bpel:scope aei:implicit="true" name="automatedStep-Reply">
+         <bpel:variables>
+            <bpel:variable messageType="asw:automatedStepResponse" name="parameters"/>
+         </bpel:variables>
+         <bpel:sequence>
+            <bpel:assign aei:assignType="XQUERY" aei:id="147880560068371825">
+               <bpel:copy>
+                  <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;sf:automatedStepResponse xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&gt;
+    &lt;sf:fields&gt;
+        &lt;sf:field name="dataAccessResponse"&gt;{ dasx:dasResponseToPO( $gDataAccessResponse ) }&lt;/sf:field&gt;
+    &lt;/sf:fields&gt;
+&lt;/sf:automatedStepResponse&gt;</bpel:from>
+                  <bpel:to part="automatedStepResponse" variable="parameters"/>
+               </bpel:copy>
+            </bpel:assign>
+            <bpel:reply aei:id="147872977452211899"
+                        name="automatedStep-Reply"
+                        operation="automatedStep"
+                        partnerLink="DASAutomatedStep"
+                        variable="parameters"/>
+         </bpel:sequence>
+      </bpel:scope>
+   </bpel:sequence>
+</bpel:process>

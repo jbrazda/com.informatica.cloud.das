@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+               isByCopy="true"
+               name="tProcedureSignature">
+   <description/>
+   <detail>
+      <field name="parameter" type="objectlist">
+         <options>
+            <option name="referenceTo">ProcedureParameter</option>
+            <option name="relationshipName">Child</option>
+         </options>
+      </field>
+   </detail>
+</processObject>

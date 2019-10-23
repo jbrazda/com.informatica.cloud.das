@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aetgt:dataAccessRequest xmlns:aetgt="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+                         xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+                         xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+                         xmlns:ns2="http://schemas.active-endpoints.com/engineapi/2010/09/ProcessManagementTypes.xsd"
+                         xmlns:ns3="http://schemas.active-endpoints.com/engineapi/2010/05/EngineAPITypes.xsd">
+   <das:sqlStatement columnCase="unchanged"
+                     hasResultSet="true"
+                     statementId="test_statement">
+      <das:statement>SELECT * FROM source_metadata</das:statement>
+   </das:sqlStatement>
+</aetgt:dataAccessRequest>

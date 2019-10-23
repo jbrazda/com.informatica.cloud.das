@@ -1,0 +1,381 @@
+<processRenderings modified="1529601323650">
+   <layout-segments>
+      <segment height="873"
+               id="process_0"
+               tile-cols="2"
+               tile-height="1000"
+               tile-rows="1"
+               tile-width="1000"
+               tiled="true"
+               width="1040">
+         <image col="1"
+                height="873"
+                name="process_0_R1C1.jpg"
+                row="1"
+                width="1000"/>
+         <image col="2"
+                height="873"
+                name="process_0_R1C2.jpg"
+                row="1"
+                width="40"/>
+      </segment>
+      <segment height="651"
+               id="fault_handlers_1"
+               tile-cols="2"
+               tile-height="1000"
+               tile-rows="1"
+               tile-width="1000"
+               tiled="true"
+               width="1014">
+         <image col="1"
+                height="651"
+                name="fault_handlers_1_R1C1.jpg"
+                row="1"
+                width="1000"/>
+         <image col="2"
+                height="651"
+                name="fault_handlers_1_R1C2.jpg"
+                row="1"
+                width="14"/>
+      </segment>
+   </layout-segments>
+   <process>
+      <bpel locationId="1"
+            name="execSQL"
+            path="/process"
+            segment="process_0"
+            sheight="33"
+            swidth="33"
+            sx="924"
+            sy="535"
+            type="process">
+         <bpel locationId="12" path="/process/partnerLinks" type="partnerLinks">
+            <bpel locationId="13"
+                  name="DASAutomatedStep"
+                  path="/process/partnerLinks/partnerLink[@name='DASAutomatedStep']"
+                  type="partnerLink"/>
+            <bpel locationId="14"
+                  name="DS1"
+                  path="/process/partnerLinks/partnerLink[@name='DS1']"
+                  type="partnerLink"/>
+            <bpel locationId="15"
+                  name="DS2"
+                  path="/process/partnerLinks/partnerLink[@name='DS2']"
+                  type="partnerLink"/>
+            <bpel locationId="16"
+                  name="DS3"
+                  path="/process/partnerLinks/partnerLink[@name='DS3']"
+                  type="partnerLink"/>
+            <bpel locationId="17"
+                  name="DS4"
+                  path="/process/partnerLinks/partnerLink[@name='DS4']"
+                  type="partnerLink"/>
+            <bpel locationId="18"
+                  name="DS5"
+                  path="/process/partnerLinks/partnerLink[@name='DS5']"
+                  type="partnerLink"/>
+         </bpel>
+         <bpel locationId="20" path="/process/variables" type="variables">
+            <bpel locationId="21"
+                  name="gDataAccessRequest"
+                  path="/process/variables/variable[@name='gDataAccessRequest']"
+                  type="variable"/>
+            <bpel locationId="22"
+                  name="gDataAccessResponse"
+                  path="/process/variables/variable[@name='gDataAccessResponse']"
+                  type="variable"/>
+            <bpel locationId="23"
+                  name="gAutomatedStepRequest"
+                  path="/process/variables/variable[@name='gAutomatedStepRequest']"
+                  type="variable"/>
+         </bpel>
+         <bpel locationId="24"
+               path="/process/faultHandlers"
+               segment="fault_handlers_1"
+               sheight="33"
+               swidth="33"
+               sx="924"
+               sy="535"
+               type="faultHandlers">
+            <bpel height="60"
+                  locationId="25"
+                  path="/process/faultHandlers/catchAll"
+                  type="catchAll"
+                  width="32"
+                  x="216"
+                  y="187">
+               <bpel height="10"
+                     locationId="26"
+                     name=""
+                     path="/process/faultHandlers/catchAll/sequence"
+                     type="sequence"
+                     width="1"
+                     x="232"
+                     y="247">
+                  <bpel height="53"
+                        locationId="27"
+                        name="Set_Title"
+                        path="/process/faultHandlers/catchAll/sequence/assign[@name='Set_Title']"
+                        type="assign"
+                        width="125"
+                        x="170"
+                        y="257"/>
+                  <bpel locationId="30"
+                        name=""
+                        path="/process/faultHandlers/catchAll/sequence/scope"
+                        type="scope">
+                     <bpel locationId="31"
+                           path="/process/faultHandlers/catchAll/sequence/scope/variables"
+                           type="variables">
+                        <bpel locationId="32"
+                              name="parameters"
+                              path="/process/faultHandlers/catchAll/sequence/scope/variables/variable[@name='parameters']"
+                              type="variable"/>
+                     </bpel>
+                     <bpel locationId="33"
+                           name=""
+                           path="/process/faultHandlers/catchAll/sequence/scope/sequence"
+                           type="sequence">
+                        <bpel locationId="34"
+                              name=""
+                              path="/process/faultHandlers/catchAll/sequence/scope/sequence/assign"
+                              type="assign"/>
+                        <bpel height="60"
+                              locationId="38"
+                              name=""
+                              path="/process/faultHandlers/catchAll/sequence/scope/sequence/reply"
+                              type="reply"
+                              width="70"
+                              x="197"
+                              y="335"/>
+                     </bpel>
+                  </bpel>
+               </bpel>
+            </bpel>
+         </bpel>
+         <bpel height="10"
+               locationId="39"
+               name=""
+               path="/process/sequence"
+               type="sequence"
+               width="1"
+               x="522"
+               y="15">
+            <bpel height="60"
+                  locationId="40"
+                  name="automatedStep"
+                  path="/process/sequence/receive[@name='automatedStep']"
+                  type="receive"
+                  width="70"
+                  x="487"
+                  y="25"/>
+            <bpel height="53"
+                  locationId="41"
+                  name="Get_DAS_Request"
+                  path="/process/sequence/assign[@name='Get_DAS_Request']"
+                  type="assign"
+                  width="125"
+                  x="460"
+                  y="110"/>
+            <bpel height="53"
+                  locationId="45"
+                  name=""
+                  path="/process/sequence/validate"
+                  type="validate"
+                  width="125"
+                  x="460"
+                  y="188"/>
+            <bpel height="60"
+                  locationId="46"
+                  name=""
+                  path="/process/sequence/if"
+                  type="if"
+                  width="32"
+                  x="506"
+                  y="266">
+               <bpel height="291"
+                     locationId="47"
+                     path="/process/sequence/if/if-condition"
+                     type="if-condition"
+                     width="145"
+                     x="25"
+                     y="326">
+                  <bpel height="53"
+                        locationId="49"
+                        name="execSQL"
+                        path="/process/sequence/if/if-condition/invoke[@name='execSQL']"
+                        type="invoke"
+                        width="125"
+                        x="35"
+                        y="365"/>
+               </bpel>
+               <bpel height="291"
+                     locationId="50"
+                     path="/process/sequence/if/elseif"
+                     type="elseif"
+                     width="145"
+                     x="195"
+                     y="326">
+                  <bpel height="53"
+                        locationId="52"
+                        name="execSQL"
+                        path="/process/sequence/if/elseif/invoke[@name='execSQL']"
+                        type="invoke"
+                        width="125"
+                        x="205"
+                        y="365"/>
+               </bpel>
+               <bpel height="291"
+                     locationId="53"
+                     path="/process/sequence/if/elseif[2]"
+                     type="elseif"
+                     width="145"
+                     x="365"
+                     y="326">
+                  <bpel height="53"
+                        locationId="55"
+                        name="execSQL"
+                        path="/process/sequence/if/elseif[2]/invoke[@name='execSQL']"
+                        type="invoke"
+                        width="125"
+                        x="375"
+                        y="365"/>
+               </bpel>
+               <bpel height="291"
+                     locationId="56"
+                     path="/process/sequence/if/elseif[3]"
+                     type="elseif"
+                     width="145"
+                     x="535"
+                     y="326">
+                  <bpel height="53"
+                        locationId="58"
+                        name="execSQL"
+                        path="/process/sequence/if/elseif[3]/invoke[@name='execSQL']"
+                        type="invoke"
+                        width="125"
+                        x="545"
+                        y="365"/>
+               </bpel>
+               <bpel height="291"
+                     locationId="59"
+                     path="/process/sequence/if/elseif[4]"
+                     type="elseif"
+                     width="145"
+                     x="705"
+                     y="326">
+                  <bpel height="53"
+                        locationId="61"
+                        name="execSQL"
+                        path="/process/sequence/if/elseif[4]/invoke[@name='execSQL']"
+                        type="invoke"
+                        width="125"
+                        x="715"
+                        y="365"/>
+               </bpel>
+               <bpel height="291"
+                     locationId="62"
+                     path="/process/sequence/if/else"
+                     type="else"
+                     width="145"
+                     x="875"
+                     y="326">
+                  <bpel height="10"
+                        locationId="63"
+                        name=""
+                        path="/process/sequence/if/else/sequence"
+                        type="sequence"
+                        width="1"
+                        x="947"
+                        y="355">
+                     <bpel height="53"
+                           locationId="64"
+                           name="Set_Process_Title"
+                           path="/process/sequence/if/else/sequence/assign[@name='Set_Process_Title']"
+                           type="assign"
+                           width="125"
+                           x="885"
+                           y="365"/>
+                     <bpel height="60"
+                           locationId="67"
+                           name=""
+                           path="/process/sequence/if/else/sequence/scope"
+                           type="scope"
+                           width="70"
+                           x="912"
+                           y="443">
+                        <bpel locationId="68"
+                              path="/process/sequence/if/else/sequence/scope/variables"
+                              type="variables">
+                           <bpel locationId="69"
+                                 name="parameters"
+                                 path="/process/sequence/if/else/sequence/scope/variables/variable[@name='parameters']"
+                                 type="variable"/>
+                        </bpel>
+                        <bpel locationId="70"
+                              name=""
+                              path="/process/sequence/if/else/sequence/scope/sequence"
+                              type="sequence">
+                           <bpel locationId="71"
+                                 name=""
+                                 path="/process/sequence/if/else/sequence/scope/sequence/assign"
+                                 type="assign"/>
+                           <bpel locationId="75"
+                                 name=""
+                                 path="/process/sequence/if/else/sequence/scope/sequence/reply"
+                                 type="reply"/>
+                        </bpel>
+                     </bpel>
+                     <bpel height="60"
+                           locationId="76"
+                           name=""
+                           path="/process/sequence/if/else/sequence/terminate"
+                           type="terminate"
+                           width="70"
+                           x="912"
+                           y="528"/>
+                  </bpel>
+               </bpel>
+            </bpel>
+            <bpel height="53"
+                  locationId="77"
+                  name="Set_Process_Title"
+                  path="/process/sequence/assign[@name='Set_Process_Title']"
+                  type="assign"
+                  width="125"
+                  x="460"
+                  y="702"/>
+            <bpel locationId="80"
+                  name="automatedStep-Reply"
+                  path="/process/sequence/scope[@name='automatedStep-Reply']"
+                  type="scope">
+               <bpel locationId="81"
+                     path="/process/sequence/scope[@name='automatedStep-Reply']/variables"
+                     type="variables">
+                  <bpel locationId="82"
+                        name="parameters"
+                        path="/process/sequence/scope[@name='automatedStep-Reply']/variables/variable[@name='parameters']"
+                        type="variable"/>
+               </bpel>
+               <bpel height="60"
+                     locationId="83"
+                     name=""
+                     path="/process/sequence/scope[@name='automatedStep-Reply']/sequence"
+                     type="sequence"
+                     width="70"
+                     x="487"
+                     y="780">
+                  <bpel locationId="84"
+                        name=""
+                        path="/process/sequence/scope[@name='automatedStep-Reply']/sequence/assign"
+                        type="assign"/>
+                  <bpel locationId="88"
+                        name="automatedStep-Reply"
+                        path="/process/sequence/scope[@name='automatedStep-Reply']/sequence/reply[@name='automatedStep-Reply']"
+                        type="reply"/>
+               </bpel>
+            </bpel>
+         </bpel>
+      </bpel>
+   </process>
+</processRenderings>

@@ -1,0 +1,70 @@
+<!--
+   Data Access Services
+   ActiveEndpoints, Inc.
+--><wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+                  xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+                  xmlns:tns="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  targetNamespace="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl">
+
+   <plnk:partnerLinkType name="dataAccessPLT">
+      <plnk:role name="sender">
+         <plnk:portType name="tns:dataAccessPT"/>
+      </plnk:role>
+   </plnk:partnerLinkType>
+
+   <wsdl:types>
+      <xs:schema elementFormDefault="qualified"
+                 targetNamespace="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl">
+
+         <xs:import namespace="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+                    schemaLocation="../schema/data-access.xsd"/>
+
+         <xs:complexType name="faultElementType">
+            <xs:sequence>
+               <xs:element maxOccurs="1" minOccurs="1" name="code" type="xs:int"/>
+               <xs:element maxOccurs="1" minOccurs="1" name="message" type="xs:string"/>
+            </xs:sequence>
+         </xs:complexType>
+         <xs:element name="faultElement" type="tns:faultElementType"/>
+
+      </xs:schema>
+   </wsdl:types>
+
+   <wsdl:message name="dataAccessMessage">
+      <wsdl:part element="das:dataAccessRequest" name="dataAccessPart"/>
+   </wsdl:message>
+
+   <wsdl:message name="resultMessage">
+      <wsdl:part element="das:dataAccessResponse" name="resultPart"/>
+   </wsdl:message>
+
+   <wsdl:message name="multiDataAccessMessage">
+      <wsdl:part element="das:multiDataAccessRequest" name="dataAccessPart"/>
+   </wsdl:message>
+
+   <wsdl:message name="multiResultMessage">
+      <wsdl:part element="das:multiDataAccessResponse" name="resultPart"/>
+   </wsdl:message>
+   
+   <wsdl:message name="dataAccessFaultMessage">
+      <wsdl:part element="das:dataAccessFault" name="faultPart"/>
+   </wsdl:message>
+
+   <wsdl:portType name="dataAccessPT">
+      <wsdl:operation name="execSQL">
+         <wsdl:input message="tns:dataAccessMessage"/>
+         <wsdl:output message="tns:resultMessage"/>
+         <wsdl:fault message="tns:dataAccessFaultMessage" name="dataAccessFault"/>
+      </wsdl:operation>
+      <wsdl:operation name="execMultiSQL">
+         <wsdl:input message="tns:multiDataAccessMessage"/>
+         <wsdl:output message="tns:multiResultMessage"/>
+         <wsdl:fault message="tns:dataAccessFaultMessage" name="dataAccessFault"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   
+
+</wsdl:definitions>
