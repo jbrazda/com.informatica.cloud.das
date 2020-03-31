@@ -2,20 +2,21 @@
 
 <!-- MarkdownTOC -->
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Install this package on ICS/ICRT](#install-this-package-on-icsicrt)
-- [Package Contents](#package-contents)
-- [DAS Wrapper Components](#das-wrapper-components)
-    - [BPEL Processes \(Automated Steps\)](#bpel-processes-automated-steps)
-        - [execSQL.bpel](#execsqlbpel)
-            - [tDataAccessRequest Object](#tdataaccessrequest-object)
-        - [execMultiSQl.bpel](#execmultisqlbpel)
+- [Data Access Service Support for Informatica Cloud Application Integration](#data-access-service-support-for-informatica-cloud-application-integration)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Installation](#installation)
+  - [Install this package on ICS/ICRT](#install-this-package-on-icsicrt)
+  - [Package Contents](#package-contents)
+  - [DAS Wrapper Components](#das-wrapper-components)
+    - [BPEL Processes (Automated Steps)](#bpel-processes-automated-steps)
+      - [execSQL.bpel](#execsqlbpel)
+        - [tDataAccessRequest Object](#tdataaccessrequest-object)
+      - [execMultiSQl.bpel](#execmultisqlbpel)
     - [PDDs](#pdds)
     - [XQuery Library Modules](#xquery-library-modules)
     - [Automated Step Service Metadata](#automated-step-service-metadata)
-- [Possible Adjustments](#possible-adjustments)
+  - [Possible Adjustments](#possible-adjustments)
     - [Add Support for Additional Data Sources](#add-support-for-additional-data-sources)
 
 <!-- /MarkdownTOC -->
