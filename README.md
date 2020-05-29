@@ -6,13 +6,14 @@
   - [Introduction](#introduction)
   - [Features](#features)
   - [Installation](#installation)
-  - [Install this package on ICS/ICRT](#install-this-package-on-icsicrt)
+  - [Install this package on ICS/ICAI](#install-this-package-on-icsicai)
   - [Package Contents](#package-contents)
   - [DAS Wrapper Components](#das-wrapper-components)
     - [BPEL Processes (Automated Steps)](#bpel-processes-automated-steps)
       - [execSQL.bpel](#execsqlbpel)
         - [tDataAccessRequest Object](#tdataaccessrequest-object)
       - [execMultiSQl.bpel](#execmultisqlbpel)
+      - [Invoke Stored Procedure or function](#invoke-stored-procedure-or-function)
     - [PDDs](#pdds)
     - [XQuery Library Modules](#xquery-library-modules)
     - [Automated Step Service Metadata](#automated-step-service-metadata)
@@ -52,7 +53,7 @@ This package contains a Generic Wrapper for this Service which allows consumptio
 
 You will need an Informatica Process Developer to build and install this package
 
-## Install this package on ICS/ICRT
+## Install this package on ICS/ICAI
 
 1. Install and Configure Informatica Process Developer ([Open Installation guide](https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/install_process_developer.md))
 2. Import this project zip into an eclipse workspace using Eclipse menu `File > Import > Existing Projects into Workspace` select the Archive Option
@@ -65,8 +66,8 @@ You will need an Informatica Process Developer to build and install this package
 9. Set the Target bprd file name to `/com.informatica.cloud.das/deploy/com.informatica.cloud.das.bprd`'
 10. Optionally you can set the deployment option to deeply directly to your cloud org, this saves one step in the deployment as you have to deploy manually only to agents
 11. Deployment Url should be following `https://[Your_POD_Hostname]/active-bpel/services/[YOURORGID]/ActiveBpelDeployBPR` i.e. `https://na1.ai.dm-us.informaticacloud.com/active-bpel/services/d8UL5i5Pm4KddufpfKuiaN/ActiveBpelDeployBPR`
-12. Deploy the produced bpr from `/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr` bot to your cloud org and all agents where you want to use this DAS service
-13. Import attached [IPD_SOURCE_DAS-IICS-2.0.zip](https://github.com/jbrazda/com.informatica.cloud.das/raw/master/sample-data/IPD_SOURCE_DAS-IICS-2.0.zip) to your IPD
+12. Deploy the produced bpr from `/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr` bot to your cloud org and all agents where you want to use this DAS service (alternatively pre-built latest bpr is available on release page [com.informatica.cloud.das.bpr](https://github.com/jbrazda/com.informatica.cloud.das/releases/latest/download/com.informatica.cloud.das.bpr))
+13. Import attached [IPD_SOURCE_DAS-IICS.zip](https://github.com/jbrazda/com.informatica.cloud.das/releases/latest/download/IPD_SOURCE_DAS-IICS.zip) to your IPD
 14. Adjust target Agent name in the imported Proxy processes `execSQLProxy` and `execMultiSQLProxy`
 15. Setup and Configure DS1 to DS{n} in the `Process Console > Admin >  Datasource Service` section
 16. Publish all provided resources imported in the step 15
@@ -454,6 +455,45 @@ Response:
 </multiDataAccessResponse>
 ```
 
+#### Invoke Stored Procedure or function
+
+Request:
+
+```xml
+<DataAccessRequest>
+   <sqlStatement>
+      <statementId>SOME_PKG.function</statementId>
+      <columnCase>lowercase</columnCase>
+      <hasResultSet>false</hasResultSet>
+      <statement>CALL SOME_PKG.function(?,?)</statement>
+      <procedure>
+         <procedureParameter>
+            <name>PARAMETER1</name>
+            <sqlType>string</sqlType>
+            <mode>in</mode>
+            <data>{$p1data}</data>
+         </procedureParameter>
+         <procedureParameter>
+            <name>PARAMETER2</name>
+            <sqlType>string</sqlType>
+            <mode>out</mode>
+            <data>{$p1data}</data>
+         </procedureParameter>
+      </procedure>
+   </sqlStatement>  
+   <dataSource>DS1</dataSource>
+</DataAccessRequest>
+```
+
+Important part is to map the parameter types correctly with the respect of the SQL types
+DAS does not support Oracle object array types, only following types are supported
+
+Parameter attribute. Types include string (default), byte, short, int, long, float, double, date, binary, or clob
+Binary requires special handling to send data as attachment and it is not supported by this DAS wrapper implementation
+
+You should be able to specify both in/out parameters - read more about data access service [here](
+https://docs.informatica.com/process-automation/informatica-activevos/current-version/2----designer/building-a-process-with-a-system-service/data-access-service.html)
+
 ### PDDs
 
 Each BPEL process (Service) needs a [Process Deployment Descriptor](http://infocenter.activevos.com/infocenter/ActiveVOS/v92/index.jsp?topic=/com.activee.bpep.doc/html/UG20-5.html) to describe the process to a process engine.
@@ -537,7 +577,7 @@ This service Supports One SQL statement, but multiple batched updates/inserts</d
 ```
 
 Note that the Service Descriptors refer to process objects such as `DataAccessService:tMultiResponse` or `DataAccessService:tMultiDataAccessRequest` that are defined
-in separate files that must be also deployed and published on the target ICRT Org instance. This is necessary to provide metadata for design time in the IPD to describe the process objects.
+in separate files that must be also deployed and published on the target ICAI Org instance. This is necessary to provide metadata for design time in the IPD to describe the process objects.
 You will need to import and publish following Objects included in the [IPD_SOURCE_DAS-IICS-2.0.zip](https://github.com/jbrazda/com.informatica.cloud.das/raw/master/sample-data/IPD_SOURCE_DAS-IICS-2.0.zip) Archive
 
 - DataAccessService Connection
@@ -563,7 +603,7 @@ These two processes are not necessary if you create IPD process deployed and pub
 
 ### Add Support for Additional Data Sources
 
-If the currently supported 5 Data sources is not enough for your ICRT Implementation and you need more you can simply add more Data Source definitions into your environment and Automated Step processes
+If the currently supported 5 Data sources is not enough for your ICAI Implementation and you need more you can simply add more Data Source definitions into your environment and Automated Step processes
 
 1. Open each of the bpel processes included in the Informatica Process Developer
 2. Add a new partner link called DSn where n is the number for new data Source PLT such as `DS6`
@@ -584,3 +624,4 @@ You should test new branches by creating similar process to provided `TEST_DAS.p
 
 You should also update the `DataAccessService.svc.xml` in the IPD Connector designer and new data Sources to a DataSource field parameter pick-list definition and re-publish both connector and connection definition.
 This will ensure consistency of your metadata with your service implementation
+
