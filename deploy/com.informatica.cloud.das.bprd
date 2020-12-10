@@ -14,7 +14,7 @@
    <property name="archive.deploytype" value="file" />
 
    <!-- The username/password used during webservice deployment -->
-   <property name="deploy.username" value="jbrazda-iics@informatica.com" />
+   <property name="deploy.username" value="aeadmin" />
    <property name="deploy.password" value="" />
 
    <!-- A temp directory location. -->

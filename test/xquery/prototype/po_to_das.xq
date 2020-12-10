@@ -16,7 +16,7 @@ declare function local:objectToDasRequest ($node as node()?) as item()* {
         case element(sqlStatement) return local:po_das_sqlStatement($node)
         case element(statement) return local:po_das_statement($node)
         case element(parameter) return local:po_das_parameter($node)
-        case element(parameter) return local:po_das_parameter($node)
+        case element(procedureParameter) return local:po_das_parameter($node)
         case element(parameterBatch) return local:po_das_parameterBatch($node)
         case element(procedure) return local:po_das_procedure($node)
         case element(dataSource) return ()
@@ -93,8 +93,7 @@ declare function local:po_das_statement ($node) as node() {
 };
 
 
-
-let $po_das_request := doc("../../../sample-data/processObjects/tDataAccessRequest.xml")/*/.
+let $po_das_request := doc("../../../sample-data/processObjects/tDataAccessRequestStoredProcedure.xml")/*/.
 
 return
 local:objectToDasRequest($po_das_request)

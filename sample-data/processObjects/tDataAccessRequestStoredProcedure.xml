@@ -1,0 +1,44 @@
+<tDataAccessRequest xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/">
+  <sqlStatement>
+    <statementId>call APPS.XX_ERG_ORDERIMP.import</statementId>
+    <columnCase />
+
+    <includeMetadata>true</includeMetadata>
+    <hasResultSet>false</hasResultSet>
+    <statement>call APPS.XX_ERG_ORDERIMP.import(?,?,?,?,?)</statement>
+    <procedure>
+      <parameter>
+        <name>ip_order_info_ref</name>
+        <sqlType>string</sqlType>
+        <mode>in</mode>
+        <data>a18020000002Sw4AAE</data>
+      </parameter>
+
+      <parameter>
+        <name>op_order_header_id</name>
+        <sqlType>string</sqlType>
+        <mode>out</mode>
+      </parameter>
+
+      <parameter>
+        <name>op_order_number</name>
+        <sqlType>string</sqlType>
+        <mode>out</mode>
+      </parameter>
+
+      <parameter>
+        <name>op_return_status</name>
+        <sqlType>string</sqlType>
+        <mode>out</mode>
+      </parameter>
+
+      <parameter>
+        <name>op_return_message</name>
+        <sqlType>string</sqlType>
+        <mode>out</mode>
+      </parameter>
+    </procedure>
+  </sqlStatement>
+
+  <dataSource>DS1</dataSource>
+</tDataAccessRequest>

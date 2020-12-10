@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aetgt:automatedStepRequest
+  xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+  xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd">
+  <sf:userId>anonymous</sf:userId>
+  <sf:correlationId />
+
+  <sf:serviceName>execSQL</sf:serviceName>
+  <sf:avosServiceName>execSQL</sf:avosServiceName>
+  <sf:processId>24</sf:processId>
+  <sf:stepId>ivluyizb</sf:stepId>
+  <sf:hostContext
+    xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/"
+    xmlns:ns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+    xmlns:type="http://schemas.informatica.com/spi/types/2013/12/spi-interface/">
+    <sf:arg name="INFA_DESIGN_GUID">gVkb2KpjYichC7LQ3RSbEA</sf:arg>
+  </sf:hostContext>
+
+  <sf:parameters>
+    <sf:parameter name="dataAccessRequest">
+      <tDataAccessRequest xmlns:aetgt="http://schemas.informatica.com/spi/types/2013/12/spi-interface/">
+        <sqlStatement>
+          <maxRows />
+
+          <maxWaitSeconds />
+
+          <statementId />
+
+          <columnCase />
+
+          <includeMetadata />
+
+          <hasResultSet />
+
+          <statement>call APPS.XX_ERG_ORDERIMP.import(?,?,?,?,?)</statement>
+          <procedure>
+            <procedureParameter>
+              <name>ip_order_info_ref</name>
+              <sqlType>string</sqlType>
+              <mode>in</mode>
+              <data>a18020000002SvkAAE</data>
+            </procedureParameter>
+
+            <procedureParameter>
+              <name>op_order_header_id</name>
+              <sqlType>string</sqlType>
+              <mode>out</mode>
+              <data>fn:string($temp.op_order_header_id)</data>
+            </procedureParameter>
+
+            <procedureParameter>
+              <name>op_order_number</name>
+              <sqlType>string</sqlType>
+              <mode>out</mode>
+              <data>$temp.op_order_number</data>
+            </procedureParameter>
+
+            <procedureParameter>
+              <name>op_return_status</name>
+              <sqlType>string</sqlType>
+              <mode>out</mode>
+              <data>$temp.op_return_status</data>
+            </procedureParameter>
+
+            <procedureParameter>
+              <name>op_return_message</name>
+              <sqlType>string</sqlType>
+              <mode>out</mode>
+              <data>$temp.op_return_msg</data>
+            </procedureParameter>
+          </procedure>
+        </sqlStatement>
+
+        <dataSource>DS1</dataSource>
+      </tDataAccessRequest>
+    </sf:parameter>
+  </sf:parameters>
+</aetgt:automatedStepRequest>

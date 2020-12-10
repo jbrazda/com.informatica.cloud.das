@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
-              xmlns:dasx="http://www.informatica.com/das/1.0/xquery"
-              xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
-              xmlns:dasw="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl"
-              xmlns:ext1="http://www.activebpel.org/2009/06/bpel/extension/links"
-              xmlns:ext2="http://www.activebpel.org/2011/08/bpel/extension/script"
-              xmlns:abx="http://www.activebpel.org/bpel/extension"
-              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-              xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
-              xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
-              xmlns:asw="http://schemas.active-endpoints.com/wsdl/screenFlow/2010/10/avosAutomatedStep.wsdl"
               xmlns:ext="http://www.activebpel.org/2006/09/bpel/extension/query_handling"
               xmlns:aei="http://www.activebpel.org/2009/02/bpel/extension/ignorable"
+              xmlns:asw="http://schemas.active-endpoints.com/wsdl/screenFlow/2010/10/avosAutomatedStep.wsdl"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+              xmlns:dasx="http://www.informatica.com/das/1.0/xquery"
+              xmlns:dasw="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl"
+              xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+              xmlns:abx="http://www.activebpel.org/bpel/extension"
+              xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+              xmlns:ext2="http://www.activebpel.org/2011/08/bpel/extension/script"
+              xmlns:ext1="http://www.activebpel.org/2009/06/bpel/extension/links"
               aei:editStyle="BPMN"
               ext1:linksAreTransitions="yes"
               ext:createTargetXPath="yes"
@@ -19,8 +19,8 @@
               name="execSQL"
               suppressJoinFailure="yes"
               targetNamespace="http://execSQL">
-   <bpmndi:BPMNDiagram xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
-                       xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+   <bpmndi:BPMNDiagram xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                       xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
                        aei:bpelDigest=""
                        aei:editStyle="BPMN"
                        aei:layoutNeeded="false"
@@ -296,7 +296,7 @@
             <dc:Bounds height="78" width="150" x="0" y="0"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS5'"
-                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {705,326}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="147872999966316064"
@@ -437,9 +437,7 @@
                <dc:Bounds height="26" width="116" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {150,187}"
-                           aei:absoluteSize="DIM {165,238}"
-                           aei:catchAllFaults="true"
+         <bpmndi:BPMNShape aei:catchAllFaults="true"
                            aei:collapedIconLocation="icons/bpmn/activity/catch.png"
                            aei:constraint=""
                            aei:expanded="true"
@@ -451,9 +449,7 @@
                            bpmnElement="147880547449471559"
                            isHorizontal="false">
             <dc:Bounds height="-1" width="-1" x="140" y="177"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {219,197}"
-                              aei:absoluteSize="DIM {54,13}"
-                              aei:anchor.location="0"
+            <bpmndi:BPMNLabel aei:anchor.location="0"
                               aei:anchor.objectId="1478808628590109998"
                               aei:backgroundColor="RGB {255,255,255}"
                               aei:objectId="1478808628590110000"
@@ -463,31 +459,23 @@
                <dc:Bounds height="-1" width="-1" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {160,247}"
-                           aei:absoluteSize="DIM {145,158}"
-                           aei:objectId="147880548185471567"
+         <bpmndi:BPMNShape aei:objectId="147880548185471567"
                            aei:type="SEQUENCE"
                            bpmnElement="147880548185471567"
                            isHorizontal="false">
             <dc:Bounds height="-1" width="-1" x="4" y="16"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {170,257}"
-                           aei:absoluteSize="DIM {125,53}"
-                           aei:name="Set Title"
+         <bpmndi:BPMNShape aei:name="Set Title"
                            aei:objectId="148035196882401351"
                            aei:type="ASSIGN"
                            bpmnElement="148035196882401351">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {197,335}"
-                           aei:absoluteSize="DIM {70,60}"
-                           aei:objectId="147880548185271563"
+         <bpmndi:BPMNShape aei:objectId="147880548185271563"
                            aei:type="REPLY"
                            bpmnElement="147880548185271563">
             <dc:Bounds height="-1" width="-1" x="14" y="26"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {221,392}"
-                              aei:absoluteSize="DIM {46,13}"
-                              aei:anchor.location="1"
+            <bpmndi:BPMNLabel aei:anchor.location="1"
                               aei:anchor.objectId="147880548185271563"
                               aei:backgroundColor="RGB {255,255,255}"
                               aei:objectId="147880548185371565"
@@ -647,7 +635,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS4"/>
          </bpel:elseif>
          <bpel:elseif aei:id="147872999966316064">
-            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS5'</bpel:condition>
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS5'</bpel:condition>
             <bpel:invoke aei:id="147872999966316066"
                          inputVariable="gDataAccessRequest"
                          name="execSQL"
