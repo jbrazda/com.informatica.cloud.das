@@ -12,8 +12,15 @@
     - [BPEL Processes (Automated Steps)](#bpel-processes-automated-steps)
       - [execSQL.bpel](#execsqlbpel)
         - [tDataAccessRequest Object](#tdataaccessrequest-object)
+  - [DAS Service Request Examples](#das-service-request-examples)
+    - [Complete tDataAccessRequest Structure example](#complete-tdataaccessrequest-structure-example)
+    - [Invoke DDL STatement](#invoke-ddl-statement)
+    - [Prepared Statement (Insert)](#prepared-statement-insert)
+    - [Parameter Batch Insert](#parameter-batch-insert)
+    - [Select Request](#select-request)
+    - [Invoke Stored Procedure or function](#invoke-stored-procedure-or-function)
       - [execMultiSQl.bpel](#execmultisqlbpel)
-      - [Invoke Stored Procedure or function](#invoke-stored-procedure-or-function)
+  - [Example Multi Data Access Request](#example-multi-data-access-request)
     - [PDDs](#pdds)
     - [XQuery Library Modules](#xquery-library-modules)
     - [Automated Step Service Metadata](#automated-step-service-metadata)
@@ -140,7 +147,9 @@ values
     (?,?,?,?)
 ```
 
-Complete tDataAccessRequest Structure example
+## DAS Service Request Examples
+
+### Complete tDataAccessRequest Structure example
 
 ```xml
 <tDataAccessRequest>
@@ -180,6 +189,8 @@ Complete tDataAccessRequest Structure example
 </tDataAccessRequest>
 ```
 
+### Invoke DDL STatement
+
 You can use DAS to invoke even DDL statements such as
 
 ```xml
@@ -200,6 +211,8 @@ You can use DAS to invoke even DDL statements such as
     </sqlStatement>
  </tDataAccessRequest>
 ```
+
+### Prepared Statement (Insert)
 
 It is recommended to use parametrized queries unless you invoking some static SQL, Constructing SQL statements by string concatenation is considered unsafe and prone for SQL injection attacks especially when the parameters might be a user input on the web page or request parameter. prefer prepared statement style of invocation whenever possible.
 
@@ -248,6 +261,8 @@ Response Example:
     </row>
 </tResponse>
 ```
+
+### Parameter Batch Insert
 
 Parameter batch will be used in the case when you want to perform bulk inserts or updates  here is an example of such request
 
@@ -320,6 +335,8 @@ Example Response:
 </tResponse>
 ```
 
+### Select Request
+
 Select Request Example:
 
 ```xml
@@ -388,6 +405,45 @@ Select Response Example:
 </tResponse>
 ```
 
+### Invoke Stored Procedure or function
+
+Request:
+
+```xml
+<DataAccessRequest>
+   <sqlStatement>
+      <statementId>SOME_PKG.function</statementId>
+      <columnCase>lowercase</columnCase>
+      <hasResultSet>false</hasResultSet>
+      <statement>CALL SOME_PKG.function(?,?)</statement>
+      <procedure>
+         <procedureParameter>
+            <name>PARAMETER1</name>
+            <sqlType>string</sqlType>
+            <mode>in</mode>
+            <data>{$p1data}</data>
+         </procedureParameter>
+         <procedureParameter>
+            <name>PARAMETER2</name>
+            <sqlType>string</sqlType>
+            <mode>out</mode>
+            <data>{$p1data}</data>
+         </procedureParameter>
+      </procedure>
+   </sqlStatement>  
+   <dataSource>DS1</dataSource>
+</DataAccessRequest>
+```
+
+Important part is to map the parameter types correctly with the respect of the SQL types
+DAS does not support Oracle object array types, only following types are supported
+
+Parameter attribute. Types include string (default), byte, short, int, long, float, double, date, binary, or clob
+Binary requires special handling to send data as attachment and it is not supported by this DAS wrapper implementation
+
+You should be able to specify both in/out parameters - read more about data access service [here](
+https://docs.informatica.com/process-automation/informatica-activevos/current-version/2----designer/building-a-process-with-a-system-service/data-access-service.html)
+
 #### execMultiSQl.bpel
 
 This allows to invoke multiple Database statements in one request, this is very useful when you need to run multiple statements of a different kind. It supports the same set parameters and both static and parametrized queries as well as stored procedures and DDL statement as the execSQL Service. It only adds ability to execute multiple statements at the same time where the DAs service provides individual result set or output for each statement
@@ -395,7 +451,7 @@ This allows to invoke multiple Database statements in one request, this is very 
 
 ![execMultiSQL](doc/images/execMultiSQL_Process.png)
 
-Example Multi Data Access Request
+## Example Multi Data Access Request
 
 ```xml
 <tMultiDataAccessRequest>
@@ -454,45 +510,6 @@ Response:
     </result>
 </multiDataAccessResponse>
 ```
-
-#### Invoke Stored Procedure or function
-
-Request:
-
-```xml
-<DataAccessRequest>
-   <sqlStatement>
-      <statementId>SOME_PKG.function</statementId>
-      <columnCase>lowercase</columnCase>
-      <hasResultSet>false</hasResultSet>
-      <statement>CALL SOME_PKG.function(?,?)</statement>
-      <procedure>
-         <procedureParameter>
-            <name>PARAMETER1</name>
-            <sqlType>string</sqlType>
-            <mode>in</mode>
-            <data>{$p1data}</data>
-         </procedureParameter>
-         <procedureParameter>
-            <name>PARAMETER2</name>
-            <sqlType>string</sqlType>
-            <mode>out</mode>
-            <data>{$p1data}</data>
-         </procedureParameter>
-      </procedure>
-   </sqlStatement>  
-   <dataSource>DS1</dataSource>
-</DataAccessRequest>
-```
-
-Important part is to map the parameter types correctly with the respect of the SQL types
-DAS does not support Oracle object array types, only following types are supported
-
-Parameter attribute. Types include string (default), byte, short, int, long, float, double, date, binary, or clob
-Binary requires special handling to send data as attachment and it is not supported by this DAS wrapper implementation
-
-You should be able to specify both in/out parameters - read more about data access service [here](
-https://docs.informatica.com/process-automation/informatica-activevos/current-version/2----designer/building-a-process-with-a-system-service/data-access-service.html)
 
 ### PDDs
 
