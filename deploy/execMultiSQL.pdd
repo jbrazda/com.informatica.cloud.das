@@ -2,10 +2,13 @@
 <pdd:process xmlns:bpelns="http://execMultiSQL" xmlns:pdd="http://schemas.active-endpoints.com/pdd/2006/08/pdd.xsd" location="bpel/com.informatica.cloud.das/bpel/execMultiSQL.bpel" name="bpelns:execMultiSQL" platform="enterprise">
   <pdd:partnerLinks>
     <pdd:partnerLink name="DASAutomatedStep">
-      <pdd:myRole allowedRoles="" binding="EXTERNAL" service="execMultiSQL"/>
+      <pdd:myRole binding="EXTERNAL" service="execMultiSQL"/>
     </pdd:partnerLink>
     <pdd:partnerLink name="DS1">
       <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS1"/>
+    </pdd:partnerLink>
+    <pdd:partnerLink name="DS10">
+      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS10"/>
     </pdd:partnerLink>
     <pdd:partnerLink name="DS2">
       <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS2"/>
@@ -18,6 +21,18 @@
     </pdd:partnerLink>
     <pdd:partnerLink name="DS5">
       <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS5"/>
+    </pdd:partnerLink>
+    <pdd:partnerLink name="DS6">
+      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS6"/>
+    </pdd:partnerLink>
+    <pdd:partnerLink name="DS7">
+      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS7"/>
+    </pdd:partnerLink>
+    <pdd:partnerLink name="DS8">
+      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS8"/>
+    </pdd:partnerLink>
+    <pdd:partnerLink name="DS9">
+      <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/DS9"/>
     </pdd:partnerLink>
   </pdd:partnerLinks>
   <pdd:references>

@@ -62,7 +62,7 @@
          <zipfileset file="${project_loc}/doc/images/execSQL_Process.png" fullpath="resources/com.informatica.cloud.das/doc/images/execSQL_Process.png" />
          <zipfileset file="${project_loc}/images/database.png" fullpath="resources/com.informatica.cloud.das/images/database.png" />
          <zipfileset file="${project_loc}/images/database_go.png" fullpath="resources/com.informatica.cloud.das/images/database_go.png" />
-         <zipfileset file="${project_loc}/xquery/infa-das.xq" fullpath="wsdl/Users/jbrazda/git/github/jbrazda/com.informatica.cloud.das/xquery/infa-das.xq" />
+         <zipfileset file="${project_loc}/xquery/infa-das.xq" fullpath="wsdl/home/jbrazda/git/github/jbrazda/com.informatica.cloud.das/xquery/infa-das.xq" />
          <!-- Process Image Files. -->
          <zipfileset file="${project_loc}/.image/bpel/execSQL/*" prefix=".image/com.informatica.cloud.das/bpel/execSQL" />
          <zipfileset file="${project_loc}/.image/bpel/execMultiSQL/*" prefix=".image/com.informatica.cloud.das/bpel/execMultiSQL" />
@@ -78,7 +78,7 @@
          <otherentry typeURI="res:/image/png" location="project:/com.informatica.cloud.das/doc/images/execSQL_Process.png" classpath="resources/com.informatica.cloud.das/doc/images/execSQL_Process.png" />
          <otherentry typeURI="res:/image/png" location="project:/com.informatica.cloud.das/images/database.png" classpath="resources/com.informatica.cloud.das/images/database.png" />
          <otherentry typeURI="res:/image/png" location="project:/com.informatica.cloud.das/images/database_go.png" classpath="resources/com.informatica.cloud.das/images/database_go.png" />
-         <otherentry typeURI="http://modules.active-endpoints.com/2009/07/xquery" location="project:/com.informatica.cloud.das/xquery/infa-das.xq" classpath="wsdl/Users/jbrazda/git/github/jbrazda/com.informatica.cloud.das/xquery/infa-das.xq" />
+         <otherentry typeURI="http://modules.active-endpoints.com/2009/07/xquery" location="project:/com.informatica.cloud.das/xquery/infa-das.xq" classpath="wsdl/home/jbrazda/git/github/jbrazda/com.informatica.cloud.das/xquery/infa-das.xq" />
       </createcatalog>
       <!-- The contribution task sets up a contribution file which documents the exported and imported namespaces for this contribution -->
       <createcontribution file="${archive.filename}">
