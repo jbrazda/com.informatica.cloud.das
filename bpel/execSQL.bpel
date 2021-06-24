@@ -104,7 +104,7 @@
                            aei:type="RECEIVE"
                            bpmnElement="147872977451711897">
             <dc:Bounds height="60" width="70" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {920,82}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {940,87}"
                               aei:absoluteSize="DIM {81,26}"
                               aei:anchor.location="1"
                               aei:anchor.objectId="147872977451711897"
@@ -138,7 +138,7 @@
                            bpmnElement="147872999966316046"
                            isHorizontal="false">
             <dc:Bounds height="411" width="995" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {963,272}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {983,277}"
                               aei:absoluteSize="DIM {8,13}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="147049074850411289"
@@ -159,7 +159,7 @@
                            aei:type="ELSE_IF"
                            bpmnElement="147872999966316046ifDef">
             <dc:Bounds height="121" width="145" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {68,320}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {88,325}"
                               aei:absoluteSize="DIM {22,26}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="147049074850411293"
@@ -202,7 +202,7 @@
                            aei:type="ELSE_IF"
                            bpmnElement="147872999966316052">
             <dc:Bounds height="121" width="145" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {260,305}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {280,310}"
                               aei:absoluteSize="DIM {22,16}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="147049081602011417"
@@ -245,7 +245,7 @@
                            aei:type="ELSE_IF"
                            bpmnElement="147872999966316056">
             <dc:Bounds height="121" width="145" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {428,308}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {448,313}"
                               aei:absoluteSize="DIM {22,26}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="147049081918011443"
@@ -288,7 +288,7 @@
                            aei:type="ELSE_IF"
                            bpmnElement="147872999966316060">
             <dc:Bounds height="121" width="145" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {598,307}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {618,312}"
                               aei:absoluteSize="DIM {22,26}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="147049082329111469"
@@ -331,7 +331,7 @@
                            aei:type="ELSE_IF"
                            bpmnElement="147872999966316064">
             <dc:Bounds height="121" width="145" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {765,305}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {785,310}"
                               aei:absoluteSize="DIM {22,16}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="147049082682211495"
@@ -366,7 +366,7 @@
             <dc:Bounds height="78" width="150" x="0" y="0"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS6'"
-                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {895,331}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387231765705059"
@@ -374,7 +374,7 @@
                            aei:type="ELSE_IF"
                            bpmnElement="162387231765705059">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {940,310}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {960,315}"
                               aei:absoluteSize="DIM {19,13}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="162387231765705059"
@@ -409,7 +409,7 @@
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS7'"
-                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {1065,331}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387232032805085"
@@ -417,7 +417,7 @@
                            aei:type="ELSE_IF"
                            bpmnElement="162387232032805085">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1105,310}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1125,315}"
                               aei:absoluteSize="DIM {19,13}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="162387232032805085"
@@ -452,7 +452,7 @@
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS8'"
-                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {1235,331}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387232294905111"
@@ -460,7 +460,7 @@
                            aei:type="ELSE_IF"
                            bpmnElement="162387232294905111">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1280,310}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1300,315}"
                               aei:absoluteSize="DIM {19,13}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="162387232294905111"
@@ -494,8 +494,8 @@
                            isHorizontal="false">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:IF_EXPRESSION=""
-                           aei:IF_EXPR_LANG=""
+         <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='D9'"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {1405,331}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387232678805137"
@@ -503,7 +503,7 @@
                            aei:type="ELSE_IF"
                            bpmnElement="162387232678805137">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1445,310}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1465,315}"
                               aei:absoluteSize="DIM {19,13}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="162387232678805137"
@@ -538,7 +538,7 @@
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS10'"
-                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {1575,331}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387241548305197"
@@ -546,7 +546,7 @@
                            aei:type="ELSE_IF"
                            bpmnElement="162387241548305197">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1615,310}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1635,315}"
                               aei:absoluteSize="DIM {25,13}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="162387241548305197"
@@ -586,7 +586,7 @@
                            aei:type="ELSE"
                            bpmnElement="147872999966316046elseDef">
             <dc:Bounds height="291" width="145" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1798,337}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1818,342}"
                               aei:absoluteSize="DIM {21,26}"
                               aei:anchor.location="4"
                               aei:anchor.objectId="147049074850511299"
@@ -620,7 +620,7 @@
                            aei:type="REPLY"
                            bpmnElement="1478808284253102922">
             <dc:Bounds height="60" width="70" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1786,500}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1806,505}"
                               aei:absoluteSize="DIM {46,26}"
                               aei:anchor.location="1"
                               aei:anchor.objectId="1478808284253102922"
@@ -639,7 +639,7 @@
                            aei:type="EXIT"
                            bpmnElement="1478808292749103206">
             <dc:Bounds height="60" width="70" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1783,585}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1803,590}"
                               aei:absoluteSize="DIM {55,26}"
                               aei:anchor.location="1"
                               aei:anchor.objectId="1478808292749103206"
@@ -667,7 +667,7 @@
                            aei:type="REPLY"
                            bpmnElement="147872977452211899">
             <dc:Bounds height="60" width="70" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {905,837}"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {925,842}"
                               aei:absoluteSize="DIM {116,26}"
                               aei:anchor.location="1"
                               aei:anchor.objectId="147872977452211899"
@@ -906,7 +906,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS5"/>
          </bpel:elseif>
          <bpel:elseif aei:id="162387231765705059">
-            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS6'</bpel:condition>
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS6'</bpel:condition>
             <bpel:invoke aei:id="162387244860905417"
                          inputVariable="gDataAccessRequest"
                          name="execSQL"
@@ -915,7 +915,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS6"/>
          </bpel:elseif>
          <bpel:elseif aei:id="162387232032805085">
-            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS7'</bpel:condition>
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS7'</bpel:condition>
             <bpel:invoke aei:id="162387245353205673"
                          inputVariable="gDataAccessRequest"
                          name="execSQL"
@@ -924,7 +924,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS7"/>
          </bpel:elseif>
          <bpel:elseif aei:id="162387232294905111">
-            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS8'</bpel:condition>
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS8'</bpel:condition>
             <bpel:invoke aei:id="162387245810205917"
                          inputVariable="gDataAccessRequest"
                          name="execSQL"
@@ -933,6 +933,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS8"/>
          </bpel:elseif>
          <bpel:elseif aei:id="162387232678805137">
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='D9'</bpel:condition>
             <bpel:invoke aei:id="162387246282806057"
                          inputVariable="gDataAccessRequest"
                          name="execSQL"
@@ -941,7 +942,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS9"/>
          </bpel:elseif>
          <bpel:elseif aei:id="162387241548305197">
-            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS10'</bpel:condition>
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"dataAccessRequest" ) ='DS10'</bpel:condition>
             <bpel:invoke aei:id="162387246767006297"
                          inputVariable="gDataAccessRequest"
                          name="execSQL"

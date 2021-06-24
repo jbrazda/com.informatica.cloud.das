@@ -55,7 +55,6 @@
          <zipfileset file="${project_loc}/schema/data-access.xsd" fullpath="resources/com.informatica.cloud.das/schema/data-access.xsd" />
          <!-- Other Files. -->
          <zipfileset file="${project_loc}/LICENSE" fullpath="resources/com.informatica.cloud.das/LICENSE" />
-         <zipfileset file="${project_loc}/README.html" fullpath="resources/com.informatica.cloud.das/README.html" />
          <zipfileset file="${project_loc}/README.md" fullpath="resources/com.informatica.cloud.das/README.md" />
          <zipfileset file="${project_loc}/config/services.xml" fullpath="resources/com.informatica.cloud.das/config/services.xml" />
          <zipfileset file="${project_loc}/doc/images/execMultiSQL_Process.png" fullpath="resources/com.informatica.cloud.das/doc/images/execMultiSQL_Process.png" />
@@ -71,7 +70,6 @@
          <wsdlentry location="project:/com.informatica.cloud.das/wsdl/data-access.wsdl" classpath="resources/com.informatica.cloud.das/wsdl/data-access.wsdl" />
          <schemaentry location="project:/com.informatica.cloud.das/schema/data-access.xsd" classpath="resources/com.informatica.cloud.das/schema/data-access.xsd" />
          <otherentry typeURI="res:/application/octet-stream" location="project:/com.informatica.cloud.das/LICENSE" classpath="resources/com.informatica.cloud.das/LICENSE" />
-         <otherentry typeURI="res:/text/html" location="project:/com.informatica.cloud.das/README.html" classpath="resources/com.informatica.cloud.das/README.html" />
          <otherentry typeURI="res:/application/octet-stream" location="project:/com.informatica.cloud.das/README.md" classpath="resources/com.informatica.cloud.das/README.md" />
          <otherentry typeURI="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosServiceDiscovery.xsd" location="project:/com.informatica.cloud.das/config/services.xml" classpath="resources/com.informatica.cloud.das/config/services.xml" />
          <otherentry typeURI="res:/image/png" location="project:/com.informatica.cloud.das/doc/images/execMultiSQL_Process.png" classpath="resources/com.informatica.cloud.das/doc/images/execMultiSQL_Process.png" />

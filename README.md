@@ -54,7 +54,7 @@ This package contains a Generic Wrapper for this Service which allows consumptio
 - Supports all parameters and data types supported by the DAS (except binary blobs and attachments)
 - Support for stored procedures calls and batched updates
 - Exposed as Automated Step (Seamless integration with IPD)
-- Support up to 5 Data sources (possible to extend)
+- Support up to 10 Data sources (possible to extend)
 
 ## Installation
 
@@ -176,13 +176,13 @@ values
          </parameter>
       </parameterBatch>
       <procedure>
-         <procedureParameter>
+         <parameter>
             <name></name>
             <sqlType></sqlType>
             <mode></mode>
             <data></data>
             <attachment></attachment>
-         </procedureParameter>
+         </parameter>
       </procedure>
    </sqlStatement>
    <dataSource></dataSource>
@@ -417,18 +417,18 @@ Request:
       <hasResultSet>false</hasResultSet>
       <statement>CALL SOME_PKG.function(?,?)</statement>
       <procedure>
-         <procedureParameter>
+         <parameter>
             <name>PARAMETER1</name>
             <sqlType>string</sqlType>
             <mode>in</mode>
             <data>{$p1data}</data>
-         </procedureParameter>
-         <procedureParameter>
+         </parameter>
+         <parameter>
             <name>PARAMETER2</name>
             <sqlType>string</sqlType>
             <mode>out</mode>
             <data>{$p1data}</data>
-         </procedureParameter>
+         </parameter>
       </procedure>
    </sqlStatement>  
    <dataSource>DS1</dataSource>
@@ -623,16 +623,16 @@ These two processes are not necessary if you create IPD process deployed and pub
 If the currently supported 5 Data sources is not enough for your ICAI Implementation and you need more you can simply add more Data Source definitions into your environment and Automated Step processes
 
 1. Open each of the bpel processes included in the Informatica Process Developer
-2. Add a new partner link called DSn where n is the number for new data Source PLT such as `DS6`
+2. Add a new partner link called DSn where n is the number for new data Source PLT such as `DS11`
 3. Add a new if condition branch to existing process
-4. Edit the condition and set it to following `$gDataAccessRequest/das:sqlStatement/@dataSource='DS6'`
-5. rename the condition branch label 'if' to `DS6`
+4. Edit the condition and set it to following `$gDataAccessRequest/das:sqlStatement/@dataSource='DS11'`
+5. rename the condition branch label 'if' to `DS11`
 6. Drag and drop the corresponding `execSQL` or `execMultiSQL` operation from Partner link view on to new empty branch
 7. Set Input of the Invoke to already existing global variable  `gDataAccessrequest` or `gMultiDataAccessRequest`
 8. Set the output to already existing global variable  `gDataAccessResponse` or `gMultiDataAccessResponse`
 9. Save the BPEL changes
 10. Open corresponding PDD for the edited process, it will be automatically updated to include new partner link definition (a reference to new data source)
-11. Edit the new 'DS6' PArtner link properties as it has missing mapping for a data source name, set the Service Invoke Handle to a `System Service` and the JNDI  name to `jdbbc/DS6`
+11. Edit the new 'DS6' PArtner link properties as it has missing mapping for a data source name, set the Service Invoke Handle to a `System Service` and the JNDI  name to `jdbc/DS11`
 12. Save The PDD
 
 Repeat the same for as many Data Sources as you need

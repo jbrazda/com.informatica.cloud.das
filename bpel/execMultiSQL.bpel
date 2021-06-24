@@ -366,7 +366,7 @@
             <dc:Bounds height="78" width="150" x="0" y="0"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS6'"
-                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {875,326}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387158169500559"
@@ -409,7 +409,7 @@
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS7'"
-                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {1045,326}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387159130700585"
@@ -452,7 +452,7 @@
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS8'"
-                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {1215,326}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387159479700611"
@@ -495,7 +495,7 @@
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS9'"
-                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {1385,326}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387159796600637"
@@ -538,7 +538,7 @@
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;multiDataAccessRequest&#34; ) ='DS10'"
-                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
                            aei:absoluteLocation="LOC {1555,326}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387190946102443"
@@ -679,9 +679,7 @@
                <dc:Bounds height="26" width="116" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {45,30}"
-                           aei:absoluteSize="DIM {165,238}"
-                           aei:catchAllFaults="true"
+         <bpmndi:BPMNShape aei:catchAllFaults="true"
                            aei:collapedIconLocation="icons/bpmn/activity/catch.png"
                            aei:constraint=""
                            aei:expanded="true"
@@ -693,9 +691,7 @@
                            bpmnElement="1478808568302108706"
                            isHorizontal="false">
             <dc:Bounds height="-1" width="-1" x="35" y="20"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {125,40}"
-                              aei:absoluteSize="DIM {42,13}"
-                              aei:anchor.location="0"
+            <bpmndi:BPMNLabel aei:anchor.location="0"
                               aei:anchor.objectId="1478808571390108724"
                               aei:backgroundColor="RGB {255,255,255}"
                               aei:objectId="1478808571391108726"
@@ -705,31 +701,23 @@
                <dc:Bounds height="-1" width="-1" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {55,90}"
-                           aei:absoluteSize="DIM {145,158}"
-                           aei:objectId="1478808579088109028"
+         <bpmndi:BPMNShape aei:objectId="1478808579088109028"
                            aei:type="SEQUENCE"
                            bpmnElement="1478808579088109028"
                            isHorizontal="false">
             <dc:Bounds height="-1" width="-1" x="-10" y="-10"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {65,100}"
-                           aei:absoluteSize="DIM {125,53}"
-                           aei:name="Set Process Title"
+         <bpmndi:BPMNShape aei:name="Set Process Title"
                            aei:objectId="148035238177304309"
                            aei:type="ASSIGN"
                            bpmnElement="148035238177304309">
             <dc:Bounds height="-1" width="-1" x="10" y="10"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {92,178}"
-                           aei:absoluteSize="DIM {70,60}"
-                           aei:objectId="1478808579086109024"
+         <bpmndi:BPMNShape aei:objectId="1478808579086109024"
                            aei:type="REPLY"
                            bpmnElement="1478808579086109024">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {116,235}"
-                              aei:absoluteSize="DIM {42,13}"
-                              aei:anchor.location="1"
+            <bpmndi:BPMNLabel aei:anchor.location="1"
                               aei:anchor.objectId="1478808579086109024"
                               aei:backgroundColor="RGB {255,255,255}"
                               aei:objectId="1478808579086109026"
@@ -914,7 +902,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS5"/>
          </bpel:elseif>
          <bpel:elseif aei:id="162387158169500559">
-            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS6'</bpel:condition>
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS6'</bpel:condition>
             <bpel:invoke aei:id="162387197046103665"
                          inputVariable="gMultiDataAccessRequest"
                          name="execMultiSQL"
@@ -923,7 +911,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS6"/>
          </bpel:elseif>
          <bpel:elseif aei:id="162387159130700585">
-            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS7'</bpel:condition>
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS7'</bpel:condition>
             <bpel:invoke aei:id="162387194867302767"
                          inputVariable="gMultiDataAccessRequest"
                          name="execMultiSQL"
@@ -932,7 +920,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS7"/>
          </bpel:elseif>
          <bpel:elseif aei:id="162387159479700611">
-            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS8'</bpel:condition>
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS8'</bpel:condition>
             <bpel:invoke aei:id="162387195208503011"
                          inputVariable="gMultiDataAccessRequest"
                          name="execMultiSQL"
@@ -941,7 +929,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS8"/>
          </bpel:elseif>
          <bpel:elseif aei:id="162387159796600637">
-            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS9'</bpel:condition>
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS9'</bpel:condition>
             <bpel:invoke aei:id="162387196046303393"
                          inputVariable="gMultiDataAccessRequest"
                          name="execMultiSQL"
@@ -950,7 +938,7 @@ return dasx:objectToDasRequest($dasRequest)</bpel:from>
                          partnerLink="DS9"/>
          </bpel:elseif>
          <bpel:elseif aei:id="162387190946102443">
-            <bpel:condition>dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS10'</bpel:condition>
+            <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">dasx:getDataSourceID( $gAutomatedStepRequest,"multiDataAccessRequest" ) ='DS10'</bpel:condition>
             <bpel:invoke aei:id="162387197525303883"
                          inputVariable="gMultiDataAccessRequest"
                          name="execMultiSQL"
