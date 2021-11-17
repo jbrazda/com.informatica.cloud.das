@@ -86,7 +86,7 @@ You will need an Informatica Process Developer to build and install this package
    - `DAS/Processes/execSQLProxy`.
    - `DAS/Processes/execMultiSQLProxy`
    - `DAS/Test/TEST DAS`
-   
+
    ![Set Run On](doc/images/ApplicationIntegration-SetRunOn.png)
 11. Publish Imported Processes and Guides
    - `DAS/Processes/execSQLProxy`
@@ -628,7 +628,7 @@ This service Supports One SQL statement, but multiple batched updates/inserts</d
 
 Note that the Service Descriptors refer to process objects such as `DataAccessService:tMultiResponse` or `DataAccessService:tMultiDataAccessRequest` that are defined
 in separate files that must be also deployed and published on the target ICAI Org instance. This is necessary to provide metadata for design time in the IPD to describe the process objects.
-You will need to import and publish following Objects included in the [IPD_SOURCE_DAS-IICS-2.0.zip](https://github.com/jbrazda/com.informatica.cloud.das/raw/master/sample-data/IPD_SOURCE_DAS-IICS-2.0.zip) Archive
+You will need to import and publish following Objects included in the [IPD_SOURCE_DAS-IICS.zip][IPD_SOURCE_DAS-IICS.zip] Archive
 
 - DataAccessService Connection
 - DataAccessService Connector
