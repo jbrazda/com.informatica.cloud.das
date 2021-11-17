@@ -6,7 +6,8 @@
   - [Introduction](#introduction)
   - [Features](#features)
   - [Installation](#installation)
-  - [Install this package on ICS/ICAI](#install-this-package-on-icsicai)
+    - [Install Using Pre Build Binaries](#install-using-pre-build-binaries)
+    - [Build From Source Code](#build-from-source-code)
   - [Package Contents](#package-contents)
   - [DAS Wrapper Components](#das-wrapper-components)
     - [BPEL Processes (Automated Steps)](#bpel-processes-automated-steps)
@@ -60,12 +61,46 @@ This package contains a Generic Wrapper for this Service which allows consumptio
 
 You will need an Informatica Process Developer to build and install this package
 
-## Install this package on ICS/ICAI
+### Install Using Pre Build Binaries
+
+1. Review Latest release notes for Changes and Updates, release binaries are available also on the (Releases Page).
+2. Download DAS service wrapper bpr package [com.informatica.cloud.das.bpr](https://github.com/jbrazda/com.informatica.cloud.das/releases/latest/download/com.informatica.cloud.das.bpr).
+3. Deploy the BPR using Application Integration Console > Deployed Assets > Deploy.
+
+   ![Deploy bpr](doc/images/ApplicationIntegrationConsole-DeployBPR.png)
+4. Deploy to Cloud
+
+   ![Deploy bpr to Cloud](doc/images/ApplicationIntegrationConsole-DeployBPRCloud.png)
+5. Deploy to all Secure Agents where the DAS wrapper will be used
+
+   ![Deploy to bpr Agents](doc/images/ApplicationIntegrationConsole-DeployBPRAgent.png)
+6. Download DAS Wrapper CAI Components Binary [IPD_SOURCE_DAS-IICS.zip][IPD_SOURCE_DAS-IICS.zip]
+7. Import the Zip to IICS CAI, Do not change target location, keep assets in the original projects, otherwise the update would be difficult.
+
+   ![Import CAI Components](doc/images/ApplicationIntegration-ImportDASAssets.png)
+8. Publish Imported `DAS/Connector/DataAccessService` Connector (No edits are needed, just publish).
+
+   ![Publish DAS Connector](doc/images/ApplicationIntegration-PublishConnector.png)
+9. Publish Imported `DAS/Connections/DataAccessService` Connection (No edits are needed, just publish).
+10. Adjust target **Run On** property in the imported processes
+   - `DAS/Processes/execSQLProxy`.
+   - `DAS/Processes/execMultiSQLProxy`
+   - `DAS/Processes/TEST DAS`
+
+   ![Set Run On](doc/images/ApplicationIntegration-SetRunOn.png)
+11. Publish Imported Processes and Guides
+   - `DAS/Processes/execSQLProxy`
+   - `DAS/Processes/execMultiSQLProxy`
+   - `DAS/Processes/TEST DAS`
+12. You can use provided test case to verify functionality (test need write and create table, drop table permissions as it creates/drops test table)
+13. Use the provided `TEST DAS` process as reference and example of use to build your own processes
+
+### Build From Source Code
 
 1. Install and Configure Informatica Process Developer ([Open Installation guide](https://github.com/jbrazda/Informatica/blob/master/Guides/InformaticaCloud/install_process_developer.md))
 2. Import this project zip into an eclipse workspace using Eclipse menu `File > Import > Existing Projects into Workspace` select the Archive Option
 3. Validate the project and check for errors
-4. Create `target/bpr` directory in the project toot
+4. Create `target/bpr` directory in the project root
 5. Run `File > Export > Orchestration > Contribution - Business Process Archive` project export wizard
 6. Make sure that you  set following export parameter as follows
 7. Bpr File: `/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr`
@@ -73,23 +108,21 @@ You will need an Informatica Process Developer to build and install this package
 9. Set the Target bprd file name to `/com.informatica.cloud.das/deploy/com.informatica.cloud.das.bprd`'
 10. Optionally you can set the deployment option to deeply directly to your cloud org, this saves one step in the deployment as you have to deploy manually only to agents
 11. Deployment Url should be following `https://[Your_POD_Hostname]/active-bpel/services/[YOURORGID]/ActiveBpelDeployBPR` i.e. `https://na1.ai.dm-us.informaticacloud.com/active-bpel/services/d8UL5i5Pm4KddufpfKuiaN/ActiveBpelDeployBPR`
-12. Deploy the produced bpr from `/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr` bot to your cloud org and all agents where you want to use this DAS service (alternatively pre-built latest bpr is available on release page [com.informatica.cloud.das.bpr](https://github.com/jbrazda/com.informatica.cloud.das/releases/latest/download/com.informatica.cloud.das.bpr))
-13. Import attached [IPD_SOURCE_DAS-IICS.zip](https://github.com/jbrazda/com.informatica.cloud.das/releases/latest/download/IPD_SOURCE_DAS-IICS.zip) to your IPD
-14. Adjust target Agent name in the imported Proxy processes `execSQLProxy` and `execMultiSQLProxy`
-15. Setup and Configure DS1 to DS{n} in the `Process Console > Admin >  Datasource Service` section
-16. Publish all provided resources imported in the step 15
-17. You can use provided test case to verify functionality (test need write and create table, drop table permissions as it creates/drops test table)
-18. Use the provided `TEST DAS` process as reference and example of use to build your own processes
+12. Deploy the produced bpr from `/com.informatica.cloud.das/target/bpr/com.informatica.cloud.das.bpr`
+13. Follow the Steps from the step 3 of the [Install Using Pre Build Binaries](#install-using-pre-build-binaries)
 
-> Note: step 12 in the installation can be also performed via web service when you have access toi Secure Agent the URL would be `http://hostname:7080/process-engine/services/ActiveBpelDeployBPR`
+
+> Note: step 12 in the installation can be also performed via web service when you have access to a Secure Agent the URL would be `http://hostname:7080/process-engine/services/ActiveBpelDeployBPR`
 
 ## Package Contents
 
 - Automated Steps Processes supporting `execSQL` and `execMultiSql` operations of the DAS
-- Metadata to describe Automated step to IPD
+- Metadata to describe Automated step to IPD [config/services.xml](config/services.xml)
 - Components to Support IPD Processes
     - Service Connector and Connection - provides metadata about the Automated Step Input/Output Parameters
-    - Example Proxy Services (Provide access to Automated Steps from The Cloud Process or Guides)
+    - Example Proxy Services (Provide access to Automated Steps from the cloud bound Process or Guides)
+         - `DAS/Processes/execSQLProxy`.
+         - `DAS/Processes/execMultiSQLProxy`
     - Test Cases and sample code
     - Sample Data
     - Documentation
@@ -641,3 +674,5 @@ You should test new branches by creating similar process to provided `TEST_DAS.p
 
 You should also update the `DataAccessService.svc.xml` in the IPD Connector designer and new data Sources to a DataSource field parameter pick-list definition and re-publish both connector and connection definition.
 This will ensure consistency of your metadata with your service implementation
+
+[IPD_SOURCE_DAS-IICS.zip]: https://github.com/jbrazda/com.informatica.cloud.das/releases/latest/download/IPD_SOURCE_DAS-IICS.zip
