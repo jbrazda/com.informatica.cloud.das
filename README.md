@@ -85,13 +85,13 @@ You will need an Informatica Process Developer to build and install this package
 10. Adjust target **Run On** property in the imported processes
    - `DAS/Processes/execSQLProxy`.
    - `DAS/Processes/execMultiSQLProxy`
-   - `DAS/Processes/TEST DAS`
-
+   - `DAS/Test/TEST DAS`
+   
    ![Set Run On](doc/images/ApplicationIntegration-SetRunOn.png)
 11. Publish Imported Processes and Guides
    - `DAS/Processes/execSQLProxy`
    - `DAS/Processes/execMultiSQLProxy`
-   - `DAS/Processes/TEST DAS`
+   - `DAS/Test/TEST DAS`
 12. You can use provided test case to verify functionality (test need write and create table, drop table permissions as it creates/drops test table)
 13. Use the provided `TEST DAS` process as reference and example of use to build your own processes
 
