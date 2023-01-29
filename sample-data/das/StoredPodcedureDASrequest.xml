@@ -34,40 +34,40 @@
 
           <statement>call APPS.XX_ERG_ORDERIMP.import(?,?,?,?,?)</statement>
           <procedure>
-            <procedureParameter>
+            <parameter>
               <name>ip_order_info_ref</name>
               <sqlType>string</sqlType>
               <mode>in</mode>
               <data>a18020000002SvkAAE</data>
-            </procedureParameter>
+            </parameter>
 
-            <procedureParameter>
+            <parameter>
               <name>op_order_header_id</name>
               <sqlType>string</sqlType>
               <mode>out</mode>
               <data>fn:string($temp.op_order_header_id)</data>
-            </procedureParameter>
+            </parameter>
 
-            <procedureParameter>
+            <parameter>
               <name>op_order_number</name>
               <sqlType>string</sqlType>
               <mode>out</mode>
               <data>$temp.op_order_number</data>
-            </procedureParameter>
+            </parameter>
 
-            <procedureParameter>
+            <parameter>
               <name>op_return_status</name>
               <sqlType>string</sqlType>
               <mode>out</mode>
               <data>$temp.op_return_status</data>
-            </procedureParameter>
+            </parameter>
 
-            <procedureParameter>
+            <parameter>
               <name>op_return_message</name>
               <sqlType>string</sqlType>
               <mode>out</mode>
               <data>$temp.op_return_msg</data>
-            </procedureParameter>
+            </parameter>
           </procedure>
         </sqlStatement>
 
