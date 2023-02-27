@@ -19,7 +19,9 @@
               name="execSQL"
               suppressJoinFailure="yes"
               targetNamespace="http://execSQL">
-   <bpel:documentation>Version 2.0&#xD;
+   <bpel:documentation>Version 2.1&#xD;
+-Added  support for binary types (blob,binary) passed as attachments.&#xD;
+Version 2.0&#xD;
 -Added Support for up to 10 Data Sources</bpel:documentation>
    <bpmndi:BPMNDiagram xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
                        xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
@@ -679,7 +681,18 @@
                <dc:Bounds height="26" width="116" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:catchAllFaults="true"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {127,129}"
+                           aei:absoluteSize="DIM {54,13}"
+                           aei:objectId="167753220673304647"
+                           aei:parentElement="process"
+                           aei:text="Version 2.1"
+                           aei:type="DATAANNOTATION"
+                           bpmnElement="167753220673304647">
+            <dc:Bounds height="-1" width="-1" x="117" y="119"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {150,187}"
+                           aei:absoluteSize="DIM {165,238}"
+                           aei:catchAllFaults="true"
                            aei:collapedIconLocation="icons/bpmn/activity/catch.png"
                            aei:constraint=""
                            aei:expanded="true"
@@ -691,7 +704,9 @@
                            bpmnElement="147880547449471559"
                            isHorizontal="false">
             <dc:Bounds height="-1" width="-1" x="140" y="177"/>
-            <bpmndi:BPMNLabel aei:anchor.location="0"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {219,197}"
+                              aei:absoluteSize="DIM {47,13}"
+                              aei:anchor.location="0"
                               aei:anchor.objectId="1478808628590109998"
                               aei:backgroundColor="RGB {255,255,255}"
                               aei:objectId="1478808628590110000"
@@ -701,23 +716,31 @@
                <dc:Bounds height="-1" width="-1" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:objectId="147880548185471567"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {160,247}"
+                           aei:absoluteSize="DIM {145,158}"
+                           aei:objectId="147880548185471567"
                            aei:type="SEQUENCE"
                            bpmnElement="147880548185471567"
                            isHorizontal="false">
             <dc:Bounds height="-1" width="-1" x="4" y="16"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:name="Set Title"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {170,257}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="Set Title"
                            aei:objectId="148035196882401351"
                            aei:type="ASSIGN"
                            bpmnElement="148035196882401351">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:objectId="147880548185271563"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {197,335}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:objectId="147880548185271563"
                            aei:type="REPLY"
                            bpmnElement="147880548185271563">
             <dc:Bounds height="-1" width="-1" x="14" y="26"/>
-            <bpmndi:BPMNLabel aei:anchor.location="1"
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {221,392}"
+                              aei:absoluteSize="DIM {42,13}"
+                              aei:anchor.location="1"
                               aei:anchor.objectId="147880548185271563"
                               aei:backgroundColor="RGB {255,255,255}"
                               aei:objectId="147880548185371565"

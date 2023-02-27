@@ -1,4 +1,4 @@
-<processRenderings modified="1677530444477">
+<processRenderings modified="1677532226415">
    <layout-segments>
       <segment height="878"
                id="process_0"
@@ -145,22 +145,22 @@
                               path="/process/faultHandlers/catchAll/sequence/scope/variables/variable[@name='parameters']"
                               type="variable"/>
                      </bpel>
-                     <bpel height="60"
-                           locationId="40"
+                     <bpel locationId="40"
                            name=""
                            path="/process/faultHandlers/catchAll/sequence/scope/sequence"
-                           type="sequence"
-                           width="70"
-                           x="197"
-                           y="335">
+                           type="sequence">
                         <bpel locationId="41"
                               name=""
                               path="/process/faultHandlers/catchAll/sequence/scope/sequence/assign"
                               type="assign"/>
-                        <bpel locationId="45"
+                        <bpel height="60"
+                              locationId="45"
                               name=""
                               path="/process/faultHandlers/catchAll/sequence/scope/sequence/reply"
-                              type="reply"/>
+                              type="reply"
+                              width="70"
+                              x="197"
+                              y="335"/>
                      </bpel>
                   </bpel>
                </bpel>
