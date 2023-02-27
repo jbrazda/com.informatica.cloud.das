@@ -16,6 +16,9 @@ This service Supports One SQL statement, but multiple batched updates/inserts</d
                <option name="referenceTo">DataAccessService:tDataAccessRequest</option>
             </options>
          </parameter>
+         <parameter name="dataAccessRequestAttachments" type="attachments"
+            description="DAS Request Binary Data" >
+         </parameter>
       </input>
       <output>
          <field description="tResponse Object"
@@ -25,6 +28,10 @@ This service Supports One SQL statement, but multiple batched updates/inserts</d
             <options>
                <option name="referenceTo">DataAccessService:tResponse</option>
             </options>
+         </field>
+         <field description="DAS Response Binary Data" 
+                name="dataAccessResponseAttachments" 
+                type="attachments">
          </field>
       </output>
    </service>
@@ -45,6 +52,9 @@ This service Supports One SQL statement, but multiple batched updates/inserts</d
             <options>
                <option name="referenceTo">DataAccessService:tMultiDataAccessRequest</option>
             </options>
+            <parameter name="multiDataAccessRequestAttachments" type="attachments"
+                description="DAS Request Binary Data" >
+         </parameter>
          </parameter>
       </input>
       <output>
@@ -55,6 +65,10 @@ This service Supports One SQL statement, but multiple batched updates/inserts</d
             <options>
                <option name="referenceTo">DataAccessService:tMultiResponse</option>
             </options>
+         </field>
+         <field description="DAS Response Binary Data" 
+            name="multiDataAccessResponseAttachments" 
+            type="attachments">
          </field>
       </output>
    </service>

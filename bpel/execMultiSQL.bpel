@@ -653,7 +653,7 @@
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:absoluteLocation="LOC {885,702}"
                            aei:absoluteSize="DIM {125,53}"
-                           aei:name="Set Process Title"
+                           aei:name="Set Process Output"
                            aei:objectId="148035219544703024"
                            aei:type="ASSIGN"
                            bpmnElement="148035219544703024">
@@ -798,6 +798,7 @@
       <bpel:variable element="sf:automatedStepRequest" name="gAutomatedStepRequest"/>
       <bpel:variable element="das:multiDataAccessRequest" name="gMultiDataAccessRequest"/>
       <bpel:variable element="das:multiDataAccessResponse" name="gMultiDataAccessResponse"/>
+      <bpel:variable element="sf:automatedStepResponse" name="gAutomatedStepResponse"/>
    </bpel:variables>
    <bpel:faultHandlers>
       <bpel:catchAll aei:id="1478808568302108706">
@@ -984,7 +985,7 @@ abx:setProcessTitle(substring(string-join($titleparts," "),1,255))</ext2:script>
             </bpel:sequence>
          </bpel:else>
       </bpel:if>
-      <bpel:assign aei:id="148035219544703024" name="Set_Process_Title">
+      <bpel:assign aei:id="148035219544703024" name="Set_Process_Output">
          <bpel:extensionAssignOperation>
             <ext2:script expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $processName := abx:getProcessName() 
 let $statementCount := concat ("statementCount:",count( $gMultiDataAccessRequest/das:sqlStatement))
@@ -994,28 +995,29 @@ let $titleparts := ($processName, $statementCount, $result)
 return
 abx:setProcessTitle(substring(string-join($titleparts," "),1,255))</ext2:script>
          </bpel:extensionAssignOperation>
-      </bpel:assign>
-      <bpel:scope aei:implicit="true" name="automatedStep-Reply">
-         <bpel:variables>
-            <bpel:variable messageType="asw:automatedStepResponse" name="parameters"/>
-         </bpel:variables>
-         <bpel:sequence>
-            <bpel:assign aei:assignType="XQUERY" aei:id="147880769262883335">
-               <bpel:copy>
-                  <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;sf:automatedStepResponse xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&gt;&lt;!--Optional:--&gt;
-   &lt;sf:fields&gt;
-     &lt;sf:field name="multiDataAccessResponse"&gt;{ dasx:dasResponseToPO( $gMultiDataAccessResponse ) }&lt;/sf:field&gt;  
-   &lt;/sf:fields&gt;
+         <bpel:copy>
+            <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">(: Generate attachment cids :)
+let $cids-sequence := 
+   for $attachmentIndex in (1 to abx:getAttachmentCount('gMultiDataAccessResponse'))
+      return concat("cid:", abx:getAttachmentProperty('gMultiDataAccessResponse',$attachmentIndex ,'Content-Id' ))
+let $cids := string-join($cids-sequence, ";") 
+return
+&lt;sf:automatedStepResponse xmlns:sf="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"&gt;
+    &lt;sf:fields&gt;
+        &lt;sf:field name="multiDataAccessResponse"&gt;{ dasx:dasResponseToPO( $gMultiDataAccessResponse ) }&lt;/sf:field&gt;  
+        &lt;sf:field name="dataAccessResponseAttachments"&gt;{ $cids }&lt;/sf:field&gt;
+    &lt;/sf:fields&gt;
 &lt;/sf:automatedStepResponse&gt;</bpel:from>
-                  <bpel:to part="automatedStepResponse" variable="parameters"/>
-               </bpel:copy>
-            </bpel:assign>
-            <bpel:reply aei:id="147872977452211899"
-                        name="automatedStep-Reply"
-                        operation="automatedStep"
-                        partnerLink="DASAutomatedStep"
-                        variable="parameters"/>
-         </bpel:sequence>
-      </bpel:scope>
+            <bpel:to variable="gAutomatedStepResponse"/>
+         </bpel:copy>
+         <bpel:extensionAssignOperation>
+            <ext2:script expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">abx:copyAllAttachments('gMultiDataAccessResponse','gAutomatedStepResponse' )</ext2:script>
+         </bpel:extensionAssignOperation>
+      </bpel:assign>
+      <bpel:reply aei:id="147872977452211899"
+                  name="automatedStep-Reply"
+                  operation="automatedStep"
+                  partnerLink="DASAutomatedStep"
+                  variable="gAutomatedStepResponse"/>
    </bpel:sequence>
 </bpel:process>

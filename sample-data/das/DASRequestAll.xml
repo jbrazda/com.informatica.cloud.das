@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:dataAccessRequest xmlns:tns="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd ../../schema/data-access.xsd ">
+  <tns:sqlStatement columnCase="lowercase" dataSource="DS1" hasResultSet="false" includeMetadata="false" maxRows="0" maxWaitSeconds="0" statementId="">
+    <tns:statement>tns:statement</tns:statement>
+    <tns:parameter attachmentId="" sqlType="byte">tns:parameter</tns:parameter>
+  </tns:sqlStatement>
+</tns:dataAccessRequest>
