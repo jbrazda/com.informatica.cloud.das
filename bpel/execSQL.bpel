@@ -88,15 +88,24 @@ Version 2.0&#xD;
                            aei:type="PARTNER_LINK"
                            aei:visible="false,false,false,false,false,"
                            bpmnElement="162387229851205019"/>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {35,20}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {860,45}"
+                           aei:absoluteSize="DIM {54,13}"
+                           aei:objectId="167753220673304647"
+                           aei:parentElement="process"
+                           aei:text="Version 2.1"
+                           aei:type="DATAANNOTATION"
+                           bpmnElement="167753220673304647">
+            <dc:Bounds height="13" width="54" x="850" y="35"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {10,10}"
                            aei:absoluteSize="DIM {1865,835}"
                            aei:objectId="147872977452211901"
                            aei:type="SEQUENCE"
                            bpmnElement="147872977452211901"
                            isHorizontal="false">
-            <dc:Bounds height="-1" width="-1" x="25" y="10"/>
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {932,30}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {907,20}"
                            aei:absoluteSize="DIM {70,60}"
                            aei:attachments=""
                            aei:name="automatedStep"
@@ -118,7 +127,7 @@ Version 2.0&#xD;
                <dc:Bounds height="26" width="81" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {905,115}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {880,105}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:name="Get DAS Request"
                            aei:objectId="147880530385870839"
@@ -126,14 +135,14 @@ Version 2.0&#xD;
                            bpmnElement="147880530385870839">
             <dc:Bounds height="53" width="125" x="0" y="0"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {905,193}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {880,183}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:objectId="147880558791071817"
                            aei:type="VALIDATE"
                            bpmnElement="147880558791071817">
             <dc:Bounds height="53" width="125" x="0" y="0"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {45,271}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {20,261}"
                            aei:absoluteSize="DIM {1845,411}"
                            aei:objectId="147872999966316046"
                            aei:type="IF"
@@ -154,7 +163,7 @@ Version 2.0&#xD;
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS1'"
                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
-                           aei:absoluteLocation="LOC {45,331}"
+                           aei:absoluteLocation="LOC {20,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="147872999966316048"
                            aei:text="DS1"
@@ -173,7 +182,7 @@ Version 2.0&#xD;
                <dc:Bounds height="26" width="22" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {55,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {30,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:attachments=""
                            aei:name="execSQL"
@@ -184,7 +193,7 @@ Version 2.0&#xD;
                            bpmnElement="147872999966316050">
             <dc:Bounds height="53" width="125" x="208" y="196"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {45,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {20,350}"
                            aei:absoluteSize="DIM {145,73}"
                            aei:actySimState="0"
                            aei:bpelName=""
@@ -197,7 +206,7 @@ Version 2.0&#xD;
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS2'"
                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
-                           aei:absoluteLocation="LOC {215,331}"
+                           aei:absoluteLocation="LOC {190,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="147872999966316052"
                            aei:text="DS2"
@@ -216,7 +225,7 @@ Version 2.0&#xD;
                <dc:Bounds height="16" width="22" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {225,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {200,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:attachments=""
                            aei:name="execSQL"
@@ -227,7 +236,7 @@ Version 2.0&#xD;
                            bpmnElement="147872999966316054">
             <dc:Bounds height="53" width="125" x="237" y="194"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {215,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {190,350}"
                            aei:absoluteSize="DIM {145,73}"
                            aei:actySimState="0"
                            aei:bpelName=""
@@ -240,7 +249,7 @@ Version 2.0&#xD;
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS3'"
                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
-                           aei:absoluteLocation="LOC {385,331}"
+                           aei:absoluteLocation="LOC {360,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="147872999966316056"
                            aei:text="DS3"
@@ -259,7 +268,7 @@ Version 2.0&#xD;
                <dc:Bounds height="26" width="22" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {395,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {370,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:attachments=""
                            aei:name="execSQL"
@@ -270,7 +279,7 @@ Version 2.0&#xD;
                            bpmnElement="147872999966316058">
             <dc:Bounds height="53" width="125" x="235" y="188"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {385,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {360,350}"
                            aei:absoluteSize="DIM {145,73}"
                            aei:actySimState="0"
                            aei:bpelName=""
@@ -283,7 +292,7 @@ Version 2.0&#xD;
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS4'"
                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
-                           aei:absoluteLocation="LOC {555,331}"
+                           aei:absoluteLocation="LOC {530,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="147872999966316060"
                            aei:text="DS4"
@@ -302,7 +311,7 @@ Version 2.0&#xD;
                <dc:Bounds height="26" width="22" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {565,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {540,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:attachments=""
                            aei:name="execSQL"
@@ -313,7 +322,7 @@ Version 2.0&#xD;
                            bpmnElement="147872999966316062">
             <dc:Bounds height="53" width="125" x="237" y="282"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {555,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {530,350}"
                            aei:absoluteSize="DIM {145,73}"
                            aei:actySimState="0"
                            aei:bpelName=""
@@ -326,7 +335,7 @@ Version 2.0&#xD;
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS5'"
                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
-                           aei:absoluteLocation="LOC {725,331}"
+                           aei:absoluteLocation="LOC {700,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="147872999966316064"
                            aei:text="DS5"
@@ -345,7 +354,7 @@ Version 2.0&#xD;
                <dc:Bounds height="16" width="22" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {735,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {710,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:attachments=""
                            aei:name="execSQL"
@@ -356,7 +365,7 @@ Version 2.0&#xD;
                            bpmnElement="147872999966316066">
             <dc:Bounds height="53" width="125" x="307" y="231"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {725,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {700,350}"
                            aei:absoluteSize="DIM {145,73}"
                            aei:actySimState="0"
                            aei:bpelName=""
@@ -369,7 +378,7 @@ Version 2.0&#xD;
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS6'"
                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
-                           aei:absoluteLocation="LOC {895,331}"
+                           aei:absoluteLocation="LOC {870,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387231765705059"
                            aei:text="DS6"
@@ -388,7 +397,7 @@ Version 2.0&#xD;
                <dc:Bounds height="-1" width="-1" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {905,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {880,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:attachments=""
                            aei:name="execSQL"
@@ -399,7 +408,7 @@ Version 2.0&#xD;
                            bpmnElement="162387244860905417">
             <dc:Bounds height="-1" width="-1" x="889" y="395"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {895,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {870,350}"
                            aei:absoluteSize="DIM {145,73}"
                            aei:actySimState="0"
                            aei:bpelName=""
@@ -412,7 +421,7 @@ Version 2.0&#xD;
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS7'"
                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
-                           aei:absoluteLocation="LOC {1065,331}"
+                           aei:absoluteLocation="LOC {1040,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387232032805085"
                            aei:text="DS7"
@@ -431,7 +440,7 @@ Version 2.0&#xD;
                <dc:Bounds height="-1" width="-1" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1075,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1050,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:attachments=""
                            aei:name="execSQL"
@@ -442,7 +451,7 @@ Version 2.0&#xD;
                            bpmnElement="162387245353205673">
             <dc:Bounds height="-1" width="-1" x="1052" y="384"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1065,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1040,350}"
                            aei:absoluteSize="DIM {145,73}"
                            aei:actySimState="0"
                            aei:bpelName=""
@@ -455,7 +464,7 @@ Version 2.0&#xD;
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS8'"
                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
-                           aei:absoluteLocation="LOC {1235,331}"
+                           aei:absoluteLocation="LOC {1210,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387232294905111"
                            aei:text="DS8"
@@ -474,7 +483,7 @@ Version 2.0&#xD;
                <dc:Bounds height="-1" width="-1" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1245,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1220,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:attachments=""
                            aei:name="execSQL"
@@ -485,7 +494,7 @@ Version 2.0&#xD;
                            bpmnElement="162387245810205917">
             <dc:Bounds height="-1" width="-1" x="1233" y="381"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1235,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1210,350}"
                            aei:absoluteSize="DIM {145,73}"
                            aei:actySimState="0"
                            aei:bpelName=""
@@ -498,7 +507,7 @@ Version 2.0&#xD;
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='D9'"
                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
-                           aei:absoluteLocation="LOC {1405,331}"
+                           aei:absoluteLocation="LOC {1380,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387232678805137"
                            aei:text="DS9"
@@ -517,7 +526,7 @@ Version 2.0&#xD;
                <dc:Bounds height="-1" width="-1" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1415,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1390,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:attachments=""
                            aei:name="execSQL"
@@ -528,7 +537,7 @@ Version 2.0&#xD;
                            bpmnElement="162387246282806057">
             <dc:Bounds height="-1" width="-1" x="1395" y="372"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1405,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1380,350}"
                            aei:absoluteSize="DIM {145,73}"
                            aei:actySimState="0"
                            aei:bpelName=""
@@ -541,7 +550,7 @@ Version 2.0&#xD;
          </bpmndi:BPMNShape>
          <bpmndi:BPMNShape aei:IF_EXPRESSION="dasx:getDataSourceID( $gAutomatedStepRequest,&#34;dataAccessRequest&#34; ) ='DS10'"
                            aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
-                           aei:absoluteLocation="LOC {1575,331}"
+                           aei:absoluteLocation="LOC {1550,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="162387241548305197"
                            aei:text="DS10"
@@ -560,7 +569,7 @@ Version 2.0&#xD;
                <dc:Bounds height="-1" width="-1" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1585,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1560,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:attachments=""
                            aei:name="execSQL"
@@ -571,7 +580,7 @@ Version 2.0&#xD;
                            bpmnElement="162387246767006297">
             <dc:Bounds height="-1" width="-1" x="1576" y="385"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1575,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1550,350}"
                            aei:absoluteSize="DIM {145,73}"
                            aei:actySimState="0"
                            aei:bpelName=""
@@ -582,7 +591,7 @@ Version 2.0&#xD;
                            isHorizontal="false">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1745,331}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1720,321}"
                            aei:absoluteSize="DIM {145,291}"
                            aei:objectId="147872999966316068"
                            aei:type="ELSE"
@@ -600,7 +609,7 @@ Version 2.0&#xD;
                <dc:Bounds height="26" width="21" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1745,360}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1720,350}"
                            aei:absoluteSize="DIM {145,243}"
                            aei:objectId="147872999966316069"
                            aei:type="SEQUENCE"
@@ -608,7 +617,7 @@ Version 2.0&#xD;
                            isHorizontal="false">
             <dc:Bounds height="248" width="150" x="0" y="0"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1755,370}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1730,360}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:name="Set Process Title"
                            aei:objectId="148035270197608721"
@@ -616,7 +625,7 @@ Version 2.0&#xD;
                            bpmnElement="148035270197608721">
             <dc:Bounds height="53" width="125" x="10" y="10"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1782,448}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1757,438}"
                            aei:absoluteSize="DIM {70,60}"
                            aei:objectId="1478808284253102922"
                            aei:type="REPLY"
@@ -634,7 +643,7 @@ Version 2.0&#xD;
                <dc:Bounds height="26" width="46" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1782,533}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1757,523}"
                            aei:absoluteSize="DIM {70,60}"
                            aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
                            aei:objectId="1478808292749103206"
@@ -653,7 +662,7 @@ Version 2.0&#xD;
                <dc:Bounds height="26" width="55" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {905,707}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {880,697}"
                            aei:absoluteSize="DIM {125,53}"
                            aei:name="Set Process Output"
                            aei:objectId="148035103537401017"
@@ -661,7 +670,7 @@ Version 2.0&#xD;
                            bpmnElement="148035103537401017">
             <dc:Bounds height="53" width="125" x="0" y="0"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {932,785}"
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {907,775}"
                            aei:absoluteSize="DIM {70,60}"
                            aei:name="automatedStep-Reply"
                            aei:objectId="147872977452211899"
@@ -681,18 +690,7 @@ Version 2.0&#xD;
                <dc:Bounds height="26" width="116" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {127,129}"
-                           aei:absoluteSize="DIM {54,13}"
-                           aei:objectId="167753220673304647"
-                           aei:parentElement="process"
-                           aei:text="Version 2.1"
-                           aei:type="DATAANNOTATION"
-                           bpmnElement="167753220673304647">
-            <dc:Bounds height="-1" width="-1" x="117" y="119"/>
-         </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {150,187}"
-                           aei:absoluteSize="DIM {165,238}"
-                           aei:catchAllFaults="true"
+         <bpmndi:BPMNShape aei:catchAllFaults="true"
                            aei:collapedIconLocation="icons/bpmn/activity/catch.png"
                            aei:constraint=""
                            aei:expanded="true"
@@ -704,9 +702,7 @@ Version 2.0&#xD;
                            bpmnElement="147880547449471559"
                            isHorizontal="false">
             <dc:Bounds height="-1" width="-1" x="140" y="177"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {219,197}"
-                              aei:absoluteSize="DIM {47,13}"
-                              aei:anchor.location="0"
+            <bpmndi:BPMNLabel aei:anchor.location="0"
                               aei:anchor.objectId="1478808628590109998"
                               aei:backgroundColor="RGB {255,255,255}"
                               aei:objectId="1478808628590110000"
@@ -716,31 +712,23 @@ Version 2.0&#xD;
                <dc:Bounds height="-1" width="-1" x="0" y="0"/>
             </bpmndi:BPMNLabel>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {160,247}"
-                           aei:absoluteSize="DIM {145,158}"
-                           aei:objectId="147880548185471567"
+         <bpmndi:BPMNShape aei:objectId="147880548185471567"
                            aei:type="SEQUENCE"
                            bpmnElement="147880548185471567"
                            isHorizontal="false">
             <dc:Bounds height="-1" width="-1" x="4" y="16"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {170,257}"
-                           aei:absoluteSize="DIM {125,53}"
-                           aei:name="Set Title"
+         <bpmndi:BPMNShape aei:name="Set Title"
                            aei:objectId="148035196882401351"
                            aei:type="ASSIGN"
                            bpmnElement="148035196882401351">
             <dc:Bounds height="-1" width="-1" x="0" y="0"/>
          </bpmndi:BPMNShape>
-         <bpmndi:BPMNShape aei:absoluteLocation="LOC {197,335}"
-                           aei:absoluteSize="DIM {70,60}"
-                           aei:objectId="147880548185271563"
+         <bpmndi:BPMNShape aei:objectId="147880548185271563"
                            aei:type="REPLY"
                            bpmnElement="147880548185271563">
             <dc:Bounds height="-1" width="-1" x="14" y="26"/>
-            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {221,392}"
-                              aei:absoluteSize="DIM {42,13}"
-                              aei:anchor.location="1"
+            <bpmndi:BPMNLabel aei:anchor.location="1"
                               aei:anchor.objectId="147880548185271563"
                               aei:backgroundColor="RGB {255,255,255}"
                               aei:objectId="147880548185371565"
